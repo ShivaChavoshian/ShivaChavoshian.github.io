@@ -109,8 +109,8 @@ $(document).ready(function () {
     $("#demo03").animatedModal();
     $("#demo04").animatedModal();
     $("#demo05").animatedModal();
-    $("#demo06").animatedModal();
-    $("#demo07").animatedModal();
-    $("#demo08").animatedModal();
-    $("#demo09").animatedModal();
+    // $("#demo06").animatedModal();
+    // $("#demo07").animatedModal();
+    // $("#demo08").animatedModal();
+    // $("#demo09").animatedModal();
 });

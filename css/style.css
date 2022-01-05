@@ -317,6 +317,7 @@ a.active {
 
 #about {
     padding: 100px 0;
+    background: #f3f3f3
 }
 
 .about-img-div img {
@@ -463,7 +464,7 @@ a.active {
 ==================================================*/
 
 #projects {
-    padding: 100px 0
+    padding: 100px 0;
 }
 
 .portfolio .categories-grid span {
@@ -651,7 +652,6 @@ a.active {
 
 #contact {
     padding: 100px 0;
-    background: #f3f3f3
 }
 
 .social {
