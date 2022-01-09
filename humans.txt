@@ -1,0 +1,10 @@
+/* TEAM */
+Author: Shiva Chavoshian
+Developer: Saeed Vayghani
+contact: shiva@chavoshian.com
+
+/* THANKS */
+Name: Alireza Jafari (Photography and Consultancy)
+
+
+Standards: HTML5, CSS3, javascript
