@@ -64,6 +64,9 @@ h4:before {
     top: 18px;
 }
 
+.navbar-fixed-top ul li {
+    margin-left: -3px;
+}
 
 .navbar-fixed-top ul li a {
     color: #000;
@@ -646,6 +649,11 @@ a.active {
     line-height: 50px;
 }
 
+.section .container h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    line-height: 50px;
+}
 
 /* contact
 ==================================================*/
