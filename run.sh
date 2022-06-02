@@ -5,7 +5,7 @@ do
 
 		echo "*** Otimizing $image - File size: $(( $(wc -c < "$image") / 1000 ))";
 
-		convert $image -sampling-factor 4:2:0 -strip -quality 80 -interlace JPEG -colorspace sRGB $image;
+		convert $image -sampling-factor 4:2:0 -strip -quality 20 -interlace JPEG -colorspace sRGB $image;
 
 		echo "*** File size optimized: $(( $(wc -c < "$image") / 1000 ))";
 		echo "*** Updating image's meta data";
