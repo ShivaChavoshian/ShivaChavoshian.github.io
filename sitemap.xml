@@ -44,6 +44,31 @@
   <url>
     <loc>https://chavoshian.com/ui-ux/portfolio-teaching-tazhib.html</loc>
     <lastmod>2022-12-03</lastmod>
+    <image:image>
+      <image:loc>https://chavoshian.com/ui-ux/cover-ux-portfolio-teaching-tazhib.jpg</image:loc>
+      <image:title>cover-ux-portfolio-teaching-tazhib</image:title>
+      <image:license>https://chavoshian.com/image-license.txt</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://chavoshian.com/ui-ux/ux-portfolio-teaching-tazhib.jpg</image:loc>
+      <image:title>ux-portfolio-teaching-tazhib</image:title>
+      <image:license>https://chavoshian.com/image-license.txt</image:license>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://chavoshian.com/ui-ux/portfolio-music-sharing-app.html</loc>
+    <lastmod>2022-12-03</lastmod>
+    <image:image>
+      <image:loc>https://chavoshian.com/ui-ux/cover-ux-portfolio-music-sharing-app.jpg</image:loc>
+      <image:title>cover-ux-portfolio-music-sharing-app</image:title>
+      <image:license>https://chavoshian.com/image-license.txt</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://chavoshian.com/ui-ux/ux-portfolio-music-sharing-app.jpg</image:loc>
+      <image:title>ux-portfolio-music-sharing-app</image:title>
+      <image:license>https://chavoshian.com/image-license.txt</image:license>
+    </image:image>
   </url>
 
   <url>
