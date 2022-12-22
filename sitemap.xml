@@ -72,6 +72,21 @@
   </url>
 
   <url>
+    <loc>https://chavoshian.com/ui-ux/ux-portfolio-food-delivery.html</loc>
+    <lastmod>2022-12-23</lastmod>
+    <image:image>
+      <image:loc>https://chavoshian.com/ui-ux/cover-ux-portfolio-food-delivery.jpg</image:loc>
+      <image:title>cover-ux-portfolio-food-delivery</image:title>
+      <image:license>https://chavoshian.com/image-license.txt</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://chavoshian.com/ui-ux/ux-portfolio-food-delivey-app.jpg</image:loc>
+      <image:title>ux-portfolio-food-delivery</image:title>
+      <image:license>https://chavoshian.com/image-license.txt</image:license>
+    </image:image>
+  </url>
+        
+  <url>
     <loc>https://chavoshian.com/artworks/01-zomorod.html</loc>
     <lastmod>2022-03-05</lastmod>
     <image:image>
