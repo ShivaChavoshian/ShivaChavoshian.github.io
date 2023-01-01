@@ -62,16 +62,6 @@ $(document).ready(function () {
     });
 
 
-
-    // Parallax
-    var parallax = function () {
-        $(window).stellar();
-    };
-
-    $(function () {
-        parallax();
-    });
-
     // AOS
     AOS.init({
         duration: 1200,
@@ -79,29 +69,22 @@ $(document).ready(function () {
         disable: 'mobile'
     });
 
-    //  isotope
-    $('#artProjects').waitForImages(function () {
-        var $container = $('.portfolio_container');
-        $container.isotope({
-            filter: '*',
-        });
 
-        $('.portfolio_filter a').click(function () {
-            $('.portfolio_filter .active').removeClass('active');
-            $(this).addClass('active');
+    var $container = $('.portfolio_container');
+    $('.portfolio_filter li').click(function () {
+        var selector = $(this).attr('data-filter');
 
-            var selector = $(this).attr('data-filter');
-            $container.isotope({
-                filter: selector,
-                animationOptions: {
-                    duration: 500,
-                    animationEngine: "jquery"
-                }
-            });
-            return false;
-        });
+        $('.portfolio_filter .active').removeClass('active');
+        $(this).addClass('active');
 
+        if (selector === '*') {
+            $('.portfolio_container > div').fadeIn(1000);
+        } else {
+            $('.portfolio_container > div').fadeOut(0);
+            $('.portfolio_container div.'+selector).fadeIn(1000);
+        }
     });
+
 
     //animatedModal
     $("#demo01").animatedModal();

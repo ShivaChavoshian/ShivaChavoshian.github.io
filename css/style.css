@@ -506,7 +506,7 @@ a.active {
     margin: 20px 0;
 }
 
-.portfolio .categories-grid .categories ul li a {
+.portfolio .categories-grid .categories ul li {
     display: inline-block;
     color: #60606e;
     padding: 0 10px;
@@ -515,14 +515,15 @@ a.active {
     transition: all .2s ease-in-out .2s;
 }
 
-.portfolio .categories-grid .categories ul li a:hover,
-.portfolio .categories-grid .categories ul li a:focus {
+.portfolio .categories-grid .categories ul li:hover,
+.portfolio .categories-grid .categories ul li:focus {
+    cursor: pointer;
     text-decoration: none;
 }
 
-.portfolio .categories-grid .categories ul li a.active {
+.portfolio .categories-grid .categories ul li.active {
     background-color: #425BB5;
-    padding: 0px 20px;
+    padding: 0px 10px;
     color: white;
     text-decoration: none;
 }
@@ -606,11 +607,9 @@ a.active {
     transform: translateX(0);
 }
 
+
 .portfolio .categories-grid .categories ul li {
     float: left;
-}
-
-.portfolio .categories-grid .categories ul li a {
     padding: 0 10px;
     -webkit-transition: all .2s ease-in-out .2s;
     transition: all .2s ease-in-out .2s;
@@ -723,7 +722,7 @@ a.active {
 ==================================================*/
 
 @media (max-width: 991px) {
-    .portfolio .categories-grid .categories ul li a {
+    .portfolio .categories-grid .categories ul li {
         padding: 0 2px;
     }
 }
