@@ -501,16 +501,14 @@ a.active {
     display: inline-block;
 }
 
-.portfolio .categories-grid .categories ul li {
-    list-style: none;
-    margin: 20px 0;
-}
 
 .portfolio .categories-grid .categories ul li {
+    list-style: none;
+    margin: 10px 10px;
+    background-color: #ddd;
     display: inline-block;
     color: #60606e;
     padding: 0 10px;
-    margin: 0 14px;
     -webkit-transition: all .2s ease-in-out .2s;
     transition: all .2s ease-in-out .2s;
 }
