@@ -16,7 +16,6 @@
     width: 80%;
     height: 80%;
     overflow: auto;
-    padding-bottom: 20px
 }
 
 .close-popup-modal-text {
@@ -24,6 +23,7 @@
     cursor: pointer;
     float: right;
     width: auto;
+    opacity: 1000
 }
 
 .close-popup-modal-text:hover,
