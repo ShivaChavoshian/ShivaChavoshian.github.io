@@ -18,12 +18,20 @@
     overflow: auto;
 }
 
+.portfolio-padding {
+    padding: 20px 0 0 0;
+}
+
+.portfolio-padding > .col-md-8{
+    margin-top: -30px;
+}
+
 .close-popup-modal-text {
     margin-top: 10px;
     cursor: pointer;
     float: right;
     width: auto;
-    opacity: 1000
+    z-index: 1000
 }
 
 .close-popup-modal-text:hover,
