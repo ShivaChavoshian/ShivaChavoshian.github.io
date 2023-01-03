@@ -634,38 +634,6 @@ a.active {
     padding-top: 55px;
 }
 
-.modal-content {
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0);
-    /* margin: auto;
-    margin-top: 100px;
-    width: 90%; */
-    border: none;
-}
-
-.popup-modal {
-    background: #fff;
-}
-
-.close-popup-modal {
-    float: right;
-    margin: 20px;
-    font-size: 22px;
-    /* opacity: 0; */
-    cursor: pointer;
-    -webkit-transition: all .3s;
-    transition: all .3s;
-    -webkit-transition-delay: .6s;
-    transition-delay: .6s;
-    position: fixed;
-    z-index: 100000;
-    right: 14px;
-}
-
-.animatedModal-on .close-popup-modal {
-    opacity: 1;
-}
-
-
 .section .container h1 {
     font-family: 'Playfair Display', serif;
     font-size: 42px;
