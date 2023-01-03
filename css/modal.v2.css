@@ -6,19 +6,21 @@
     left: 0;
     top: 100px;
     width: 100%; /* Full width */
-    height: 100%; /* Full height */
+    height: 100% ; /* Full height */
     overflow: auto; /* Enable scroll if needed */
 }
 
 /* Modal Content */
 .modal-content {
-    /*box-shadow: 0 5px 15px rgba(0, 0, 0, 0);*/
     margin: 0 auto;
     width: 80%;
+    height: 80%;
+    overflow: auto;
+    padding-bottom: 20px
 }
 
 .close-popup-modal-text {
-    margin-top: 0px;
+    margin-top: 10px;
     cursor: pointer;
     float: right;
     width: auto;
@@ -29,4 +31,10 @@
     color: #000;
     font-weight: bold;
     cursor: pointer;
+}
+
+.modal-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    line-height: 50px;
 }
