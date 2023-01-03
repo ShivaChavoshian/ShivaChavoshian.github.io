@@ -1824,16 +1824,17 @@
   <script>
     $('#artProjects .portfolio_container > div > a').click(function () {
       var selector = $(this).attr('href');
-      $(selector).css("display", "block");
+      $(selector).css('display', 'block');
     });
 
     $('.close-popup-modal-text').click(function () {
-      $('.popup-modal').css("display", "none");
+      alert('hi')
+      $('.popup-modal').css('display', 'none');
     });
 
     $(document).keyup(function(e) {
-      if (e.key === "Escape") {
-        $('.popup-modal').css("display", "none");
+      if (e.key === 'Escape') {
+        $('.popup-modal').css('display', 'none');
       }
     });
 
