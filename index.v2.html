@@ -720,7 +720,7 @@
     <div class="modal-content">
       <div class="container">
         <div class="portfolio-padding">
-          <div class="close-popup-modal-text"> CLOSE ME <span class="ion-close-round"></span></div>
+          <div class="col-md-1 col-md-offset-2 close-popup-modal-text"> CLOSE ME <span class="ion-close-round"></span></div>
           <div class="col-md-8 col-md-offset-2">
             <h2>ZOMOROD</h2>
             <p>Size: 50 * 60 cm</p>
@@ -1864,6 +1864,13 @@
         $('.popup-modal').css("display", "none");
       }
     });
+
+    // When the user clicks anywhere outside of the modal, close it
+    // window.onclick = function(event) {
+    //   if (event.target == modal) {
+    //     modal.style.display = "none";
+    //   }
+    // }
   </script>
 </body>
 

@@ -18,9 +18,10 @@
 }
 
 .close-popup-modal-text {
-    margin-top: 20px;
+    margin-top: 0px;
     cursor: pointer;
     float: right;
+    width: auto;
 }
 
 .close-popup-modal-text:hover,
