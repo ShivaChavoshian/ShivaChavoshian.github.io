@@ -33,6 +33,26 @@
   <link href="../css/bootstrap.min.css"         rel="stylesheet">
   <link href="../css/style.css"                 rel="stylesheet">
 
+
+<style>
+	.container {
+	  border: 1px solid red;
+	}
+	.desktop_gif {
+	  width: 100%;
+	  height: 100%;
+	  margin: 0 auto;
+	  position: absolute;
+
+	}
+	.mobile_gif {
+	  position: absolute;
+	  z-index: 1;
+	  opacity: 0.8;
+	  margin: 50px 0  0 90%;
+	}	
+</style>
+  
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-FGRCPX3DDG"></script>
   <script>
@@ -48,8 +68,18 @@
   <div class="section" id="">
     <div class="container">
       <img src="ux-portfolio-raceid-organizers1.jpg" alt="Event Management System" class="img-responsive" />
-      <img src="ux-portfolio-raceid-organizers-desktop.gif" alt="Event Management System" class="img-responsive" />
-      <!-- <img src="ux-portfolio-raceid-organizers-mobile.gif" alt="Event Management System" class="img-responsive" /> -->
+      
+      
+
+	  <div class="desktop_gif">
+        <img src="ux-portfolio-raceid-organizers-desktop.gif" alt="Event Management System" class="img-responsive" /> 
+    </div>
+	  <div class="mobile_gif">
+       <img src="ux-portfolio-raceid-organizers-mobile.gif" alt="Event Management System" class="img-responsive" />
+    </div>
+
+       
+      
       <img src="ux-portfolio-raceid-organizers3.jpg" alt="Event Management System" class="img-responsive" />
     </div>
   </div>
