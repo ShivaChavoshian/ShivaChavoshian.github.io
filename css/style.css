@@ -251,6 +251,8 @@ header {
 
 header nav {
     background-color: #fff
+    /* Added by Shiva:) */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 nav ul {
