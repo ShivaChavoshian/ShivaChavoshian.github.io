@@ -247,12 +247,12 @@ header {
     -webkit-transition: all .5s;
     transition: all .5s;
     height: 65px;
+    /* Added by Shiva:) */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 header nav {
     background-color: #fff
-    /* Added by Shiva:) */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 nav ul {
