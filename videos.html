@@ -1,483 +1,307 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shiva Chavoshian - Tazhib Videos</title>
-
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible"  content="IE=edge">
-  <meta http-equiv='content-language' content='en-us'>
-
-  <meta name="viewport"    content="width=device-width, initial-scale=1">
-  <meta name="description" content="Iranian Islamic Traditional Artworks - Tazhib (Tezhip)">
-  <meta name="keywords"    content="Tazhib, Tezhip, Videos, Artworks, Traditional, Islamic, Illumination, Halkari, Brush, Gold, Gilding">
-  <meta name="author"      content="Shiva Chavoshian">
-
-  <link rel="canonical" href="https://www.chavoshian.com"/>
+  <meta name="description" content="Iranian Islamic Traditional Artworks - Tazhib (Tezhip) Videos">
   <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/modern.css">
+  <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-  <meta property="og:site_name"    content="Shiva Chavoshian - Tazhib"/>
-  <meta property="og:title"        content="Shiva Chavoshian - Tazhib"/>
-  <meta property="og:url"          content="https://chavoshian.com"/>
-  <meta property="og:type"         content="website"/>
-  <meta property="og:description"  content="Iranian Islamic Traditional Artworks - Tazhib (Tezhip)"/>
+  <!-- Custom Video Styles -->
+  <style>
+    .video-grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
 
-  <meta itemprop="url"             content="https://chavoshian.com"/>
-  <meta itemprop="description"     content="Iranian Islamic Traditional Artworks - Tazhib (Tezhip)"/>
+    .episode {
+      background: var(--surface-color);
+      border: var(--glass-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      padding: 1.5rem;
+    }
 
-  <meta name="twitter:title"       content="Shiva Chavoshian - Tazhib"/>
-  <meta name="twitter:url"         content="https://twitter.com/shivachavoshian"/>
-  <meta name="twitter:card"        content="summary"/>
-  <meta name="twitter:description" content="Iranian Islamic Traditional Artworks - Tazhib (Tezhip)"/>
+    .episode__number {
+      font-size: 0.8rem;
+      color: var(--accent-color);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
 
-  <link href="css/bootstrap.min.css"         rel="stylesheet">
-  <link href="ionicons/css/ionicons.min.css" rel="stylesheet">
-  <link href="css/videos.css"                rel="stylesheet">
-  <link href="css/style.css"                 rel="stylesheet">
+    .episode .title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
+    .episode iframe {
+      width: 100%;
+      aspect-ratio: 16/9;
+      height: auto;
+      border-radius: var(--radius-sm);
+      margin-bottom: 1rem;
+    }
+  </style>
+
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-FGRCPX3DDG"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-FGRCPX3DDG');
   </script>
 </head>
 
 <body>
 
-  <!-- header -->
-  <header class="navbar-fixed-top">
-    <nav>
-      <ul>
-        <li><a href="index.html#about" id="style-2">About</a></li>
-        <li><a href="index.html#uiuxProjects">UI/UX</a></li>
-        <li><a href="index.html#artProjects">Art Projects</a></li>
-        <li><a href="index.html#experience">Experiences</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
-        <li><a href="./resume_shiva_chavoshian.pdf" target="_blank">Resume</a></li>
-      </ul>
-    </nav>
-  </header>
-  <!-- ./header -->
-
-  <div id="listing">
-    <div class="container">      
-      <article class="episode">
-        <div class="episode__number">00</div>
-        <div class="episode__content">
-          <div class="title">Introduction to Islamic illumination</div>
-          <div class="story">
-            <iframe width="600" height="340" src="https://www.youtube.com/embed/KTmEzGVjFMU" title="Introduction to Islamic illumination"
-                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-            <p>
-              Do you want to learn Persian traditional Tazhib art?
-              I will teach it here step by step regularly. 
-            </p>
-          </div>
-        </div>
-      </article>
-      
-      <article class="episode">
-        <div class="episode__number">01</div>
-        <div class="episode__content">
-          <div class="title">All steps in illumination (Tazhib) in the traditional way</div>
-          <div class="story">
-            <iframe width="600" height="340" src="https://www.youtube.com/embed/euSp5HuyvwM" title="Introduction to Islamic illumination"
-                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-            <p>
-              I am talking about the steps of making a Tazhib artwork and I will teach each step in the next videos.
-            </p>
-          </div>
-        </div>
-      </article>
-      
-      <article class="episode">
-        <div class="episode__number">02</div>
-        <div class="episode__content">
-          <div class="title">Circles in Islamic illumination</div>
-          <div class="story">
-            <iframe width="600" height="340" src="https://www.youtube.com/embed/vF_fwGa__GA" title="Circles in Islamic illumination"
-                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-            <p>
-              In this video, I started to teach sketching Islamic Illumination. 
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <article class="episode">
-        <div class="episode__number">03</div>
-        <div class="episode__content">
-          <div class="title">Sketching flowers in Islamic Illumination</div>
-          <div class="story">
-            <iframe width="600" height="340" src="https://www.youtube.com/embed/FzplTkb09SA" title="Sketching flowers in Islamic Illumination"
-                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-            <p>
-              I teach sketching round flowers in this video. It is one of the most important flowers in Islamic Illumination. If you have a question or comment you can write it below this video in the comments.
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <article class="episode">
-        <div class="episode__number">04</div>
-        <div class="episode__content">
-          <div class="title">معرفی و تاریخچه کوتاهی از هنر تذهیب</div>
-          <div class="story">
-            <iframe width="600" height="340" src="https://www.youtube.com/embed/9VJP-Plh_r8" title="معرفی و تاریخچه کوتاهی از هنر تذهیب"
-                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-            <p>
-              در این فیلم خیلی خلاصه در مورد تاریخچه تذهیب گفتم.
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <article class="episode">
-        <div class="episode__number">05</div>
-        <div class="episode__content">
-          <div class="title">Everything you should know about the round flower in Tazhib sketching</div>
-          <div class="story">
-            <iframe width="600" height="340" src="https://www.youtube.com/embed/_HgXlwWnWzE" title="Everything you should know about the round flower in Tazhib sketching"
-                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-            <p>
-              You will learn other kinds of round flowers in this video and I added a good sample of old artwork at the end of the video. 
-              You can Email me your practice with the title of "learning-online" so I can see and correct them for you.
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <article class="episode">
-        <div class="episode__number">06</div>
-        <div class="episode__content">
-          <div class="title">How to draw leaves and buds in Tazhib(Islamic Art)?</div>
-          <div class="story">
-            <iframe width="600" height="340" src="https://www.youtube.com/embed/2wJxAxRFQ1A" title="How to draw leaves and buds in Tazhib(Islamic Art)?"
-                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-            <p>
-              In this video, I teach leaves and buds and I sum up the last videos. 
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <article class="episode">
-        <div class="episode__number">07</div>
-        <div class="episode__content">
-          <div class="title">مراحل اجرای یک کار تذهیب</div>
-          <div class="story">
-            <iframe width="600" height="340" src="https://www.youtube.com/embed/kE_-bWo9fHk" title="مراحل اجرای یک کار تذهیب"
-                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-            <p>
-              مراحل اجرای یک کار تذهیب در یک کار مرحله به مرحله نشون دادم.
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <article class="episode">
-        <div class="episode__number">08</div>
-        <div class="episode__content">
-          <div class="title">How to draw a narcissus flower in Tazhib (Islamic Art)?</div>
-          <div class="story">
-            <iframe width="600" height="340" src="https://www.youtube.com/embed/-5VAny8stPg" title="How to draw a narcissus flower in Tazhib (Islamic Art)?"
-                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-            <p>
-              I teach narcissus flower in this lesson. Please share your ideas and your sketches with me.
-            </p>
-          </div>
-        </div>
-      </article>
-      
-      <article class="episode">
-        <div class="episode__number">09</div>
-        <div class="episode__content">
-          <div class="title">Tazhib Techniques (Halkari, Islamic Art)</div>
-          <div class="story">
-            <iframe width="600" height="340" src="https://www.youtube.com/embed/2cZsElf9nQ0" title="Tazhib Techniques (Halkari, Islamic Art)"
-                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-            <p>
-              In this video, I am teaching a very important and easy-to-learn technique about Tazhib.
-            </p>
-          </div>
-        </div>
-      </article>
-      
-      <article class="episode">
-        <div class="episode__number">10</div>
-        <div class="episode__content">
-          <div class="title">How to draw butterfly flower in Islamic Art?</div>
-          <div class="story">
-            <iframe width="600" height="340" src="https://www.youtube.com/embed/xeY0cbfUTIg" title="How to draw butterfly flower in Islamic Art?"
-                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-            <p>
-              In this video, I am teaching another Khafaee motif. 
-              All you need to make your own Tazhib artwork is to learn these small steps. 
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <article class="episode">
-        <div class="episode__number">11</div>
-        <div class="episode__content">
-          <div class="title">Gereh Chini in Tazhib Islamic Art</div>
-          <div class="story">
-            <iframe width="600" height="340" src="https://www.youtube.com/embed/Cmotc-ebvzA" title="Gereh Chini in Tazhib Islamic Art"
-                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-            <p>
-              You will learn the fundamentals of gereh Chini in Islamic art and you can make thousands of them using these rules. 
-              These borders make your calligraphy and Tazhib artworks so beautiful and professional. 
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <article class="episode">
-        <div class="episode__number">12</div>
-        <div class="episode__content">
-          <div class="title">How to draw all kind of leaves in Tazhib?</div>
-          <div class="story">
-            <iframe width="600" height="340" src="https://www.youtube.com/embed/gNWY40HT-aA" title="How to draw all kind of leaves in Tazhib?"
-                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-            <p>
-              You will see the whole process of making a Tazhib piece in this video.
-              You will get a gist of the whole process and materials but it is not enough for learning.  I will teach the steps in future videos. 
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <article class="episode">
-        <div class="episode__number">13</div>
-        <div class="episode__content">
-          <div class="title">How to make lotus flowers in tazhib?</div>
-          <div class="story">
-            <iframe width="600" height="340" src="https://www.youtube.com/embed/E_Sy-jLpK7M" title="How to make lotus flowers in tazhib?"
-                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-            <p>
-              In this video, you will learn one of the most important motifs in Tazhib. 
-              Learning these teeth is a bit challenging but they are gorgeous in a finished piece. 
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <article class="episode">
-        <div class="episode__number">14</div>
-        <div class="episode__content">
-          <div class="title">How to draw whirligig flower in tazhib?</div>
-          <div class="story">
-            <iframe width="600" height="340" src="https://www.youtube.com/embed/xgcRwIgBfTQ" title="How to draw whirligig flower in tazhib?"
-                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-            <p>
-              In this video, I teach you a beautiful flower. Learning Tazhib needs a good knowledge of sketching. I am trying to teach from scratch so you will be able to make your own artwork. 
-            </p>
-          </div>
-        </div>
-      </article>    
-
-      <article class="episode">
-        <div class="episode__number">15</div>
-        <div class="episode__content">
-          <div class="title">How to use compass box in Tazhib?</div>
-          <div class="story">
-            <iframe width="600" height="340" src="https://www.youtube.com/embed/qxLyrpKjz70" title="How to use compass box in Tazhib?"
-                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-            <p>
-              In this video, you learn about one of the most important tools and techniques generally in Islamic art. 
-              You will need these borders in almost all of your traditional paintings. 
-              I will make more videos about the tools and how to use them in the future.  
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <article class="episode">
-        <div class="episode__number">16</div>
-        <div class="episode__content">
-          <div class="title">Free hand techniques in Tazhib art</div>
-          <div class="story">
-            <iframe width="600" height="340" src="https://www.youtube.com/embed/N-uIjb6t0NU" title="Free hand techniques in Tazhib art"
-                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-            <p>
-              You will see the freehand technique in this video. If you need I can help you to make better artwork. 
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <article class="episode">
-        <div class="episode__number">17</div>
-        <div class="episode__content">
-          <div class="title">How to draw the angle bisector of any angle?</div>
-          <div class="story">
-            <iframe width="600" height="340" src="https://www.youtube.com/embed/M6z6q6E6Lco" title="How to draw the angle bisector of any angle?"
-                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-            <p>
-              In Tazhib we need to know some geometry. In a few videos like this, I want to teach them in a very easy way. Then we will use this geometric knowledge to make a Shamseh in Tazhib. 
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <article class="episode">
-        <div class="episode__number">18</div>
-        <div class="episode__content">
-          <div class="title">Geometry in Tazhib, Perpendicular Bisector Construction</div>
-          <div class="story">
-            <iframe width="600" height="340" src="https://www.youtube.com/embed/POBVjHiyDc4" title="Geometry in Tazhib, Perpendicular Bisector Construction"
-                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-            <p>
-              This video is about the instructions on how to construct the perpendicular bisector of a segment with a compass and a ruler.
-              In the next video, I will use these 2 instructions to start making a "Shamse" piece. 
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <article class="episode">
-        <div class="episode__number">19</div>
-        <div class="episode__content">
-          <div class="title">Flowers in Tazhib(Shah Abbasi)</div>
-          <div class="story">
-            <iframe width="600" height="340" src="https://www.youtube.com/embed/CaKMGq_GLpU" title="Flowers in Tazhib(Shah Abbasi)"
-                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-            <p>
-              You will learn to sketch a beautiful flower here. You can find this flower in Tazhib, Carpets, and lots of Islamic arts. 
-              You can follow the video and sketch with me and enjoy it. 
-              You can share your sketchings with me using my email address. 
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <article class="episode">
-        <div class="episode__number">20</div>
-        <div class="episode__content">
-          <div class="title">How to make braided borders in a real artwork?</div>
-          <div class="story">
-            <iframe width="600" height="340" src="https://www.youtube.com/embed/bAOh-qfkFL0" title="How to make braided borders in a real artwork?"
-                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-            <p>
-              You will learn this beautifully braided border from scratch. You can bring a piece of paper and a pencil to sketch it with me.
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <article class="episode">
-        <div class="episode__number">21</div>
-        <div class="episode__content">
-          <div class="title">How to start making a Shamse piece in Tazhib?(basics of a complex illumination)</div>
-          <div class="story">
-            <iframe width="600" height="340" src="https://www.youtube.com/embed/AxLYJ7iPgVg" title="How to start making a Shamse piece in Tazhib?(basics of a complex illumination)"
-                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-            <p>
-              You will learn the basics of a Shamse work.
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <article class="episode">
-        <div class="episode__number">22</div>
-        <div class="episode__content">
-          <div class="title">How to use Tracing Paper(Tazhib, Islamic art)?</div>
-          <div class="story">
-            <iframe width="600" height="340" src="https://www.youtube.com/embed/HZltYgRGpNk" title="How to use Tracing Paper(Tazhib, Islamic art)?"
-                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-            <p>
-              See my artwork on Instagram: https://www.instagram.com/shiva.chavoshian
-              After learning the Khataee or floral motifs we need to put them together. To do so we will make some simple stems.
-              Then you will learn how to trace on transparent paper and copy your sketching to the final paper. 
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <article class="episode">
-        <div class="episode__number">23</div>
-        <div class="episode__content">
-          <div class="title">Everything about outlining with ink and a brush in Islamic art (Tazhib)</div>
-          <div class="story">
-            <iframe width="600" height="340" src="https://www.youtube.com/embed/_6qysuE09hU" title="Everything about outlining with ink and a brush in Islamic art (Tazhib)"
-                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-            <p>
-              In this video, I will teach you to outline a Tazhib piece using ink and a brush.
-              I will tell you about the purpose of outlining all types of brushes and the needed ink amount and the exercises prior to learning outlining.
-              Then you can see  2 clips outlining  Eslimi and Khataii patterns.
-            </p>
-          </div>
-        </div>
-      </article>
-
-
-    </div>
-  </div>
-
-  <!-- Inspired by Aristide Benoist - https://www.instagram.com/aristidebenoist -->
-
-  <!-- contact -->
-  <div class="section" id="contact">
+  <header class="site-header">
     <div class="container">
-      <div class="col-md-12">
-        <h4>04</h4>
-        <h2>Contact Me</h2>
-        <div class="h-50"></div>
-      </div>
-      <div class="col-md-4" data-aos="fade-up">
+      <a href="index.html" class="logo" style="font-weight:700; font-size:1.2rem; white-space: nowrap;"><strong>Shiva
+          Chavoshian</strong></a>
+      <nav class="nav-links">
+        <a href="index.html#about">About</a>
+        <a href="index.html#projects">Work</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="index.html#art">Art</a>
+        <a href="index.html#contact">Contact</a>
 
-        <h3>Email</h3>
-        <p><a href="mailto:shiva@chavoshian.com">shiva@chavoshian.com</a></p>
+        <div class="header-socials"
+          style="display: flex; gap: 1rem; border-left: 1px solid rgba(255,255,255,0.2); padding-left: 1rem; margin-left: 0.5rem;">
+          <a href="mailto:chavoshian.shiva@gmail.com" title="Email"><i class="icon ion-ios-mail"
+              style="font-size: 1.3rem;"></i></a>
+          <a href="https://www.youtube.com/channel/UCiXPxcdTpvxd3H3SXANp1jg" target="_blank" title="YouTube"><i
+              class="icon ion-logo-youtube" style="font-size: 1.3rem;"></i></a>
+          <a href="https://www.linkedin.com/in/shiva-chavoshian/" target="_blank" title="LinkedIn"><i
+              class="icon ion-logo-linkedin" style="font-size: 1.3rem;"></i></a>
+        </div>
 
-        <h3>Gmail</h3>
-        <p><a href="mailto:chavoshian.shiva@gmail.com">chavoshian.shiva@gmail.com</a></p>
-
-        <h3>Social Network</h3>
-
-        <ul class="social">
-          <li><a href="https://www.instagram.com/shiva.chavoshian" target="_blank"><i class="ion-social-instagram"></i></a></li>
-          <li><a href="https://www.youtube.com/channel/UCiXPxcdTpvxd3H3SXANp1jg" target="_blank"><i class="ion-social-youtube"></i></a>
-          </li>
-        </ul>
-        <div class="clearfix"></div>
-        <div class="h-50"></div>
-      </div>
-      <div class="col-md-8" data-aos="fade-up">
-        
-      </div>
+        <a href="./resume_shiva_chavoshian.pdf" class="btn btn-outline"
+          style="padding: 0.5rem 1.2rem; font-size: 0.8rem; margin-left: 0.5rem;" target="_blank">Resume</a>
+      </nav>
     </div>
-  </div>
-  <!-- ./contact -->
+  </header>
 
+  <main>
+    <section>
+      <div class="container">
+        <h4 style="color: var(--accent-color);">Tutorials</h4>
+        <h2>Tazhib Videos</h2>
+        <p style="max-width: 600px; margin-bottom: 3rem;">Learn Persian traditional Tazhib art step by step.</p>
+
+        <div class="video-grid">
+          <!-- 00 -->
+          <article class="episode">
+            <div class="episode__number">00</div>
+            <div class="title">Introduction to Islamic illumination</div>
+            <iframe src="https://www.youtube.com/embed/KTmEzGVjFMU" frameborder="0" allowfullscreen></iframe>
+            <p>Do you want to learn Persian traditional Tazhib art? I will teach it here step by step regularly.</p>
+          </article>
+
+          <!-- 01 -->
+          <article class="episode">
+            <div class="episode__number">01</div>
+            <div class="title">All steps in illumination (Tazhib)</div>
+            <iframe src="https://www.youtube.com/embed/euSp5HuyvwM" frameborder="0" allowfullscreen></iframe>
+            <p>I am talking about the steps of making a Tazhib artwork.</p>
+          </article>
+
+          <!-- 02 -->
+          <article class="episode">
+            <div class="episode__number">02</div>
+            <div class="title">Circles in Islamic illumination</div>
+            <iframe src="https://www.youtube.com/embed/vF_fwGa__GA" frameborder="0" allowfullscreen></iframe>
+            <p>In this video, I started to teach sketching Islamic Illumination.</p>
+          </article>
+
+          <!-- 03 -->
+          <article class="episode">
+            <div class="episode__number">03</div>
+            <div class="title">Sketching flowers</div>
+            <iframe src="https://www.youtube.com/embed/FzplTkb09SA" frameborder="0" allowfullscreen></iframe>
+            <p>I teach sketching round flowers in this video.</p>
+          </article>
+
+          <!-- 04 -->
+          <article class="episode">
+            <div class="episode__number">04</div>
+            <div class="title">معرفی و تاریخچه کوتاهی از هنر تذهیب</div>
+            <iframe src="https://www.youtube.com/embed/9VJP-Plh_r8" frameborder="0" allowfullscreen></iframe>
+            <p>در این فیلم خیلی خلاصه در مورد تاریخچه تذهیب گفتم.</p>
+          </article>
+
+          <!-- 05 -->
+          <article class="episode">
+            <div class="episode__number">05</div>
+            <div class="title">Round flower in Tazhib sketching</div>
+            <iframe src="https://www.youtube.com/embed/_HgXlwWnWzE" frameborder="0" allowfullscreen></iframe>
+            <p>You will learn other kinds of round flowers in this video.</p>
+          </article>
+
+          <!-- 06 -->
+          <article class="episode">
+            <div class="episode__number">06</div>
+            <div class="title">How to draw leaves and buds?</div>
+            <iframe src="https://www.youtube.com/embed/2wJxAxRFQ1A" frameborder="0" allowfullscreen></iframe>
+            <p>In this video, I teach leaves and buds.</p>
+          </article>
+
+          <!-- 07 -->
+          <article class="episode">
+            <div class="episode__number">07</div>
+            <div class="title">مراحل اجرای یک کار تذهیب</div>
+            <iframe src="https://www.youtube.com/embed/kE_-bWo9fHk" frameborder="0" allowfullscreen></iframe>
+            <p>مراحل اجرای یک کار تذهیب در یک کار مرحله به مرحله.</p>
+          </article>
+
+          <!-- 08 -->
+          <article class="episode">
+            <div class="episode__number">08</div>
+            <div class="title">How to draw a narcissus flower?</div>
+            <iframe src="https://www.youtube.com/embed/-5VAny8stPg" frameborder="0" allowfullscreen></iframe>
+            <p>I teach narcissus flower in this lesson.</p>
+          </article>
+
+          <!-- 09 -->
+          <article class="episode">
+            <div class="episode__number">09</div>
+            <div class="title">Tazhib Techniques (Halkari)</div>
+            <iframe src="https://www.youtube.com/embed/2cZsElf9nQ0" frameborder="0" allowfullscreen></iframe>
+            <p>Teaching a very important and easy-to-learn technique.</p>
+          </article>
+
+          <!-- 10 -->
+          <article class="episode">
+            <div class="episode__number">10</div>
+            <div class="title">How to draw butterfly flower?</div>
+            <iframe src="https://www.youtube.com/embed/xeY0cbfUTIg" frameborder="0" allowfullscreen></iframe>
+            <p>Teaching another Khafaee motif.</p>
+          </article>
+
+          <!-- 11 -->
+          <article class="episode">
+            <div class="episode__number">11</div>
+            <div class="title">Gereh Chini in Tazhib Islamic Art</div>
+            <iframe src="https://www.youtube.com/embed/Cmotc-ebvzA" frameborder="0" allowfullscreen></iframe>
+            <p>You will learn the fundamentals of gereh Chini.</p>
+          </article>
+
+          <!-- 12 -->
+          <article class="episode">
+            <div class="episode__number">12</div>
+            <div class="title">How to draw all kind of leaves?</div>
+            <iframe src="https://www.youtube.com/embed/gNWY40HT-aA" frameborder="0" allowfullscreen></iframe>
+            <p>You will see the whole process of making a Tazhib piece.</p>
+          </article>
+
+          <!-- 13 -->
+          <article class="episode">
+            <div class="episode__number">13</div>
+            <div class="title">How to make lotus flowers?</div>
+            <iframe src="https://www.youtube.com/embed/E_Sy-jLpK7M" frameborder="0" allowfullscreen></iframe>
+            <p>You will learn one of the most important motifs in Tazhib.</p>
+          </article>
+
+          <!-- 14 -->
+          <article class="episode">
+            <div class="episode__number">14</div>
+            <div class="title">How to draw whirligig flower?</div>
+            <iframe src="https://www.youtube.com/embed/xgcRwIgBfTQ" frameborder="0" allowfullscreen></iframe>
+            <p>In this video, I teach you a beautiful flower.</p>
+          </article>
+
+          <!-- 15 -->
+          <article class="episode">
+            <div class="episode__number">15</div>
+            <div class="title">How to use compass box in Tazhib?</div>
+            <iframe src="https://www.youtube.com/embed/qxLyrpKjz70" frameborder="0" allowfullscreen></iframe>
+            <p>Learn about one of the most important tools generally in Islamic art.</p>
+          </article>
+
+          <!-- 16 -->
+          <article class="episode">
+            <div class="episode__number">16</div>
+            <div class="title">Free hand techniques in Tazhib art</div>
+            <iframe src="https://www.youtube.com/embed/N-uIjb6t0NU" frameborder="0" allowfullscreen></iframe>
+            <p>You will see the freehand technique in this video.</p>
+          </article>
+
+          <!-- 17 -->
+          <article class="episode">
+            <div class="episode__number">17</div>
+            <div class="title">Angle bisector of any angle</div>
+            <iframe src="https://www.youtube.com/embed/M6z6q6E6Lco" frameborder="0" allowfullscreen></iframe>
+            <p>In Tazhib we need to know some geometry.</p>
+          </article>
+
+          <!-- 18 -->
+          <article class="episode">
+            <div class="episode__number">18</div>
+            <div class="title">Perpendicular Bisector Construction</div>
+            <iframe src="https://www.youtube.com/embed/POBVjHiyDc4" frameborder="0" allowfullscreen></iframe>
+            <p>Construct the perpendicular bisector of a segment.</p>
+          </article>
+
+          <!-- 19 -->
+          <article class="episode">
+            <div class="episode__number">19</div>
+            <div class="title">Flowers in Tazhib(Shah Abbasi)</div>
+            <iframe src="https://www.youtube.com/embed/CaKMGq_GLpU" frameborder="0" allowfullscreen></iframe>
+            <p>You will learn to sketch a beautiful flower here.</p>
+          </article>
+
+          <!-- 20 -->
+          <article class="episode">
+            <div class="episode__number">20</div>
+            <div class="title">How to make braided borders?</div>
+            <iframe src="https://www.youtube.com/embed/bAOh-qfkFL0" frameborder="0" allowfullscreen></iframe>
+            <p>You will learn this beautifully braided border from scratch.</p>
+          </article>
+
+          <!-- 21 -->
+          <article class="episode">
+            <div class="episode__number">21</div>
+            <div class="title">How to start making a Shamse piece?</div>
+            <iframe src="https://www.youtube.com/embed/AxLYJ7iPgVg" frameborder="0" allowfullscreen></iframe>
+            <p>You will learn the basics of a Shamse work.</p>
+          </article>
+
+          <!-- 22 -->
+          <article class="episode">
+            <div class="episode__number">22</div>
+            <div class="title">How to use Tracing Paper?</div>
+            <iframe src="https://www.youtube.com/embed/HZltYgRGpNk" frameborder="0" allowfullscreen></iframe>
+            <p>How to use Tracing Paper in Tazhib.</p>
+          </article>
+
+          <!-- 23 -->
+          <article class="episode">
+            <div class="episode__number">23</div>
+            <div class="title">Outlining with ink and a brush</div>
+            <iframe src="https://www.youtube.com/embed/_6qysuE09hU" frameborder="0" allowfullscreen></iframe>
+            <p>Learn to outline a Tazhib piece using ink and a brush.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer
+    style="padding: 2rem 0; text-align: center; border-top: var(--glass-border); color: var(--text-secondary); font-size: 0.9rem;">
+    <div class="container">
+      &copy; 2026 Shiva Chavoshian. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
 </body>
+
 </html>

@@ -1,83 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <title>Event Management System - UI/UX Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RaceID Organizers - Shiva Chavoshian</title>
+  <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../css/modern.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible"  content="IE=edge">
-  <meta http-equiv='content-language' content='en-us'>
+  <style>
+    .project-images {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
 
-  <meta name="viewport"    content="width=device-width, initial-scale=1">
-  <meta name="description" content="Product Designer, Raceid portfolio">
-  <meta name="keywords"    content="UI, UX, User Experience, USer interface, Tazhib, Tezhip, Artworks, Traditional, Illumination, Halkari, Eslimi, Brush, Gold, Gilding">
-  <meta name="author"      content="Shiva Chavoshian">
+    .gif-container {
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      gap: 1rem;
+      align-items: start;
+    }
 
-  <link rel="canonical" href="https://www.chavoshian.com"/>
-  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    .back-nav {
+      padding: 2rem 0;
+      border-bottom: var(--glass-border);
+      margin-bottom: 2rem;
+    }
+  </style>
 
-  <meta property="og:site_name"    content="Shiva Chavoshian "/>
-  <meta property="og:title"        content="Shiva Chavoshian "/>
-  <meta property="og:url"          content="https://chavoshian.com"/>
-  <meta property="og:type"         content="website"/>
-  <meta property="og:description"  content="Event Management System - UI/UX Portfolio"/>
-
-  <meta itemprop="url"             content="https://chavoshian.com"/>
-  <meta itemprop="description"     content="Event Management System - UI/UX Portfolio"/>
-
-  <meta name="twitter:title"       content="Shiva Chavoshian "/>
-  <meta name="twitter:url"         content="https://twitter.com/shivachavoshian"/>
-  <meta name="twitter:card"        content="summary"/>
-  <meta name="twitter:description" content="Event Management System - UI/UX Portfolio"/>
-
-  <link href="../css/bootstrap.min.css"         rel="stylesheet">
-  <link href="../css/style.css"                 rel="stylesheet">
-
-
-<style>
-	.container_2 {
-	  width:100%;
-	}
-	.desktop_gif {
-	  width: 80%;
-	  float: left;
-	}
-	.mobile_gif {
-	  /* z-index: 10; */
-	  width: 20%;
-          margin-top: 5%;
-	  float: right;
-	}
-</style>
-  
-  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-FGRCPX3DDG"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-FGRCPX3DDG');
   </script>
 </head>
 
 <body>
-  <div class="section" id="">
-    <div class="container">
-      <img src="ux-portfolio-raceid-organizers1.jpg" alt="Event Management System" class="img-responsive" />
 
-   	<div class="container_2">
-		<div class="desktop_gif">
-	        	<img src="ux-portfolio-raceid-organizers-desktop.gif" alt="Event Management System" class="img-responsive"> 
-	    	</div>
-		<div class="mobile_gif">
-	       		<img src="ux-portfolio-raceid-organizers-mobile.gif" alt="Event Management System" class="img-responsive">
-	    	</div>
-	</div>       
-      
-      <img src="ux-portfolio-raceid-organizers3.jpg" alt="Event Management System" class="img-responsive" />
+  <div class="back-nav">
+    <div class="container">
+      <a href="../index.html#projects" class="btn btn-outline" style="font-size: 0.9rem;">&larr; Back to Work</a>
     </div>
   </div>
 
+  <main>
+    <div class="container">
+      <div class="project-images">
+        <img src="ux-portfolio-raceid-organizers1.jpg" alt="RaceID Organizers Flow"
+          style="width: 100%; border-radius: var(--radius-sm);">
+
+        <div class="gif-container">
+          <img src="ux-portfolio-raceid-organizers-desktop.gif" alt="Desktop Demo"
+            style="width: 100%; border-radius: var(--radius-sm); border: 1px solid #333;">
+          <img src="ux-portfolio-raceid-organizers-mobile.gif" alt="Mobile Demo"
+            style="width: 100%; border-radius: var(--radius-sm); border: 1px solid #333; margin-top:2rem;">
+        </div>
+
+        <img src="ux-portfolio-raceid-organizers3.jpg" alt="RaceID Features"
+          style="width: 100%; border-radius: var(--radius-sm);">
+      </div>
+
+      <div style="margin: 4rem 0; text-align: center;">
+        <a href="../index.html#projects" class="btn btn-outline">See More Projects</a>
+      </div>
+    </div>
+  </main>
+
+  <footer
+    style="padding: 2rem 0; text-align: center; border-top: var(--glass-border); color: var(--text-secondary); font-size: 0.9rem;">
+    <div class="container">
+      &copy; 2026 Shiva Chavoshian. All rights reserved.
+    </div>
+  </footer>
+
 </body>
+
 </html>

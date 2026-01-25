@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art - Shiva Chavoshian</title>
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/modern.css">
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="logo">Shiva Chavoshian</a>
+            <nav class="nav-links">
+                <a href="index.html">Work</a>
+                <a href="art.html" class="active">Art</a>
+                <a href="about.html">About</a>
+                <a href="./resume_shiva_chavoshian.pdf" target="_blank" class="btn btn-outline"
+                    style="padding: 0.5rem 1.2rem; font-size: 0.9rem;">
+                    Download Resume <i class="icon ion-md-download" style="margin-left:8px;"></i>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main style="padding-top: var(--header-height);">
+
+        <!-- Art Hero -->
+        <section class="container animate-on-scroll" style="text-align: center; padding-top: 4rem;">
+            <p style="color: var(--accent-highlight); letter-spacing: 0.1em; text-transform: uppercase;">The Soul</p>
+            <h1 class="text-gradient">Tazhib Art</h1>
+            <p style="max-width: 600px; margin: 0 auto;">
+                Traditional Persian Illumination (Tazhib) is the art of decorating manuscripts with gold and color.
+                It requires patience, precision, and a deep appreciation for geometry.
+            </p>
+        </section>
+
+        <!-- Gallery Grid -->
+        <section class="container" style="padding-top: 2rem;">
+            <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem;">
+
+                <!-- Zomorod -->
+                <div class="card animate-on-scroll" style="cursor: pointer;"
+                    onclick="document.getElementById('modal-zomorod').classList.add('active')">
+                    <img src="img/portfolio/01-zomorod/zomorod-demo.jpg" alt="Zomorod" class="card-image"
+                        style="height: 350px;">
+                    <div class="card-content"
+                        style="position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent); padding-top: 4rem;">
+                        <h3>Zomorod</h3>
+                        <p style="color: var(--text-primary); font-size: 0.9rem;">Tazhib • Gold & Gouache</p>
+                    </div>
+                </div>
+
+                <!-- Love -->
+                <div class="card animate-on-scroll" style="cursor: pointer;"
+                    onclick="document.getElementById('modal-love').classList.add('active')">
+                    <img src="img/portfolio/12-love/love-demo.jpg" alt="Love" class="card-image" style="height: 350px;">
+                    <div class="card-content"
+                        style="position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent); padding-top: 4rem;">
+                        <h3>Love</h3>
+                        <p style="color: var(--text-primary); font-size: 0.9rem;">Tazhib • Ink & Gold</p>
+                    </div>
+                </div>
+
+                <!-- Evolution -->
+                <div class="card animate-on-scroll" style="cursor: pointer;"
+                    onclick="document.getElementById('modal-evolution').classList.add('active')">
+                    <img src="img/portfolio/27-evolution/evolution-demo.jpg" alt="Evolution" class="card-image"
+                        style="height: 350px;">
+                    <div class="card-content"
+                        style="position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent); padding-top: 4rem;">
+                        <h3>Evolution</h3>
+                        <p style="color: var(--text-primary); font-size: 0.9rem;">Tazhib • Watercolor</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div style="text-align: center; margin-top: 4rem;">
+                <a href="artworks/index.html" class="btn btn-outline">View Full Collection</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modals -->
+    <div id="modal-zomorod" class="modal">
+        <div class="modal-content">
+            <button class="modal-close"
+                onclick="document.getElementById('modal-zomorod').classList.remove('active')">&times;</button>
+            <h2 style="margin-bottom: 0.5rem; color: var(--accent-primary);">ZOMOROD</h2>
+            <p style="margin-bottom: 2rem;">Tazhib Art</p>
+            <img src="img/portfolio/01-zomorod/zomorod.jpg"
+                style="margin-bottom: 1.5rem; width:100%; border-radius: var(--radius-sm);">
+            <div
+                style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem;">
+                <div>
+                    <h4 style="font-size: 0.9rem; color: var(--text-secondary); text-transform: uppercase;">Technique
+                    </h4>
+                    <p>Handmade Paper, Gold, Gouache, Watercolor, Ink.</p>
+                </div>
+                <div>
+                    <h4 style="font-size: 0.9rem; color: var(--text-secondary); text-transform: uppercase;">Size</h4>
+                    <p>50 * 60 cm</p>
+                </div>
+            </div>
+            <p style="margin-top:1rem; font-style: italic;">"Making Zomorod is one of my favourite art journeys. I
+                worked on the geometry, design, and colors for a long time."</p>
+        </div>
+    </div>
+
+    <div id="modal-love" class="modal">
+        <div class="modal-content">
+            <button class="modal-close"
+                onclick="document.getElementById('modal-love').classList.remove('active')">&times;</button>
+            <h2 style="margin-bottom: 0.5rem; color: var(--accent-primary);">LOVE</h2>
+            <p style="margin-bottom: 2rem;">Tazhib Art</p>
+            <img src="img/portfolio/12-love/love.jpg"
+                style="margin-bottom: 1.5rem; width:100%; border-radius: var(--radius-sm);">
+            <div
+                style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem;">
+                <div>
+                    <h4 style="font-size: 0.9rem; color: var(--text-secondary); text-transform: uppercase;">Technique
+                    </h4>
+                    <p>Handmade Paper, Gold, Ink.</p>
+                </div>
+                <div>
+                    <h4 style="font-size: 0.9rem; color: var(--text-secondary); text-transform: uppercase;">Size</h4>
+                    <p>14 * 22.6 cm</p>
+                </div>
+            </div>
+            <p style="margin-top:1rem; font-style: italic;">"This is simple and complex, dark and light."</p>
+        </div>
+    </div>
+
+    <div id="modal-evolution" class="modal">
+        <div class="modal-content">
+            <button class="modal-close"
+                onclick="document.getElementById('modal-evolution').classList.remove('active')">&times;</button>
+            <h2 style="margin-bottom: 0.5rem; color: var(--accent-primary);">EVOLUTION</h2>
+            <p style="margin-bottom: 2rem;">Tazhib Art</p>
+            <img src="img/portfolio/27-evolution/evolution.jpg"
+                style="margin-bottom: 1.5rem; width:100%; border-radius: var(--radius-sm);">
+            <div
+                style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem;">
+                <div>
+                    <h4 style="font-size: 0.9rem; color: var(--text-secondary); text-transform: uppercase;">Technique
+                    </h4>
+                    <p>Handmade Paper, Gouache, Watercolor, Ink.</p>
+                </div>
+                <div>
+                    <h4 style="font-size: 0.9rem; color: var(--text-secondary); text-transform: uppercase;">Size</h4>
+                    <p>A4</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
