@@ -37,6 +37,17 @@ We will shift from the earthly "Atelier" to a boundless, immersive "Cosmic" aest
     *   `projects/[project-name].html`: **Deep-dive Case Studies**.
 *   **Transitions:** Pages should share a consistent header/footer. Use standard browser navigation for robustness.
 
+### 2.0.1 About Page Specifics
+*   **Title:** "About Me"
+*   **Intro:** "I’m Shiva... I am a Product Designer and UX Strategist..." (Personalized, Senior Tone).
+*   **Philosophy Section:** "How I Work" - A structured list of principles (Clarity, AI Integration, Systems Thinking, Psychology). 
+*   **Experience:** "Experiences" - Scannable timeline with Logos and Titles.
+*   **Visuals:** 
+    *   Photo: Professional, artistic, t-shirt color matched to Navy/Purple theme.
+    *   Socials: High-quality modern logos for LinkedIn, YouTube, Email.
+    *   Whitespace: Ample breathing room between strategy points.
+
+
 ### 2.1 Navigation (The "North Star")
 *   **Concept:** "Fixed Top Bar"
 *   **Description:** A sleek, glass-morphic bar fixed to the top of the viewport.
@@ -57,7 +68,8 @@ We will shift from the earthly "Atelier" to a boundless, immersive "Cosmic" aest
 *   **Call to Action:** Two magnetic buttons: "View Work" (Solid Gold Fill) and "Contact Me" (Glass Outline).
 
 ### 2.3 Selected Work (The Portfolio)
-*   **Layout:** "Broken Grid" Masonry. Avoid standard 3-column rows.
+*   **Layout:** "Broken Grid" Masonry.
+*   **Quantity:** Display **6 key projects** directly on the home page to show breadth of work immediately.
 *   **Card Design:**
     *   Large, immersive thumbnails.
     *   **Hover Effect:** The image zooms slightly (105%), and the rest of the page dims slightly to focus attention. A "View Case Study" cursor follows the mouse within the card area.
@@ -69,7 +81,8 @@ We will shift from the earthly "Atelier" to a boundless, immersive "Cosmic" aest
 *   **Visuals:** Minimalist typography. Company logos in grayscale, turning full color on hover.
 
 ### 2.5 Tazhib Art (The Soul)
-*   **Layout:** Horizontal Scroll Gallery (Carousels) or a Darkroom Grid.
+*   **Layout:** Full Masonry Grid (Darkroom).
+*   **Content:** Display **ALL artworks** on this page. No "View More" links to external pages. The user should be able to browse the full collection here.
 *   **Interaction:**
     *   **Darkroom Effect:** Background turns pure black `#000000` when entering this section.
     *   **Lightbox:** Clicking an artwork opens a full-screen cohesive modal. The background allows only the artwork to shine.

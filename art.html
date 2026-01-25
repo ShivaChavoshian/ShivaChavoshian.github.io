@@ -46,125 +46,114 @@
 
         <!-- Gallery Grid -->
         <section class="container" style="padding-top: 2rem;">
-            <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem;">
-
-                <!-- Zomorod -->
-                <div class="card animate-on-scroll" style="cursor: pointer;"
-                    onclick="document.getElementById('modal-zomorod').classList.add('active')">
-                    <img src="img/portfolio/01-zomorod/zomorod-demo.jpg" alt="Zomorod" class="card-image"
-                        style="height: 350px;">
-                    <div class="card-content"
-                        style="position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent); padding-top: 4rem;">
-                        <h3>Zomorod</h3>
-                        <p style="color: var(--text-primary); font-size: 0.9rem;">Tazhib • Gold & Gouache</p>
-                    </div>
-                </div>
-
-                <!-- Love -->
-                <div class="card animate-on-scroll" style="cursor: pointer;"
-                    onclick="document.getElementById('modal-love').classList.add('active')">
-                    <img src="img/portfolio/12-love/love-demo.jpg" alt="Love" class="card-image" style="height: 350px;">
-                    <div class="card-content"
-                        style="position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent); padding-top: 4rem;">
-                        <h3>Love</h3>
-                        <p style="color: var(--text-primary); font-size: 0.9rem;">Tazhib • Ink & Gold</p>
-                    </div>
-                </div>
-
-                <!-- Evolution -->
-                <div class="card animate-on-scroll" style="cursor: pointer;"
-                    onclick="document.getElementById('modal-evolution').classList.add('active')">
-                    <img src="img/portfolio/27-evolution/evolution-demo.jpg" alt="Evolution" class="card-image"
-                        style="height: 350px;">
-                    <div class="card-content"
-                        style="position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent); padding-top: 4rem;">
-                        <h3>Evolution</h3>
-                        <p style="color: var(--text-primary); font-size: 0.9rem;">Tazhib • Watercolor</p>
-                    </div>
-                </div>
-
+            <div id="art-grid" class="grid"
+                style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem;">
+                <!-- Art cards interpolated by JS -->
             </div>
 
-            <div style="text-align: center; margin-top: 4rem;">
-                <a href="artworks/index.html" class="btn btn-outline">View Full Collection</a>
+            <div style="margin-top: 4rem; text-align: center; opacity: 0.5; font-size: 0.9rem;">
+                <p>All artworks are original creations by Shiva Chavoshian.</p>
             </div>
         </section>
 
     </main>
 
-    <!-- Modals -->
-    <div id="modal-zomorod" class="modal">
-        <div class="modal-content">
-            <button class="modal-close"
-                onclick="document.getElementById('modal-zomorod').classList.remove('active')">&times;</button>
-            <h2 style="margin-bottom: 0.5rem; color: var(--accent-primary);">ZOMOROD</h2>
-            <p style="margin-bottom: 2rem;">Tazhib Art</p>
-            <img src="img/portfolio/01-zomorod/zomorod.jpg"
-                style="margin-bottom: 1.5rem; width:100%; border-radius: var(--radius-sm);">
-            <div
-                style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem;">
-                <div>
-                    <h4 style="font-size: 0.9rem; color: var(--text-secondary); text-transform: uppercase;">Technique
-                    </h4>
-                    <p>Handmade Paper, Gold, Gouache, Watercolor, Ink.</p>
-                </div>
-                <div>
-                    <h4 style="font-size: 0.9rem; color: var(--text-secondary); text-transform: uppercase;">Size</h4>
-                    <p>50 * 60 cm</p>
-                </div>
-            </div>
-            <p style="margin-top:1rem; font-style: italic;">"Making Zomorod is one of my favourite art journeys. I
-                worked on the geometry, design, and colors for a long time."</p>
-        </div>
-    </div>
+    <!-- Modals Container -->
+    <div id="modals-container"></div>
 
-    <div id="modal-love" class="modal">
-        <div class="modal-content">
-            <button class="modal-close"
-                onclick="document.getElementById('modal-love').classList.remove('active')">&times;</button>
-            <h2 style="margin-bottom: 0.5rem; color: var(--accent-primary);">LOVE</h2>
-            <p style="margin-bottom: 2rem;">Tazhib Art</p>
-            <img src="img/portfolio/12-love/love.jpg"
-                style="margin-bottom: 1.5rem; width:100%; border-radius: var(--radius-sm);">
-            <div
-                style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem;">
-                <div>
-                    <h4 style="font-size: 0.9rem; color: var(--text-secondary); text-transform: uppercase;">Technique
-                    </h4>
-                    <p>Handmade Paper, Gold, Ink.</p>
-                </div>
-                <div>
-                    <h4 style="font-size: 0.9rem; color: var(--text-secondary); text-transform: uppercase;">Size</h4>
-                    <p>14 * 22.6 cm</p>
-                </div>
-            </div>
-            <p style="margin-top:1rem; font-style: italic;">"This is simple and complex, dark and light."</p>
-        </div>
-    </div>
+    <script>
+        // Data for Artworks
+        const artworks = [
+            { id: "01-zomorod", title: "Zomorod", technique: "Gold & Gouache", size: "50 * 60 cm", note: "Making Zomorod is one of my favourite art journeys." },
+            { id: "02-garden", title: "Garden", technique: "Watercolor", size: "A3" },
+            { id: "03-toranj", title: "Toranj", technique: "Gold & Ink", size: "30 * 40 cm" },
+            { id: "04-narenj", title: "Narenj", technique: "Gouache", size: "20 * 30 cm" },
+            { id: "05-avval", title: "Avval", technique: "Ink & Gold", size: "A4" },
+            { id: "06-blue-sky", title: "Blue Sky", technique: "Watercolor", size: "A3" },
+            { id: "07-shesh", title: "Shesh", technique: "Gold", size: "15 * 15 cm" },
+            { id: "08-balance", title: "Balance", technique: "Mixed Media", size: "40 * 50 cm" },
+            { id: "09-firuzeh", title: "Firuzeh", technique: "Gouache", size: "A4" },
+            { id: "10-calmness", title: "Calmness", technique: "Watercolor", size: "A3" },
+            { id: "11-ablagh", title: "Ablagh", technique: "Ink", size: "20 * 20 cm" },
+            { id: "12-love", title: "Love", technique: "Ink & Gold", size: "14 * 22.6 cm", note: "This is simple and complex, dark and light." },
+            { id: "13-roof", title: "Roof", technique: "Watercolor", size: "A4" },
+            { id: "14-lake", title: "Lake", technique: "Gouache", size: "A3" },
+            { id: "15-katibeh", title: "Katibeh", technique: "Gold", size: "10 * 30 cm" },
+            { id: "16-nilper", title: "Nilper", technique: "Ink", size: "A4" },
+            { id: "17-neshan-1", title: "Neshan 1", technique: "Gold", size: "Small" },
+            { id: "18-neshan-2", title: "Neshan 2", technique: "Gold", size: "Small" },
+            { id: "19-neshan-3", title: "Neshan 3", technique: "Gold", size: "Small" },
+            { id: "20-neshan-4", title: "Neshan 4", technique: "Gold", size: "Small" },
+            { id: "21-neshan-5-shiraz", title: "Shiraz", technique: "Gold", size: "Small" },
+            { id: "22-neshan-6", title: "Neshan 6", technique: "Gold", size: "Small" },
+            { id: "23-neshan-7-gisu", title: "Gisu", technique: "Gold", size: "Small" },
+            { id: "24-neshan-8-charpar", title: "Charpar", technique: "Gold", size: "Small" },
+            { id: "25-neshan-9-dance", title: "Dance", technique: "Gold", size: "Small" },
+            { id: "26-tanin", title: "Tanin", technique: "Watercolor", size: "A4" },
+            { id: "27-evolution", title: "Evolution", technique: "Watercolor", size: "A4" }
+        ];
 
-    <div id="modal-evolution" class="modal">
-        <div class="modal-content">
-            <button class="modal-close"
-                onclick="document.getElementById('modal-evolution').classList.remove('active')">&times;</button>
-            <h2 style="margin-bottom: 0.5rem; color: var(--accent-primary);">EVOLUTION</h2>
-            <p style="margin-bottom: 2rem;">Tazhib Art</p>
-            <img src="img/portfolio/27-evolution/evolution.jpg"
-                style="margin-bottom: 1.5rem; width:100%; border-radius: var(--radius-sm);">
-            <div
-                style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem;">
-                <div>
-                    <h4 style="font-size: 0.9rem; color: var(--text-secondary); text-transform: uppercase;">Technique
-                    </h4>
-                    <p>Handmade Paper, Gouache, Watercolor, Ink.</p>
-                </div>
-                <div>
-                    <h4 style="font-size: 0.9rem; color: var(--text-secondary); text-transform: uppercase;">Size</h4>
-                    <p>A4</p>
-                </div>
-            </div>
-        </div>
-    </div>
+        const gridContainer = document.getElementById('art-grid');
+        const modalsContainer = document.getElementById('modals-container');
 
+        artworks.forEach(art => {
+            // Check if demo image exists (assuming standard naming). 
+            // In a static site without backend, we assume the files are there based on folder structure.
+            const thumbPath = `img/portfolio/${art.id}/${art.id.split('-')[1] || art.id}-demo.jpg`;
+            // Fallback strategy: The folder name usually contains the name. 
+            // Most were [name]-demo.jpg inside [id].
+            // To be safe, let's use a slightly more robust logic or just assume naming is perfect.
+            // Based on ls: 01-zomorod -> zomorod-demo.jpg. 
+            // So: `img/portfolio/${art.id}/${art.id.split('-').slice(1).join('-')}-demo.jpg`
+
+            let namePart = art.id.split('-').slice(1).join('-');
+            const imgSrc = `img/portfolio/${art.id}/${namePart}-demo.jpg`;
+            const fullImgSrc = `img/portfolio/${art.id}/${namePart}.jpg`;
+
+            // Create Card
+            const card = document.createElement('div');
+            card.className = 'card animate-on-scroll';
+            card.style.cursor = 'pointer';
+            card.onclick = () => document.getElementById(`modal-${art.id}`).classList.add('active');
+
+            card.innerHTML = `
+                <div style="position: relative; padding-bottom: 100%; overflow: hidden;">
+                    <img src="${imgSrc}" alt="${art.title}" class="card-image" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover;" onerror="this.src='img/placeholder.jpg'"> <!-- Fallback if name mismatch -->
+                    <div class="card-content" style="position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent); padding-top: 4rem;">
+                        <h3>${art.title}</h3>
+                        <p style="color: var(--text-primary); font-size: 0.9rem;">${art.technique}</p>
+                    </div>
+                </div>
+            `;
+            gridContainer.appendChild(card);
+
+            // Create Modal
+            const modal = document.createElement('div');
+            modal.id = `modal-${art.id}`;
+            modal.className = 'modal';
+
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <button class="modal-close" onclick="document.getElementById('modal-${art.id}').classList.remove('active')">&times;</button>
+                    <h2 style="margin-bottom: 0.5rem; color: var(--accent-primary);">${art.title.toUpperCase()}</h2>
+                    <p style="margin-bottom: 2rem;">Tazhib Art</p>
+                    <img src="${fullImgSrc}" style="margin-bottom: 1.5rem; width:100%; border-radius: var(--radius-sm);" onerror="this.style.display='none'">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem;">
+                        <div>
+                        <h4 style="font-size: 0.9rem; color: var(--text-secondary); text-transform: uppercase;">Technique</h4>
+                        <p>${art.technique}</p>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 0.9rem; color: var(--text-secondary); text-transform: uppercase;">Size</h4>
+                            <p>${art.size}</p>
+                        </div>
+                    </div>
+                    ${art.note ? `<p style="margin-top:1rem; font-style: italic;">"${art.note}"</p>` : ''}
+                </div>
+            `;
+            modalsContainer.appendChild(modal);
+        });
+    </script>
     <script src="js/main.js"></script>
 </body>
 
