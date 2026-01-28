@@ -35,15 +35,15 @@
     <main style="padding-top: var(--header-height);">
 
         <!-- Intro Section -->
-        <section class="container animate-on-scroll" style="padding-top: 4rem;">
+        <section class="container animate-on-scroll" style="padding-top: 4rem; position: relative;">
+            <!-- Removed Title from here to place it as eyebrow below -->
             <div class="grid"
                 style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 5rem; align-items: start;">
 
                 <!-- Text Content -->
                 <div>
-                    <p style="color: var(--accent-highlight); letter-spacing: 0.1em; text-transform: uppercase;">About
-                        Me</p>
-                    <h1 class="text-gradient">I’m Shiva</h1>
+                    <span class="section-eyebrow">About Me</span>
+                    <h2 class="text-gradient" style="font-size: 2.5rem; margin-bottom: 1rem;">I’m Shiva</h2>
 
                     <p style="font-size: 1.15rem; margin-bottom: 2rem; color: var(--text-primary);">
                         I am a Product Designer and UX Strategist who enjoys turning unclear ideas into simple,
@@ -55,7 +55,8 @@
                     <p style="margin-bottom: 1.5rem;">
                         I’m especially interested in AI-supported design and modern ways of working that help teams move
                         faster with more clarity.
-                        My background in psychology and art helps me understand how people think, learn, and feel, and I
+                        My background in psychology, philosophy, and art helps me understand how people think, learn,
+                        and feel, and I
                         bring that perspective into every product I shape.
                     </p>
                 </div>
@@ -78,96 +79,184 @@
                         style="border-radius: var(--radius-lg); width: 100%; box-shadow: var(--shadow-glow);">
                 </div>
             </div>
+
+            <!-- Scroll Indicator -->
+            <div class="scroll-indicator"
+                onclick="document.getElementById('how-i-work').scrollIntoView({behavior: 'smooth'})">
+                <div class="scroll-mouse">
+                    <div class="scroll-wheel"></div>
+                </div>
+            </div>
         </section>
 
         <!-- How I Work (Philosophy) -->
-        <section class="container animate-on-scroll" style="margin-top: 2rem;">
-            <h2 style="margin-bottom: 3rem;">How I Work</h2>
+        <!-- How I Work (Philosophy) -->
+        <section id="how-i-work" class="container animate-on-scroll" style="margin-top: 2rem;">
+            <h2 class="section-title">How I Work</h2>
 
-            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
+            <div class="grid-2x2">
 
-                <div class="card" style="padding: 2rem; border-top: 4px solid var(--accent-primary);">
-                    <h3 style="font-size: 1.3rem; margin-bottom: 1rem;">Bringing Clarity</h3>
-                    <p>I like to start by understanding the real problem, user needs, and system constraints before
-                        shaping a clear direction for the team.</p>
+                <div class="card-glass">
+                    <!-- Icon or Visual Element could go here -->
+                    <i class="icon ion-md-bulb"
+                        style="font-size: 3rem; margin-bottom: 1.5rem; color: var(--accent-primary);"></i>
+                    <h3>Clarity Through Collaboration</h3>
+                    <p>I transform ambiguity into clear product direction by aligning cross-functional teams and
+                        partners around shared user needs and technical constraints.</p>
                 </div>
 
-                <div class="card" style="padding: 2rem; border-top: 4px solid var(--accent-secondary);">
-                    <h3 style="font-size: 1.3rem; margin-bottom: 1rem;">AI Integration</h3>
-                    <p>AI is a natural part of my process. I use it for exploring ideas, testing variations, building
+                <div class="card-glass">
+                    <i class="icon ion-md-pulse"
+                        style="font-size: 3rem; margin-bottom: 1.5rem; color: var(--accent-secondary);"></i>
+                    <h3>AI Integration</h3>
+                    <p>AI is a natural part of my process. I use it for exploring ideas, testing variations,
+                        building
                         fast prototypes, and helping teams move from uncertainty to insight.</p>
                 </div>
 
-                <div class="card" style="padding: 2rem; border-top: 4px solid var(--accent-highlight);">
-                    <h3 style="font-size: 1.3rem; margin-bottom: 1rem;">Systems Thinking</h3>
-                    <p>Whether the product lives across devices, partner surfaces, or AI-driven environments, I design
+                <div class="card-glass">
+                    <i class="icon ion-md-git-network"
+                        style="font-size: 3rem; margin-bottom: 1.5rem; color: var(--accent-highlight);"></i>
+                    <h3>Systems Thinking</h3>
+                    <p>Whether the product lives across devices, partner surfaces, or AI-driven environments, I
+                        design
                         with consistency, adaptability, and long-term scalability in mind.</p>
                 </div>
 
-                <div class="card" style="padding: 2rem; border-top: 4px solid var(--accent-primary);">
-                    <h3 style="font-size: 1.3rem; margin-bottom: 1rem;">Human-Centric</h3>
-                    <p>My background in psychology helps me understand how people think, learn, and behave. It guides
+                <div class="card-glass">
+                    <i class="icon ion-md-people"
+                        style="font-size: 3rem; margin-bottom: 1.5rem; color: var(--accent-primary);"></i>
+                    <h3>Human-Centric</h3>
+                    <p>My background in psychology helps me understand how people think, learn, and behave. It
+                        guides
                         how I run research and design experiences that feel intuitive.</p>
                 </div>
             </div>
-            <p style="margin-top: 2rem; max-width: 800px; color: var(--text-secondary);">
-                I collaborate closely with engineering, product, data teams, and partner organizations. I enjoy building
-                shared understanding across different backgrounds and cultures.
-            </p>
         </section>
 
         <!-- Experience Timeline -->
-        <section class="container animate-on-scroll" style="margin-top: 4rem;">
-            <h2 style="text-align: center; margin-bottom: 4rem;">Experiences</h2>
-            <div
-                style="max-width: 800px; margin: 0 auto; padding-left: 2rem; border-left: 1px dashed rgba(255,255,255,0.2);">
+        <section class="container animate-on-scroll" style="margin-top: 6rem;">
+            <h2 class="section-title">My Experiences</h2>
+            <div class="timeline">
 
                 <!-- Derivco -->
-                <div class="animate-on-scroll" style="position: relative; margin-bottom: 4rem;">
-                    <div
-                        style="position: absolute; left: -3.5rem; top: 0; background: var(--surface-color); padding: 0.5rem; border-radius: 50%; border: 1px solid var(--accent-primary);">
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-marker">
                         <img src="https://media.licdn.com/dms/image/v2/C4D0BAQFk2KjAqvS1_w/company-logo_200_200/company-logo_200_200/0/1630565860494?e=1746057600&v=beta&t=tD0qjX8GgqgQx_vIuGjQx_vIuGjQx_vIuGjQx_vIuGj"
-                            alt="Derivco" style="width: 24px; height: 24px; border-radius: 50%;">
+                            alt="Derivco">
                     </div>
-                    <span style="font-size: 0.9rem; color: var(--accent-highlight); font-weight: 600;">2024 Jan -
-                        Present</span>
-                    <h3 style="margin-top: 0.5rem; color: var(--text-primary);">Senior UX/Product Designer</h3>
-                    <span style="display:block; margin-bottom:0.5rem; font-weight: 500;">Derivco - Stockholm</span>
+                    <div class="experience-card">
+                        <span class="exp-date">2024 – Present</span>
+                        <h3 class="exp-role">Senior UX / Product Designer</h3>
+                        <div class="exp-company">Derivco — Stockholm</div>
+
+                        <div class="exp-details">
+                            <div class="exp-project">
+                                <h5>Global Gaming Platform</h5>
+                                <p>Leading UX strategy for a high-traffic platform with millions of active users. I
+                                    work
+                                    across product, engineering, data, and business teams to improve engagement and
+                                    shape user-centered features.</p>
+                            </div>
+                            <div class="exp-project">
+                                <h5>Keep.social (AI & Prototyping)</h5>
+                                <p>Designing AI-driven workflows for partners like IKEA, Lindex, GGL, MotoGP and
+                                    Betway.
+                                    I build high-fidelity prototypes that helped to present the final output of
+                                    socialized version of big company applications. ….</p>
+                            </div>
+                            <div class="exp-project">
+                                <h5>LuminBrain (0-to-1 Strategy)</h5>
+                                <p>Defining the product direction for new gaming concepts. I map user needs and plan
+                                    research to transform abstract ideas into clear, scalable product foundations.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- RaceID -->
-                <div class="animate-on-scroll" style="position: relative; margin-bottom: 4rem;">
-                    <div
-                        style="position: absolute; left: -3.5rem; top: 0; background: var(--surface-color); padding: 0.5rem; border-radius: 50%; border: 1px solid var(--text-secondary);">
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-marker">
                         <img src="https://media.licdn.com/dms/image/v2/C560BAQF2u9jQx_vIuG/company-logo_200_200/company-logo_200_200/0/1630644344444?e=1746057600&v=beta&t=tD0qjX8GgqgQx_vIuGjQx_vIuGjQx_vIuGjQx_vIuGj"
-                            alt="RaceID" style="width: 24px; height: 24px; border-radius: 50%;">
+                            alt="RaceID">
                     </div>
-                    <span style="font-size: 0.9rem; color: var(--text-secondary);">2023 Jan - 2024 Jan</span>
-                    <h3 style="margin-top: 0.5rem;">UI/UX Designer</h3>
-                    <span style="display:block; margin-bottom: 0.5rem;">RaceID - Stockholm</span>
+                    <div class="experience-card">
+                        <span class="exp-date">2023 – 2024</span>
+                        <h3 class="exp-role">Product Designer</h3>
+                        <div class="exp-company">RaceID — Stockholm</div>
+                        <div class="exp-details">
+                            <div class="exp-project">
+                                <p>Designed mobile and web experiences for a global race platform, improving
+                                    registration flows, dashboards, and athlete features to increase clarity and
+                                    conversion.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Navaak -->
-                <div class="animate-on-scroll" style="position: relative; margin-bottom: 4rem;">
-                    <div
-                        style="position: absolute; left: -3.5rem; top: 0; background: var(--surface-color); padding: 0.5rem; border-radius: 50%; border: 1px solid var(--text-secondary);">
-                        <span
-                            style="display:block; width: 24px; height: 24px; background: #333; border-radius: 50%;"></span>
+                <!-- Navaak (Designer) -->
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-marker">
+                        <!-- Consistent Fallback Icon for Navaak -->
+                        <div
+                            style="background: #333; width: 100%; height: 100%; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                            N</div>
                     </div>
-                    <span style="font-size: 0.9rem; color: var(--text-secondary);">2018 - 2022</span>
-                    <h3 style="margin-top: 0.5rem;">Product Designer</h3>
-                    <span style="display:block; margin-bottom: 0.5rem;">Navaak</span>
+                    <div class="experience-card">
+                        <span class="exp-date">2020 – 2022</span>
+                        <h3 class="exp-role">UI/UX Designer</h3>
+                        <div class="exp-company">Navaak — Hybrid</div>
+                        <div class="exp-details">
+                            <div class="exp-project">
+                                <p>Designed parts of a music streaming app and internal content tools, using UI
+                                    design
+                                    and A/B tests to improve listening experience and operational workflows.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Art Researcher -->
-                <div class="animate-on-scroll" style="position: relative;">
-                    <div
-                        style="position: absolute; left: -3.5rem; top: 0; background: var(--surface-color); padding: 0.5rem; border-radius: 50%; border: 1px solid var(--text-secondary);">
-                        <i class="icon ion-md-brush" style="font-size: 24px;"></i>
+                <!-- Navaak (IT Engineer) -->
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-marker">
+                        <div
+                            style="background: #333; width: 100%; height: 100%; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                            N</div>
                     </div>
-                    <span style="font-size: 0.9rem; color: var(--text-secondary);">2016 - Present</span>
-                    <h3 style="margin-top: 0.5rem;">Art Researcher and Artist</h3>
+                    <div class="experience-card">
+                        <span class="exp-date">2017 – 2019</span>
+                        <h3 class="exp-role">IT Engineer</h3>
+                        <div class="exp-company">Navaak — Tehran</div>
+                        <div class="exp-details">
+                            <div class="exp-project">
+                                <p>Explored different areas of technology and product development, building a strong
+                                    foundation in systems, teamwork, and problem-solving before moving into product
+                                    design.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Art Practitioner -->
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-marker">
+                        <i class="icon ion-md-brush" style="font-size: 20px; color: var(--text-primary);"></i>
+                    </div>
+                    <div class="experience-card">
+                        <span class="exp-date">2016 – Present</span>
+                        <h3 class="exp-role">Art Practitioner & Instructor</h3>
+                        <div class="exp-details">
+                            <div class="exp-project">
+                                <p>Teach traditional art online and study human behavior. This work deepens my
+                                    understanding of learning, motivation, and communication—skills I use in my
+                                    design
+                                    practice.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -176,23 +265,21 @@
     <footer
         style="padding: 4rem 0; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 6rem; text-align: center;">
         <div class="container animate-on-scroll">
-            <h2 style="font-size: 2rem; margin-bottom: 2rem;">Let's Connect</h2>
-            <div style="display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 3rem;">
-                <a href="mailto:chavoshian.shiva@gmail.com" class="btn">
-                    <i class="icon ion-ios-mail" style="margin-right: 10px; font-size: 1.2rem;"></i> Email Me
-                </a>
+            <h2 style="font-size: 2rem; margin-bottom: 2rem;">Let's create something meaningful.</h2>
+            <div style="display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 2rem;">
+                <a href="mailto:chavoshian.shiva@gmail.com" class="btn">chavoshian.shiva@gmail.com</a>
             </div>
-
-            <div style="display: flex; gap: 3rem; justify-content: center; align-items: center;">
-                <a href="https://www.linkedin.com/in/shiva-chavoshian/" target="_blank" class="social-link">
-                    <i class="icon ion-logo-linkedin" style="font-size: 2rem; transition: color 0.3s ease;"></i>
-                </a>
-                <a href="https://www.youtube.com/channel/UCiXPxcdTpvxd3H3SXANp1jg" target="_blank" class="social-link">
-                    <i class="icon ion-logo-youtube" style="font-size: 2rem; transition: color 0.3s ease;"></i>
-                </a>
+            <div
+                style="display: flex; gap: 2rem; justify-content: center; font-size: 1.5rem; color: var(--text-secondary);">
+                <a href="https://www.linkedin.com/in/shiva-chavoshian/" target="_blank"><i
+                        class="icon ion-logo-linkedin"></i></a>
+                <a href="https://www.instagram.com/shiva.chavoshian" target="_blank"><i
+                        class="icon ion-logo-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UCiXPxcdTpvxd3H3SXANp1jg" target="_blank"><i
+                        class="icon ion-logo-youtube"></i></a>
             </div>
-
-            <p style="margin-top: 3rem; font-size: 0.9rem; opacity: 0.5;">&copy; 2026 Shiva Chavoshian.</p>
+            <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.5;">&copy; 2026 Shiva Chavoshian. Designed with
+                intention.</p>
         </div>
     </footer>
     <script src="js/main.js"></script>
