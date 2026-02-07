@@ -20,6 +20,9 @@
     <header class="site-header">
         <div class="container">
             <a href="index.html" class="logo">Shiva Chavoshian</a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
             <nav class="nav-links">
                 <a href="index.html">Work</a>
                 <a href="art.html" class="active">Art</a>
@@ -38,9 +41,10 @@
         <section class="container animate-on-scroll" style="text-align: center; padding-top: 4rem;">
             <p style="color: var(--accent-highlight); letter-spacing: 0.1em; text-transform: uppercase;">The Soul</p>
             <h1 class="text-gradient">Tazhib Art</h1>
-            <p style="max-width: 600px; margin: 0 auto;">
-                Traditional Persian Illumination (Tazhib) is the art of decorating manuscripts with gold and color.
-                It requires patience, precision, and a deep appreciation for geometry.
+            <p style="max-width: 800px; margin: 0 auto;">
+                For over 15 years, I have explored the philosophy and roots of this ancient art. It keeps my mind sharp
+                and disciplined. I now share this journey globally, teaching students through my YouTube channel and
+                online courses. These are a few sample of my paintings.
             </p>
         </section>
 
@@ -66,16 +70,14 @@
             <p style="margin-bottom: 1.5rem; color: var(--text-secondary);">Tazhib Art</p>
 
             <!-- Metadata Grid moved above image for visibility -->
-            <div
-                style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.1);">
-                <div>
-                    <h4 style="font-size: 0.9rem; color: var(--text-secondary); text-transform: uppercase;">Technique
-                    </h4>
-                    <p id="modal-technique" style="margin-top: 0.2rem;"></p>
+            <div class="art-meta-grid">
+                <div class="art-meta-item">
+                    <span class="art-meta-label">Technique</span>
+                    <p id="modal-technique" class="art-meta-value"></p>
                 </div>
-                <div>
-                    <h4 style="font-size: 0.9rem; color: var(--text-secondary); text-transform: uppercase;">Size</h4>
-                    <p id="modal-size" style="margin-top: 0.2rem;"></p>
+                <div class="art-meta-item">
+                    <span class="art-meta-label">Size</span>
+                    <p id="modal-size" class="art-meta-value"></p>
                 </div>
             </div>
 

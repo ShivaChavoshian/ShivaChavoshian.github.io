@@ -13,11 +13,22 @@ document.addEventListener('DOMContentLoaded', () => {
 /* -------------------------------------------------------------------------- */
 function initScrollHeader() {
     const header = document.querySelector('.site-header');
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
+        }
+
+        // Hide scroll indicator when user scrolls
+        if (scrollIndicator) {
+            if (window.scrollY > 100) {
+                scrollIndicator.classList.add('hidden');
+            } else {
+                scrollIndicator.classList.remove('hidden');
+            }
         }
     });
 }
@@ -74,6 +85,32 @@ function highlightActiveLink() {
 /*                                 Mobile Nav                                 */
 /* -------------------------------------------------------------------------- */
 function initMobileNav() {
-    // Basic mobile menu toggle logic if we add a hamburger later
-    // For now, on small screens we rely on the responsive flexible flexbox for the top nav
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (navToggle && navLinks) {
+        navToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (navLinks.classList.contains('active') &&
+                !navToggle.contains(e.target) &&
+                !navLinks.contains(e.target)) {
+                navToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        });
+    }
 }

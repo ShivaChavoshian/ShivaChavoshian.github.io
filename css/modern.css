@@ -87,7 +87,7 @@ p {
 }
 
 .section-title {
-    font-size: 2rem;
+    font-size: clamp(2.5rem, 6vw, 4rem);
     text-align: left;
     margin-bottom: 2rem;
     font-weight: 700;
@@ -95,9 +95,37 @@ p {
     position: relative;
     display: block;
     width: 100%;
-    padding-left: 1rem;
+    padding-left: 1.5rem;
     border-left: 4px solid var(--accent-primary);
-    line-height: 1.2;
+    line-height: 1.1;
+}
+
+/* Grand Header Variant for Work Section */
+#work .section-title {
+    font-size: clamp(5rem, 15vw, 12rem);
+    letter-spacing: -0.05em;
+    padding-left: 0;
+    border-left: none;
+    margin-bottom: 6rem;
+    font-weight: 800;
+    color: #FFFFFF;
+}
+
+/* North Star Line */
+.north-star-spine {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.north-star-spine::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -2rem;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(180deg, var(--accent-highlight) 0%, rgba(255, 255, 255, 0.05) 100%);
+    opacity: 0.4;
 }
 
 /* Optional: Add a subtle underline or gradient if desired, but keeping it clean for now 
@@ -139,12 +167,16 @@ section {
     }
 }
 
-.section-hero {
-    min-height: 85vh;
+.section-hero,
+.hero {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding-bottom: 6rem;
+    padding-top: var(--header-height);
+    position: relative;
+    overflow: hidden;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -220,6 +252,100 @@ section {
     width: 100%;
 }
 
+/* Hamburger Menu Toggle */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001;
+}
+
+.hamburger {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--text-primary);
+    position: relative;
+    transition: background 0.3s ease;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background: var(--text-primary);
+    left: 0;
+    transition: transform 0.3s ease, top 0.3s ease;
+}
+
+.hamburger::before {
+    top: -7px;
+}
+
+.hamburger::after {
+    top: 7px;
+}
+
+/* Hamburger active state (X) */
+.nav-toggle.active .hamburger {
+    background: transparent;
+}
+
+.nav-toggle.active .hamburger::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.nav-toggle.active .hamburger::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+/* Mobile Navigation Styles */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        background: var(--surface-color);
+        flex-direction: column;
+        padding: 2rem;
+        gap: 1.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+        backdrop-filter: blur(20px);
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-links a {
+        font-size: 1.1rem;
+        text-align: center;
+    }
+
+    .nav-links .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
 /* Buttons */
 .btn {
     display: inline-flex;
@@ -253,6 +379,85 @@ section {
     color: white;
     transform: translateY(-3px);
     box-shadow: 0 0 20px rgba(99, 102, 241, 0.4), 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Functional Text Link with Arrow (Minimalist CTA) */
+.link-arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 1rem;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: all var(--transition-base);
+}
+
+.link-arrow i {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.link-arrow:hover {
+    color: var(--accent-highlight);
+}
+
+.link-arrow:hover i {
+    transform: translateX(5px);
+}
+
+.link-arrow::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: currentColor;
+    transition: width 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.link-arrow:hover::after {
+    width: 100%;
+}
+
+/* Premium Project Button (Glass Outline) */
+.btn-project {
+    padding: 0.8rem 2rem;
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: transparent;
+    color: var(--text-primary);
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-project:hover {
+    background: #FFFFFF;
+    color: #000000;
+    border-color: #FFFFFF;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2),
+        0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+.btn-project i {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-project:hover i {
+    transform: translateX(3px);
+}
+
+.btn-project:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Cards */
@@ -364,7 +569,7 @@ section {
 
 .modal-content {
     background: var(--surface-color);
-    padding: var(--spacing-md);
+    padding: 2.5rem;
     border-radius: var(--radius-md);
     max-width: 900px;
     width: 95%;
@@ -373,6 +578,63 @@ section {
     position: relative;
     border: 1px solid var(--accent-primary);
     box-shadow: var(--shadow-glow);
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-primary) rgba(255, 255, 255, 0.05);
+}
+
+/* Custom Scrollbar for Modal */
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--accent-primary), var(--accent-secondary));
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-highlight);
+    border-radius: 10px;
+}
+
+/* Art Details Metadata Grid */
+.art-meta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.art-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.art-meta-label {
+    font-size: 0.75rem;
+    color: var(--accent-highlight);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+}
+
+.art-meta-value {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    font-weight: 500;
+    margin: 0;
 }
 
 .modal-close {
@@ -587,8 +849,16 @@ section {
     cursor: pointer;
     z-index: 10;
     opacity: 0.7;
-    transition: opacity var(--transition-base);
+    transition: opacity var(--transition-base), visibility var(--transition-base);
     animation: scroll-bounce 2s infinite;
+    pointer-events: auto;
+}
+
+/* Hide scroll indicator when scrolling */
+.scroll-indicator.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 }
 
 .scroll-indicator:hover {
@@ -665,9 +935,9 @@ section {
 .editorial-stack {
     display: flex;
     flex-direction: column;
-    gap: 8rem;
-    /* Increased gap for breathing room */
-    padding: 2rem 0;
+    gap: 15rem;
+    /* Increased for Direction A Minimalist breathing room */
+    padding: 4rem 0;
     max-width: 1400px;
     margin: 0 auto;
     width: 100%;
@@ -715,51 +985,115 @@ section {
     z-index: 2;
 }
 
-.project-role {
-    display: inline-block;
-    font-size: 0.9rem;
+.project-split {
+    position: relative;
+    padding: var(--spacing-xl) 0;
+    margin-bottom: var(--spacing-xl);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.project-split:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+/* Ghost Numbering */
+.project-count {
+    position: absolute;
+    top: -4rem;
+    left: -2rem;
+    font-family: var(--font-heading);
+    font-size: clamp(8rem, 20vw, 15rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    opacity: 0.03;
+    line-height: 1;
+    z-index: -1;
+    pointer-events: none;
+    transition: opacity var(--transition-base), transform var(--transition-base), color var(--transition-base);
+}
+
+.project-split:hover .project-count {
+    opacity: 0.05;
+    transform: translateY(-5px);
     color: var(--accent-highlight);
+}
+
+.project-role {
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-weight: 600;
+    color: var(--text-secondary);
+    font-weight: 500;
     margin-bottom: 1rem;
+    display: block;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.project-split:hover .project-role {
+    opacity: 1;
 }
 
 .project-title {
-    font-size: 1.75rem;
-    line-height: 1.2;
-    margin-bottom: 0.75rem;
+    font-size: clamp(2.5rem, 6vw, 4.2rem);
     font-family: var(--font-heading);
+    letter-spacing: -0.03em;
     color: var(--text-primary);
-    font-weight: 600;
+    margin-bottom: 1.2rem;
+    line-height: 1.05;
+    transition: transform var(--transition-base);
+    font-weight: 700;
+}
+
+.project-split:hover .project-title {
+    transform: translateX(5px);
 }
 
 .project-subtitle {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
+    line-height: 1.7;
     color: var(--text-secondary);
-    margin-bottom: 2rem;
-    font-weight: 300;
-    line-height: 1.5;
+    max-width: 95%;
+    margin-bottom: 2.5rem;
+    font-weight: 400;
+    letter-spacing: 0.01em;
 }
 
-/* Impact Badges Row */
 .impact-row {
     display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
+    gap: 1.5rem;
     margin-bottom: 2.5rem;
+    padding-left: 2px;
+    position: relative;
+}
+
+/* Vertical Spine Alignment - Muted for Direction A */
+.impact-row::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--text-secondary);
+    opacity: 0.15;
 }
 
 .impact-badge {
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    gap: 6px;
-    padding: 0.4rem 0.8rem;
-    background: rgba(255, 255, 255, 0.03);
-    border: none;
-    border-radius: 4px;
-    cursor: default;
-    pointer-events: none;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    opacity: 0.5;
+    padding: 0.2rem 0;
+    transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+.project-split:hover .impact-badge {
+    opacity: 0.9;
+    color: var(--text-primary);
 }
 
 .impact-badge i {
@@ -769,10 +1103,8 @@ section {
 }
 
 .impact-badge span {
-    font-size: 0.8rem;
     font-weight: 500;
-    color: var(--text-secondary);
-    letter-spacing: 0.02em;
+    letter-spacing: 0.03em;
 }
 
 /* Visual Side */
@@ -884,108 +1216,75 @@ section {
 }
 
 /* -------------------------------------------------------------------------- */
-/*                        Asymmetrical Layout Modifiers                       */
+/*                        Standardized Project Layout                         */
 /* -------------------------------------------------------------------------- */
 
-/* 1. Cinematic (Wide Dashboard) 
-   Image dominates (65%), Text is compact.
-*/
-.layout-cinematic .project-visual {
-    flex: 1.8;
-}
-
-.layout-cinematic .project-content {
-    flex: 1;
-}
-
-.layout-cinematic .floating-mockup {
-    max-width: 800px;
-    height: 400px;
-    aspect-ratio: 16/10;
-    overflow: hidden;
-}
-
-.layout-cinematic .floating-mockup img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* 2. Portrait (Mobile App)
-   Text dominates (60%) with Huge Typography. Image is tall/thin (35%).
-*/
-.layout-portrait .project-visual {
-    flex: 0.8;
-    /* Takes less horizontal space */
-}
-
-.layout-portrait .project-content {
+/* Universal Project Layout */
+.project-split .project-visual {
     flex: 1.2;
 }
 
-.layout-portrait .project-title {
-    font-size: 4.5rem;
-    /* Massive headline */
-    letter-spacing: -0.03em;
-}
-
-.layout-portrait .floating-mockup {
-    max-width: 380px;
-    height: 520px;
-    aspect-ratio: 9/19;
-    border-radius: 40px;
-    overflow: hidden;
-}
-
-.layout-portrait .floating-mockup img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* 3. Macro (Detail/System)
-   Balanced 50/50 but with a Square focus.
-*/
-.layout-macro .project-visual {
+.project-split .project-content {
     flex: 1;
 }
 
-.layout-macro .project-content {
-    flex: 1;
-}
-
-.layout-macro .floating-mockup {
-    max-width: 500px;
-    height: 420px;
-    aspect-ratio: 1/1;
+.floating-mockup {
+    width: 100%;
+    max-width: 700px;
+    /* Standardized width */
+    aspect-ratio: 16/9;
+    /* Standardized aspect ratio */
+    border-radius: 12px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+    transition: transform 0.5s ease;
+    animation: float-y 6s ease-in-out infinite;
+    position: relative;
+    z-index: 1;
+    background: #1a1a1a;
     overflow: hidden;
 }
 
-.layout-macro .floating-mockup img {
+.floating-mockup img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    /* Ensures images fill the 16:9 container nicely */
+    display: block;
+    transition: transform 0.7s ease;
 }
 
-/* Mobile Overrides: Reset everything to stacked */
+/* Mobile Responsiveness */
 @media (max-width: 968px) {
-
-    .layout-cinematic .project-visual,
-    .layout-portrait .project-visual,
-    .layout-macro .project-visual {
-        flex: auto;
-        width: 100%;
+    .project-split {
+        flex-direction: column-reverse;
+        padding: 4rem 0;
+        gap: 3rem;
+        text-align: center;
     }
 
-    .layout-portrait .project-title {
-        font-size: 2.5rem;
-        /* Reset giant text */
+    .project-split:nth-child(even) {
+        flex-direction: column-reverse;
+        /* Ensure stacking is consistent */
     }
 
-    .layout-cinematic .floating-mockup,
-    .layout-portrait .floating-mockup,
-    .layout-macro .floating-mockup {
+    .project-content {
         max-width: 100%;
-        aspect-ratio: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-title {
+        font-size: 2.2rem;
+    }
+
+    .impact-row {
+        justify-content: center;
+    }
+
+    .floating-mockup {
+        max-width: 100%;
+        aspect-ratio: 16/9;
     }
 }
