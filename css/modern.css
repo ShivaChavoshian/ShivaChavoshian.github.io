@@ -1092,10 +1092,12 @@ section {
     letter-spacing: 0.03em;
 }
 
-/* Visual Side */
+/* -------------------------------------------------------------------------- */
+/*                        Project Visuals & Mockups                           */
+/* -------------------------------------------------------------------------- */
+
 .project-visual {
     flex: 1.2;
-    /* Takes slightly more space than text */
     position: relative;
     display: flex;
     justify-content: center;
@@ -1104,27 +1106,29 @@ section {
 
 .floating-mockup {
     width: 100%;
-    max-width: 650px;
+    max-width: 700px;
+    aspect-ratio: 16 / 9;
     border-radius: 12px;
-    /* Create a deep, premium shadow */
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4),
         0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+    /* Temporary border for placement verification */
     transition: transform 0.5s ease;
     animation: float-y 6s ease-in-out infinite;
     position: relative;
     z-index: 1;
     background: #1a1a1a;
-    /* Placeholder for image loading */
     overflow: hidden;
 }
 
 .floating-mockup img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     display: block;
     transition: transform 0.7s ease;
 }
 
+/* Mockup Hover Effects */
 .project-visual:hover .floating-mockup {
     transform: scale(1.02);
 }
@@ -1142,7 +1146,6 @@ section {
     transform: translate(-50%, -50%);
     width: 80%;
     height: 80%;
-    /* Use local variable if set, otherwise fallback to primary accent */
     background: var(--project-glow, var(--accent-primary));
     filter: blur(80px);
     opacity: 0.15;
@@ -1155,7 +1158,7 @@ section {
     opacity: 0.25;
 }
 
-/* Mobile Responsiveness */
+/* Mobile Responsiveness for Projects */
 @media (max-width: 968px) {
     .project-split {
         flex-direction: column-reverse;
@@ -1185,91 +1188,6 @@ section {
 
     .floating-mockup {
         max-width: 100%;
-    }
-}
-
-@keyframes float-y {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-15px);
-    }
-}
-
-/* -------------------------------------------------------------------------- */
-/*                        Standardized Project Layout                         */
-/* -------------------------------------------------------------------------- */
-
-/* Universal Project Layout */
-.project-split .project-visual {
-    flex: 1.2;
-}
-
-.project-split .project-content {
-    flex: 1;
-}
-
-.floating-mockup {
-    width: 100%;
-    max-width: 700px;
-    /* Standardized width */
-    aspect-ratio: 16/9;
-    /* Standardized aspect ratio */
-    border-radius: 12px;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4),
-        0 0 0 1px rgba(255, 255, 255, 0.05) inset;
-    transition: transform 0.5s ease;
-    animation: float-y 6s ease-in-out infinite;
-    position: relative;
-    z-index: 1;
-    background: #1a1a1a;
-    overflow: hidden;
-}
-
-.floating-mockup img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    /* Ensures images fill the 16:9 container nicely */
-    display: block;
-    transition: transform 0.7s ease;
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 968px) {
-    .project-split {
-        flex-direction: column-reverse;
-        padding: 4rem 0;
-        gap: 3rem;
-        text-align: center;
-    }
-
-    .project-split:nth-child(even) {
-        flex-direction: column-reverse;
-        /* Ensure stacking is consistent */
-    }
-
-    .project-content {
-        max-width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .project-title {
-        font-size: 2.2rem;
-    }
-
-    .impact-row {
-        justify-content: center;
-    }
-
-    .floating-mockup {
-        max-width: 100%;
-        aspect-ratio: 16/9;
+        aspect-ratio: 16 / 9;
     }
 }
