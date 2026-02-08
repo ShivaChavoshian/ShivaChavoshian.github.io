@@ -1008,11 +1008,11 @@ section {
     font-size: 0.75rem;
     letter-spacing: 0.25em;
     text-transform: uppercase;
-    color: var(--text-secondary);
-    font-weight: 500;
+    color: var(--accent-highlight);
+    font-weight: 600;
     margin-bottom: 1rem;
     display: block;
-    opacity: 0.6;
+    opacity: 0.8;
     transition: opacity 0.3s ease;
 }
 
