@@ -102,7 +102,7 @@ p {
 
 /* Grand Header Variant for Work Section */
 #work .section-title {
-    font-size: clamp(5rem, 15vw, 12rem);
+    font-size: clamp(2rem, 8vw, 6rem);
     letter-spacing: -0.05em;
     padding-left: 0;
     border-left: none;
@@ -112,21 +112,7 @@ p {
 }
 
 /* North Star Line */
-.north-star-spine {
-    position: relative;
-    padding-left: 2rem;
-}
-
-.north-star-spine::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: -2rem;
-    bottom: 0;
-    width: 1px;
-    background: linear-gradient(180deg, var(--accent-highlight) 0%, rgba(255, 255, 255, 0.05) 100%);
-    opacity: 0.4;
-}
+/* removed .north-star-spine as requested */
 
 /* Optional: Add a subtle underline or gradient if desired, but keeping it clean for now 
    based on the 'Experiences' look which was just text. 
@@ -935,9 +921,10 @@ section {
 .editorial-stack {
     display: flex;
     flex-direction: column;
-    gap: 15rem;
-    /* Increased for Direction A Minimalist breathing room */
-    padding: 4rem 0;
+    gap: 6rem;
+    /* Reduced from 15rem */
+    padding: 2rem 0;
+    /* Reduced from 4rem */
     max-width: 1400px;
     margin: 0 auto;
     width: 100%;
@@ -946,13 +933,16 @@ section {
 .project-split {
     display: flex;
     align-items: center;
-    /* Vertically center */
     justify-content: space-between;
     gap: 6rem;
     position: relative;
     width: 100%;
-    min-height: 60vh;
-    /* Ensure each project takes up significant screen real estate */
+    min-height: 40vh;
+    /* Reduced from 60vh */
+    padding: var(--spacing-lg) 0;
+    /* Reduced from xl */
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 /* Base Split Logic: 50/50 starting point */
@@ -985,12 +975,7 @@ section {
     z-index: 2;
 }
 
-.project-split {
-    position: relative;
-    padding: var(--spacing-xl) 0;
-    margin-bottom: var(--spacing-xl);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
+/* Consolidated with previous .project-split block */
 
 .project-split:last-child {
     border-bottom: none;
