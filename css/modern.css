@@ -1107,7 +1107,7 @@ section {
 .floating-mockup {
     width: 100%;
     max-width: 700px;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 1 / 1;
     border-radius: 12px;
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4),
         0 0 0 1px rgba(255, 255, 255, 0.05) inset;
@@ -1188,6 +1188,6 @@ section {
 
     .floating-mockup {
         max-width: 100%;
-        aspect-ratio: 16 / 9;
+        aspect-ratio: 1 / 1;
     }
 }
