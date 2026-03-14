@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Gaming Case Study - Shiva Chavoshian</title>
+
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+    <!-- Using ../ because this file is in the ui-ux/ directory -->
+    <link rel="stylesheet" href="../css/modern.css">
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* Specific Case Study Overrides */
+        .case-study-header {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 1.5rem 0;
+            background: var(--bg-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--accent-highlight);
+        }
+
+        .contribution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .figma-card {
+            border: 1px dashed rgba(99, 102, 241, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .figma-card:hover {
+            border-style: solid;
+            background: rgba(99, 102, 241, 0.05);
+        }
+
+        .section-padding {
+            padding: 8rem 0;
+        }
+
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            margin: 4rem 0;
+        }
+
+        /* --- New Visual Storytelling Components --- */
+
+        /* 1. Device Mockup (Mobile Frame) */
+        .device-container {
+            position: relative;
+            width: 280px;
+            height: 580px;
+            margin: 0 auto;
+            border: 8px solid #1a1a1a;
+            border-radius: 40px;
+            background: #000;
+            box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.5), 0 0 20px rgba(99, 102, 241, 0.2);
+            overflow: hidden;
+        }
+
+        .device-screen {
+            width: 100%;
+            height: 100%;
+            background: #0f172a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.1);
+            font-size: 0.8rem;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .device-screen img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* 2. Process / Evidence Gallery */
+        .evidence-gallery {
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            padding: 2rem 0;
+            scrollbar-width: none;
+            /* Firefox */
+            -ms-overflow-style: none;
+            /* IE and Edge */
+        }
+
+        .evidence-gallery::-webkit-scrollbar {
+            display: none;
+            /* Hide scrollbar for Chrome, Safari and Opera */
+        }
+
+        .evidence-card {
+            flex: 0 0 350px;
+            height: 250px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-md);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .evidence-card .label {
+            position: relative;
+            z-index: 2;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent-highlight);
+        }
+
+        /* 3. Data + Insight Block */
+        .insight-block {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 900px) {
+            .insight-block {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        .data-viz {
+            height: 300px;
+            background: rgba(99, 102, 241, 0.05);
+            border: 1px solid rgba(99, 102, 241, 0.1);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* 4. Miro / Large Map Container */
+        .process-map-container {
+            width: 100%;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-lg);
+            margin: 4rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            cursor: zoom-in;
+        }
+
+        .map-overlay {
+            position: absolute;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--glass-bg);
+            padding: 0.8rem 1.5rem;
+            border-radius: var(--radius-full);
+            color: white;
+            font-size: 0.8rem;
+            border: var(--glass-border);
+            backdrop-filter: blur(5px);
+        }
+    </style>
+
+    <!-- Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FGRCPX3DDG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-FGRCPX3DDG');
+    </script>
+</head>
+
+<body>
+
+    <!-- Simplified Header for deep dive focus -->
+    <nav class="case-study-header">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="../index.html" class="logo">Shiva Chavoshian</a>
+            <a href="../index.html#work" class="back-link">
+                <i class="icon ion-md-arrow-back"></i> Back to Work
+            </a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero section-padding">
+            <div class="container">
+                <div class="grid" style="grid-template-columns: 1.2fr 1fr; align-items: center; gap: 4rem;">
+                    <div class="animate-on-scroll">
+                        <span class="section-eyebrow">Case Study</span>
+                        <h1 class="text-gradient" style="margin-bottom: 2rem; font-size: clamp(2.5rem, 5vw, 4rem);">
+                            Global Gaming Experience — UI/UX Strategy & Design
+                        </h1>
+                        <p
+                            style="font-size: 1.4rem; margin-bottom: 3rem; color: var(--text-primary); font-weight: 500;">
+                            Leading UX strategy, research, and feature definition for a live platform with millions of
+                            daily users.
+                        </p>
+                        <div style="display: flex; gap: 3rem; margin-bottom: 2.5rem;">
+                            <div style="text-align: left;">
+                                <span
+                                    style="display: block; font-size: 0.8rem; text-transform: uppercase; color: var(--accent-highlight); margin-bottom: 0.5rem; letter-spacing: 0.1em;">My
+                                    Role</span>
+                                <span style="font-weight: 600; font-size: 1.1rem;">Head of UX</span>
+                            </div>
+                            <div style="text-align: left;">
+                                <span
+                                    style="display: block; font-size: 0.8rem; text-transform: uppercase; color: var(--accent-highlight); margin-bottom: 0.5rem; letter-spacing: 0.1em;">Timeline</span>
+                                <span style="font-weight: 600; font-size: 1.1rem;">2024 — 2025</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product Hero Image in Device Frame -->
+                    <div class="animate-on-scroll" style="transition-delay: 0.2s; text-align: center;">
+                        <div class="device-container" style="margin-bottom: 1.5rem;">
+                            <div class="device-screen">
+                                <span>[Main App Screenshot]</span>
+                            </div>
+                        </div>
+                        <a href="#" class="link-arrow" style="font-size: 0.9rem;">
+                            View Live Application <i class="icon ion-md-open" style="margin-left: 5px;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Background element -->
+            <div
+                style="position: absolute; top: 10%; left: 50%; transform: translateX(-50%); width: 80%; height: 60vh; background: var(--accent-primary); filter: blur(200px); opacity: 0.05; z-index: -1;">
+            </div>
+        </section>
+
+        <!-- Overview Section -->
+        <section class="section-padding"
+            style="background: rgba(255,255,255,0.01); border-top: 1px solid rgba(255,255,255,0.03);">
+            <div class="container animate-on-scroll">
+                <div class="grid" style="grid-template-columns: 1fr 1.5fr; gap: 4rem;">
+                    <div>
+                        <span class="section-eyebrow">Overview</span>
+                        <h2 style="margin-bottom: 2rem;">Setting the Context</h2>
+                    </div>
+                    <div>
+                        <p
+                            style="font-size: 1.2rem; color: var(--text-primary); margin-bottom: 2rem; line-height: 1.7;">
+                            This project focused on improving engagement and retention for a large-scale sportsbook
+                            platform. Used by millions of players across multiple regions, the system was already
+                            successful, but needed to evolve.
+                        </p>
+                        <p style="font-size: 1.15rem; line-height: 1.7;">
+                            As Head of UX, my goal was to modernize the user experience. I worked to create better flow
+                            clarity and a more cohesive design that simplified complex socialized betting workflows.
+                        </p>
+                        <p style="font-size: 1.15rem; line-height: 1.7;">
+                            I collaborated deeply with stakeholders, Product Managers, developers, and data teams to
+                            ensure our design
+                            strategy was both technically feasible and backed by real user behavior.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Contribution Section -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="animate-on-scroll">
+                    <h2 class="section-title">My Contribution</h2>
+                    <p style="max-width: 800px; margin-bottom: 4rem; font-size: 1.2rem;">
+                        As Head of UX, I bridged the gap between global business goals and user needs by driving UX
+                        maturity and creating a data-led design culture.
+                    </p>
+                </div>
+
+                <!-- Strategic Pillars (Leadership focus) -->
+                <div class="grid"
+                    style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; margin-bottom: 8rem;">
+
+                    <!-- 1. Strategy & Maturity -->
+                    <div class="animate-on-scroll">
+                        <div style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+                            <i class="icon ion-md-compass" style="font-size: 2rem; color: var(--accent-highlight);"></i>
+                            <h3 style="margin: 0;">UX Strategy & Maturity</h3>
+                        </div>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 1rem; position: relative; padding-left: 1.5rem;">
+                                <i class="icon ion-md-checkmark-circle"
+                                    style="position: absolute; left: 0; color: var(--accent-highlight);"></i>
+                                Led the move to <strong>data-backed decisions</strong>, ensuring every design choice was
+                                validated by user behavior.
+                            </li>
+                            <li style="margin-bottom: 1rem; position: relative; padding-left: 1.5rem;">
+                                <i class="icon ion-md-checkmark-circle"
+                                    style="position: absolute; left: 0; color: var(--accent-highlight);"></i>
+                                Orchestrated <strong>weekly global critiques</strong> with teams in the UK, Sweden,
+                                Australia, and South Africa.
+                            </li>
+                            <li style="margin-bottom: 1rem; position: relative; padding-left: 1.5rem;">
+                                <i class="icon ion-md-checkmark-circle"
+                                    style="position: absolute; left: 0; color: var(--accent-highlight);"></i>
+                                <strong>Mentored PMs</strong> to run their own early-stage tests, accelerating the
+                                delivery cycle.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 2. Data-Driven Research -->
+                    <div class="animate-on-scroll" style="transition-delay: 0.1s;">
+                        <div style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+                            <i class="icon ion-md-analytics" style="font-size: 2rem; color: var(--accent-primary);"></i>
+                            <h3 style="margin: 0;">Research & Intelligence</h3>
+                        </div>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 1rem; position: relative; padding-left: 1.5rem;">
+                                <i class="icon ion-md-checkmark-circle"
+                                    style="position: absolute; left: 0; color: var(--accent-primary);"></i>
+                                Built a <strong>Living Persona System</strong> to help teams empathize with millions of
+                                global players.
+                            </li>
+                            <li style="margin-bottom: 1rem; position: relative; padding-left: 1.5rem;">
+                                <i class="icon ion-md-checkmark-circle"
+                                    style="position: absolute; left: 0; color: var(--accent-primary);"></i>
+                                Partnered with Data Analysts to track <strong>Product Stickiness</strong> and behavioral
+                                clickstreams (PowerBI).
+                            </li>
+                            <li style="margin-bottom: 1rem; position: relative; padding-left: 1.5rem;">
+                                <i class="icon ion-md-checkmark-circle"
+                                    style="position: absolute; left: 0; color: var(--accent-primary);"></i>
+                                Led A/B testing and usability studies to mitigate risks for high-traffic feature
+                                launches.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 3. Feature & Collaboration -->
+                    <div class="animate-on-scroll" style="transition-delay: 0.2s;">
+                        <div style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+                            <i class="icon ion-md-contacts"
+                                style="font-size: 2rem; color: var(--accent-secondary);"></i>
+                            <h3 style="margin: 0;">Global Orchestration</h3>
+                        </div>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 1rem; position: relative; padding-left: 1.5rem;">
+                                <i class="icon ion-md-checkmark-circle"
+                                    style="position: absolute; left: 0; color: var(--accent-secondary);"></i>
+                                Shaped social features and sportsbook improvements from <strong>concept to global
+                                    launch</strong>.
+                            </li>
+                            <li style="margin-bottom: 1rem; position: relative; padding-left: 1.5rem;">
+                                <i class="icon ion-md-checkmark-circle"
+                                    style="position: absolute; left: 0; color: var(--accent-secondary);"></i>
+                                Coordinated <strong>multi-disciplinary teams</strong> in a high-volume, fast-moving
+                                environment.
+                            </li>
+                            <li style="margin-bottom: 1rem; position: relative; padding-left: 1.5rem;">
+                                <i class="icon ion-md-checkmark-circle"
+                                    style="position: absolute; left: 0; color: var(--accent-secondary);"></i>
+                                Bridged communication between <strong>Engineering, Design, and Business
+                                    Leadership</strong>.
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- Evidence of Scale & Structure -->
+                <style>
+                    .evidence-card {
+                        position: relative;
+                        overflow: hidden;
+                        border-radius: 1.25rem;
+                        border: 1px solid rgba(255, 255, 255, 0.05);
+                        background: var(--bg-color);
+                        transition: border-color 0.4s ease;
+                    }
+
+                    .evidence-card:hover {
+                        border-color: rgba(255, 255, 255, 0.1);
+                    }
+
+                    .evidence-img-container {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        z-index: 1;
+                        transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+                    }
+
+                    .evidence-card:hover .evidence-img-container {
+                        transform: scale(1.05);
+                    }
+
+                    .evidence-single-img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        object-position: top center;
+                        filter: brightness(0.4) contrast(1.1) grayscale(20%);
+                        transition: filter 0.8s ease;
+                    }
+
+                    .evidence-card:hover .evidence-single-img {
+                        filter: brightness(0.7) contrast(1.1) grayscale(0%);
+                    }
+
+                    .evidence-mosaic {
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        z-index: 1;
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        grid-template-rows: 1fr 1fr;
+                        gap: 2px;
+                        /* Minimal gap for clean separation */
+                        transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease;
+                        filter: brightness(0.4) contrast(1.1) grayscale(30%);
+                    }
+
+                    .evidence-card:hover .evidence-mosaic {
+                        transform: scale(1.05);
+                        filter: brightness(0.7) contrast(1.1) grayscale(0%);
+                    }
+
+                    .mosaic-item {
+                        background-size: cover;
+                        background-position: center;
+                    }
+
+                    .evidence-overlay {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: linear-gradient(to top, rgba(2, 6, 23, 0.9) 0%, rgba(2, 6, 23, 0.3) 50%, transparent 100%);
+                        z-index: 2;
+                        backdrop-filter: blur(0px);
+                        transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+                    }
+
+                    .evidence-card:hover .evidence-overlay {
+                        background: rgba(2, 6, 23, 0.7);
+                        backdrop-filter: blur(20px);
+                    }
+
+                    .evidence-content {
+                        position: relative;
+                        z-index: 3;
+                        padding: 3rem;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        text-align: center;
+                        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+                    }
+
+                    .evidence-card:hover .evidence-content {
+                        transform: translateY(0) scale(1.02);
+                    }
+
+                    .evidence-card p {
+                        color: rgba(255, 255, 255, 0.7);
+                        transition: color 0.6s ease;
+                        margin: 0 auto;
+                    }
+
+                    .evidence-card:hover p {
+                        color: #ffffff;
+                    }
+
+                    .evidence-tag {
+                        font-size: 0.75rem;
+                        text-transform: uppercase;
+                        letter-spacing: 0.15em;
+                        margin-bottom: 1rem;
+                        display: inline-block;
+                        padding: 0.4rem 1rem;
+                        background: rgba(255, 255, 255, 0.08);
+                        border-radius: 100px;
+                        backdrop-filter: blur(10px);
+                        border: 1px solid rgba(255, 255, 255, 0.1);
+                    }
+
+                    .evidence-link {
+                        margin-top: 1.5rem;
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                        color: var(--accent-highlight);
+                        font-weight: 500;
+                        font-size: 0.95rem;
+                        opacity: 0;
+                        transform: translateY(10px);
+                        transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+                    }
+
+                    .evidence-card:hover .evidence-link {
+                        opacity: 1;
+                        transform: translateY(0);
+                        transition-delay: 0.1s;
+                    }
+
+                    .evidence-link i {
+                        transition: transform 0.3s ease;
+                    }
+
+                    .evidence-link:hover i {
+                        transform: translateX(5px);
+                    }
+                </style>
+
+                <div class="animate-on-scroll" style="margin-top: 6rem; text-align: center;">
+                    <span
+                        style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--accent-highlight); display: block; margin-bottom: 0.5rem;">The
+                        Process</span>
+                    <h3 style="margin-bottom: 1.5rem; font-size: 2.5rem;">Evidence of Work</h3>
+                    <p
+                        style="opacity: 0.8; max-width: 650px; margin: 0 auto 4.5rem auto; font-size: 1.15rem; line-height: 1.6;">
+                        Delivering end-to-end UX for millions of users. These structural overviews showcase the mapping
+                        and research defining our platform's scale.
+                    </p>
+
+                    <div style="display: flex; flex-direction: column; gap: 3rem;">
+
+                        <!-- Image 1: Mentoring & UX Maturity (Mosaic) -->
+                        <div class="evidence-card" style="min-height: 500px;">
+                            <div class="evidence-mosaic">
+                                <div class="mosaic-item"
+                                    style="background-image: url('../img/projects/derivco/Derivco-Global-Gaming-Sample-Work/1.Mentoring.png');">
+                                </div>
+                                <div class="mosaic-item"
+                                    style="background-image: url('../img/projects/derivco/Derivco-Global-Gaming-Sample-Work/2.%20Mentoring.png');">
+                                </div>
+                                <div class="mosaic-item"
+                                    style="background-image: url('../img/projects/derivco/Derivco-Global-Gaming-Sample-Work/3.%20Mentoring.png');">
+                                </div>
+                                <div class="mosaic-item"
+                                    style="background-image: url('../img/projects/derivco/Derivco-Global-Gaming-Sample-Work/4.%20Mentoring.png');">
+                                </div>
+                            </div>
+                            <div class="evidence-overlay"></div>
+
+                            <div class="evidence-content">
+                                <span class="evidence-tag"
+                                    style="color: #ff9d00; border-color: rgba(255,157,0,0.3);">Leadership &
+                                    Growth</span>
+                                <h4 style="font-size: 1.8rem; margin-bottom: 0.8rem;">Mentoring & UX Maturity</h4>
+                                <p style="max-width: 750px; font-size: 1.05rem; line-height: 1.6;">
+                                    I worked closely with design and product teams to scale UX maturity through
+                                    interactive workshops. We focused on integrating the user's voice into the early
+                                    discovery phase, measuring A/B testing on production, and establishing research as a
+                                    prerequisite for change.
+                                </p>
+                                <a href="#" class="evidence-link">View Detailed Case Study <i
+                                        class="icon ion-md-arrow-forward"></i></a>
+                            </div>
+                        </div>
+
+                        <!-- Image 2: Behaviour Analysis -->
+                        <div class="evidence-card" style="min-height: 500px;">
+                            <div class="evidence-img-container">
+                                <img src="../img/projects/derivco/Derivco-Global-Gaming-Sample-Work/UX_%20Feed%20(Segmented%20Controllers).jpg"
+                                    alt="Behavioral Analysis" class="evidence-single-img"
+                                    style="object-position: center;">
+                            </div>
+                            <div class="evidence-overlay"></div>
+
+                            <div class="evidence-content">
+                                <span class="evidence-tag" style="color: var(--accent-primary);">User Psychology</span>
+                                <h4 style="font-size: 1.8rem; margin-bottom: 0.8rem;">Behavioral Analysis & Synthesis
+                                </h4>
+                                <p style="max-width: 700px; font-size: 1.05rem; line-height: 1.6;">
+                                    Extensive research synthesis demonstrating how raw qualitative feedback and
+                                    multi-region focus groups were organized and translated into actionable product
+                                    strategies.
+                                </p>
+                                <a href="#" class="evidence-link">View Detailed Case Study <i
+                                        class="icon ion-md-arrow-forward"></i></a>
+                            </div>
+                        </div>
+
+                        <!-- Image 3: Usability Synthesis -->
+                        <div class="evidence-card" style="min-height: 500px;">
+                            <div class="evidence-img-container">
+                                <img src="../img/projects/derivco/Derivco-Global-Gaming-Sample-Work/UX_%20Research%20Strategy-Betway-ROW-Round1%20copy.jpg"
+                                    alt="Usability Synthesis" class="evidence-single-img">
+                            </div>
+                            <div class="evidence-overlay"></div>
+
+                            <div class="evidence-content">
+                                <span class="evidence-tag" style="color: var(--accent-secondary);">Strategic
+                                    Roadmap</span>
+                                <h4 style="font-size: 1.8rem; margin-bottom: 0.8rem;">Usability & Research Synthesis
+                                </h4>
+                                <p style="max-width: 700px; font-size: 1.05rem; line-height: 1.6;">
+                                    Translating multi-variate testing results and internal surveys into a unified,
+                                    actionable product roadmap. I distilled raw data into structured insights to guide
+                                    long-term engineering and design priorities.
+                                </p>
+                                <a href="#" class="evidence-link">View Detailed Case Study <i
+                                        class="icon ion-md-arrow-forward"></i></a>
+                            </div>
+                        </div>
+
+                        <!-- Image 4: Core Journeys -->
+                        <div class="evidence-card" style="min-height: 500px;">
+                            <div class="evidence-img-container">
+                                <img src="../img/projects/derivco/Derivco-Global-Gaming-Sample-Work/Betway-Core-Journeys.png"
+                                    alt="Core User Journeys Mapping" class="evidence-single-img"
+                                    style="object-position: top left;">
+                            </div>
+                            <div class="evidence-overlay"></div>
+
+                            <div class="evidence-content">
+                                <span class="evidence-tag" style="color: var(--accent-highlight);">UX
+                                    Architecture</span>
+                                <h4 style="font-size: 1.8rem; margin-bottom: 0.8rem;">Mapping Core User Journeys</h4>
+                                <p style="max-width: 700px; font-size: 1.05rem; line-height: 1.6;">
+                                    Led the early-stage mapping and rigorous testing of highly complex UX flows. My
+                                    focus was entirely on aligning user logic, unblocking navigation, and ensuring
+                                    seamless structural journeys rather than designing visual UI components.
+                                </p>
+                                <a href="#" class="evidence-link">View Detailed Case Study <i
+                                        class="icon ion-md-arrow-forward"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Challenges -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="animate-on-scroll" style="margin-bottom: 4rem;">
+                    <h2 class="section-title">Main Challenges</h2>
+                    <p style="max-width: 700px; font-size: 1.2rem; opacity: 0.8;">Addressing complex constraints and
+                        high-scale performance requirements across multi-region legacy systems.</p>
+                </div>
+
+                <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem;">
+
+                    <!-- Challenge 1 -->
+                    <div class="animate-on-scroll card-glass"
+                        style="padding: 3rem; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1.5rem;">
+                        <i class="icon ion-md-globe"
+                            style="font-size: 3rem; color: var(--accent-highlight); margin-bottom: 0.5rem;"></i>
+                        <div>
+                            <h4 style="font-size: 1.2rem; margin-bottom: 1rem; color: var(--text-primary);">Global
+                                Scaling</h4>
+                            <p style="font-size: 1rem; opacity: 0.8; line-height: 1.7;">Designing for a massive,
+                                multi-region user base with diverse cultural and betting behaviors without compromising
+                                simplicity.</p>
+                        </div>
+                    </div>
+
+                    <!-- Challenge 2 -->
+                    <div class="animate-on-scroll card-glass"
+                        style="padding: 3rem; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1.5rem; transition-delay: 0.1s;">
+                        <i class="icon ion-md-flash"
+                            style="font-size: 3rem; color: var(--accent-primary); margin-bottom: 0.5rem;"></i>
+                        <div>
+                            <h4 style="font-size: 1.2rem; margin-bottom: 1rem; color: var(--text-primary);">Service
+                                Continuity</h4>
+                            <p style="font-size: 1rem; opacity: 0.8; line-height: 1.7;">Optimizing a live system serving
+                                millions of users daily. Every design update had to maintain 100% performance uptime.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Challenge 3 -->
+                    <div class="animate-on-scroll card-glass"
+                        style="padding: 3rem; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1.5rem; transition-delay: 0.2s;">
+                        <i class="icon ion-md-eye-off"
+                            style="font-size: 3rem; color: var(--accent-secondary); margin-bottom: 0.5rem;"></i>
+                        <div>
+                            <h4 style="font-size: 1.2rem; margin-bottom: 1rem; color: var(--text-primary);">Research
+                                Under NDA</h4>
+                            <p style="font-size: 1rem; opacity: 0.8; line-height: 1.7;">Navigating strict
+                                confidentiality while conducting deep user studies to validate core betting loops and
+                                socialization features.</p>
+                        </div>
+                    </div>
+
+                    <!-- Challenge 4 -->
+                    <div class="animate-on-scroll card-glass"
+                        style="padding: 3rem; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1.5rem; transition-delay: 0.3s;">
+                        <i class="icon ion-md-heart"
+                            style="font-size: 3rem; color: var(--text-secondary); margin-bottom: 0.5rem;"></i>
+                        <div>
+                            <h4 style="font-size: 1.2rem; margin-bottom: 1rem; color: var(--text-primary);">Ethical UX
+                            </h4>
+                            <p style="font-size: 1rem; opacity: 0.8; line-height: 1.7;">Leading with empathy to prevent
+                                "dark patterns," ensuring that the excitement of gaming remains a fair and healthy
+                                experience.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Data-Driven Prioritization -->
+        <section class="section-padding" style="background: rgba(2, 6, 23, 0.5); position: relative;">
+            <div class="container">
+                <div class="insight-block animate-on-scroll"
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 4rem; align-items: center;">
+                    <div class="data-viz-container"
+                        style="border-radius: 1.5rem; overflow: hidden;">
+                        <img src="../img/projects/derivco/Derivco-Global-Gaming-Sample-Work/derivco-powerbi-onboarding-branded.png"
+                            alt="Microsoft Power BI Onboarding Drop-off Analysis" style="width: 100%; display: block;">
+                    </div>
+                    <div>
+                        <div style="margin-bottom: 2rem;">
+                            <span class="section-eyebrow" style="color: var(--accent-highlight);">Strategic Data</span>
+                            <h3 style="font-size: 2.2rem; margin-top: 0.5rem;">Data-Driven Prioritization</h3>
+                        </div>
+                        <p style="font-size: 1.15rem; line-height: 1.8; opacity: 0.9; margin-bottom: 2rem;">
+                            By analyzing onboarding drop-off rates, we identified that <strong>46% of users</strong>
+                            were skipping the flow entirely, landing on an uninspiring empty feed. Behavioral research
+                            led us to replace the static onboarding with an immediate, <strong>regionalized
+                                feed</strong> based on user location, paired with frictionless personalization.
+                        </p>
+                        <p style="font-size: 1.15rem; line-height: 1.8; opacity: 0.9;">
+                            This strategic shift eliminated the friction point and drove a significant, measurable spike
+                            in feed interaction and day-one retention across our global markets.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact & Results -->
+        <section class="section-padding" style="background: rgba(255,255,255,0.01);">
+            <div class="container">
+                <div class="animate-on-scroll" style="margin-bottom: 5rem;">
+                    <h2 class="section-title">Impact & Results</h2>
+                    <p style="max-width: 800px; font-size: 1.2rem; opacity: 0.8;">My leadership shifted the focus from
+                        tactical design to strategic UX value, driving measurable growth and business expansion.</p>
+                </div>
+
+                <!-- Impact Metrics Grid -->
+                <div class="grid"
+                    style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; margin-bottom: 6rem;">
+
+                    <div class="animate-on-scroll">
+                        <h4 style="color: var(--accent-highlight); font-size: 3rem; margin-bottom: 1rem;">Millions</h4>
+                        <p
+                            style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.5rem; font-weight: 600;">
+                            Global Reach</p>
+                        <p style="opacity: 0.7; line-height: 1.6;">Delivered core features and socialization tools used
+                            by a massive daily player base worldwide.</p>
+                    </div>
+
+                    <div class="animate-on-scroll" style="transition-delay: 0.1s;">
+                        <h4 style="color: var(--accent-primary); font-size: 3rem; margin-bottom: 1rem;">Measured</h4>
+                        <p
+                            style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.5rem; font-weight: 600;">
+                            Increased Retention</p>
+                        <p style="opacity: 0.7; line-height: 1.6;">Smoother user flows and channel selectors led to
+                            clearer paths and higher player satisfaction.</p>
+                    </div>
+
+                    <div class="animate-on-scroll" style="transition-delay: 0.2s;">
+                        <h4 style="color: var(--accent-secondary); font-size: 3rem; margin-bottom: 1rem;">Faster</h4>
+                        <p
+                            style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.5rem; font-weight: 600;">
+                            Team Alignment</p>
+                        <p style="opacity: 0.7; line-height: 1.6;">Bridged internal silos, allowing multidisciplinary
+                            teams to make confident, data-backed decisions.</p>
+                    </div>
+
+                </div>
+
+                <!-- Business Expansion Success Story -->
+                <div class="animate-on-scroll card-glass"
+                    style="padding: 4rem; border: 1px solid rgba(255,255,255,0.1); background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);">
+                    <div
+                        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 4rem; align-items: center;">
+                        <div>
+                            <span
+                                style="font-size: 0.9rem; text-transform: uppercase; color: var(--accent-highlight); letter-spacing: 0.15em; margin-bottom: 1.5rem; display: block;">Strategic
+                                Expansion</span>
+                            <h3 style="font-size: 2rem; margin-bottom: 1.5rem;">From Culture Shift to New Partnerships
+                            </h3>
+                            <p style="opacity: 0.8; line-height: 1.8;">Our internal UX transformation was so successful
+                                it directly influenced our external business growth, opening doors to major industry
+                                collaborations.</p>
+                        </div>
+                        <div style="padding-left: 2rem; border-left: 1px solid rgba(255,255,255,0.1);">
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="margin-bottom: 1.5rem; position: relative; padding-left: 2rem;">
+                                    <i class="icon ion-md-star"
+                                        style="position: absolute; left: 0; color: var(--accent-highlight);"></i>
+                                    <strong>Games Global Collaboration:</strong> Led high-level UX strategy and process
+                                    alignment with one of the industry's biggest players.
+                                </li>
+                                <li style="margin-bottom: 1.5rem; position: relative; padding-left: 2rem;">
+                                    <i class="icon ion-md-star"
+                                        style="position: absolute; left: 0; color: var(--accent-highlight);"></i>
+                                    <strong>Process Reform:</strong> Overhauled research methodologies to move from
+                                    assumptions to uncovering real user pain points.
+                                </li>
+                                <li style="position: relative; padding-left: 2rem;">
+                                    <i class="icon ion-md-star"
+                                        style="position: absolute; left: 0; color: var(--accent-highlight);"></i>
+                                    <strong>Institutional Quality:</strong> Permanently raised the standard of product
+                                    quality, securing the company's reputation as a UX leader in gaming.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Personal Significance -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="animate-on-scroll">
+                    <h2 class="section-title">Why this project matters to my design practice</h2>
+                    <div style="max-width: 900px;">
+                        <p
+                            style="font-size: 1.25rem; line-height: 1.8; color: var(--text-primary); margin-bottom: 2rem;">
+                            This project was a defining chapter in my growth as a designer working at global scale. I
+                            learned how to transform high-level ambiguity into structured product direction, guiding
+                            complex conversations between multi-region teams while anchoring every decision in research
+                            and data.
+                        </p>
+                        <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-secondary);">
+                            Beyond the metrics, it deepened my practice in <strong>systems thinking</strong>,
+                            <strong>high-volume user experience</strong>, and <strong>cross-cultural
+                                collaboration</strong>—proving that even within the strictest constraints, user-centered
+                            design can drive both product excellence and major business expansion.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pre-footer Navigation -->
+        <section class="section-padding" style="border-top: 1px solid rgba(255,255,255,0.05);">
+            <div class="container" style="text-align: center;">
+                <a href="../index.html#work" class="btn btn-outline" style="padding: 1.2rem 3rem;">
+                    Back to All Works
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer style="padding: 4rem 0; border-top: 1px solid rgba(255,255,255,0.05); text-align: center;">
+        <div class="container animate-on-scroll">
+            <p style="font-size: 0.9rem; opacity: 0.5;">&copy; 2026 Shiva Chavoshian. Designed with intention.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
