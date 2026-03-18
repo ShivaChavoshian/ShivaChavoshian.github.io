@@ -25,6 +25,29 @@
             position: relative;
         }
 
+        /* Standardized Case Study Header */
+        .case-study-header {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 1.5rem 0;
+            background: var(--bg-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--accent-highlight);
+        }
+
         @media (max-width: 900px) {
             .cs-hero {
                 grid-template-columns: 1fr;
@@ -210,6 +233,7 @@
             font-weight: 700;
             background: var(--accent-gradient);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 1rem;
             display: block;
@@ -225,45 +249,74 @@
             margin-top: 4rem;
         }
 
-        .check-list li {
-            position: relative;
-            padding-left: 2rem;
-            margin-bottom: 1rem;
-            color: var(--text-secondary);
-            font-size: 1.1rem;
+        /* Feature Tags */
+        .feature-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 2rem;
         }
 
-        .check-list li::before {
-            content: '\f383';
-            font-family: "Ionicons";
-            position: absolute;
-            left: 0;
-            color: var(--accent-highlight);
-            font-size: 1.2rem;
+        .tag {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-full);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+        }
+
+        .tag:hover {
+            background: rgba(99, 102, 241, 0.1);
+            border-color: var(--accent-primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Figma Link Cards */
+        .figma-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .figma-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px dashed rgba(255, 255, 255, 0.2);
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .figma-card:hover {
+            border-style: solid;
+            border-color: #F24E1E;
+            background: rgba(242, 78, 30, 0.05);
+        }
+
+        .figma-card i {
+            font-size: 2rem;
+            margin-bottom: 0.8rem;
+            display: block;
         }
     </style>
 </head>
 
 <body>
 
-    <!-- Top Navigation -->
-    <header class="site-header">
-        <div class="container">
+    <!-- Simplified Header for deep dive focus -->
+    <nav class="case-study-header">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
             <a href="../index.html" class="logo">Shiva Chavoshian</a>
-            <button class="nav-toggle" aria-label="Toggle navigation">
-                <span class="hamburger"></span>
-            </button>
-            <nav class="nav-links">
-                <a href="../index.html#work" class="active">Work</a>
-                <a href="../art.html">Art</a>
-                <a href="../about.html">About</a>
-                <a href="../assets/documents/resume_shiva_chavoshian.pdf" target="_blank" class="btn btn-outline"
-                    style="padding: 0.5rem 1.2rem; font-size: 0.9rem;">
-                    Download Resume <i class="icon ion-md-download" style="margin-left:8px;"></i>
-                </a>
-            </nav>
+            <span style="font-weight: 500; color: var(--text-secondary); text-transform: capitalize;">Keep.social</span>
+            <a href="../index.html#work" class="back-link">
+                <i class="icon ion-md-arrow-back"></i> Back to Work
+            </a>
         </div>
-    </header>
+    </nav>
 
     <main>
         <!-- Hero Section -->
@@ -271,17 +324,17 @@
             <div class="container">
                 <div class="cs-hero animate-on-scroll">
                     <div class="cs-hero-content">
-                        <span class="cs-eyebrow">Product Design Case Study</span>
-                        <h1 class="text-gradient">Keep.social</h1>
+                        <span class="cs-eyebrow">Product Designer</span>
+                        <h1 class="text-gradient">Social Experience Platform</h1>
                         <p
-                            style="font-size: 1.3rem; margin-bottom: 2.5rem; color: var(--text-secondary); max-width: 500px;">
-                            Adding social layers to high-traffic enterprise products, turning legacy isolation into
-                            scalable community engagement.
+                            style="font-size: 1.3rem; margin-bottom: 2.5rem; color: var(--text-secondary); max-width: 500px; line-height: 1.4;">
+                            Leading AI-driven product strategy and design for global brands. Helping partners socialize their CX with real interactions, not just messages.
                         </p>
-                        <a href="#details" class="link-arrow">Read Case Study <i class="icon ion-md-arrow-down"></i></a>
+                        <a href="#details" class="link-arrow">Explore Case Study <i class="icon ion-md-arrow-down"></i></a>
                     </div>
                     <div class="cs-hero-visual">
-                        <img src="../img/projects/keep-social/hero-ai-mockup.png" alt="Keep.social App Mockup" />
+                        <!-- AI Generated Mockup for Placeholder -->
+                        <img src="../img/projects/keep-social/hero-ai-mockup.png" alt="Keep.social Social Experience Platform Mockup" />
                     </div>
                 </div>
 
@@ -289,171 +342,179 @@
                 <div class="cs-meta-grid animate-on-scroll" id="details">
                     <div class="cs-glass-card">
                         <h4>Role</h4>
-                        <p>Product Designer</p>
+                        <p>Product Design Lead</p>
                     </div>
                     <div class="cs-glass-card">
                         <h4>Timeline</h4>
-                        <p>2024 &ndash; 2025</p>
+                        <p>2025 &ndash; Present</p>
                     </div>
                     <div class="cs-glass-card">
-                        <h4>Platforms</h4>
-                        <p>Mobile-first (iOS/Android) + Desktop</p>
+                        <h4>Partner Focus</h4>
+                        <p>Betway, IKEA, Lindex, MotoGP</p>
                     </div>
                     <div class="cs-glass-card">
-                        <h4>Focus</h4>
-                        <p>UX Strategy, Prototyping, Leadership Alignment</p>
+                        <h4>Strategic Edge</h4>
+                        <p>AI-Driven Prototyping & UX Leadership</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Context & Challenge -->
+        <!-- Overview Section -->
         <section class="cs-section">
             <div class="container">
                 <div class="cs-split-layout">
                     <div class="cs-sticky-side animate-on-scroll">
-                        <span class="cs-eyebrow">The Business Context</span>
-                        <h2>Navigating Legacy & Bureaucracy</h2>
+                        <span class="cs-eyebrow">The Evolution</span>
+                        <h2>"Break Free" from <br>One-Way Messages</h2>
                         <div style="width: 50px; height: 3px; background: var(--accent-gradient); margin-top: 2rem;">
                         </div>
                     </div>
                     <div class="cs-content-side animate-on-scroll" style="transition-delay: 0.2s;">
                         <p>
-                            Keep.social worked with large enterprise organizations, particularly in the sportsbook
-                            sector. Building modern features into these environments presented multiple hurdles:
+                            We helped brands move beyond repetitive newsletters. By plugging in a social layer and engagement engine, we turned customer experiences into living communities.
                         </p>
-                        <ul class="check-list" style="margin-bottom: 2rem;">
-                            <li><strong>Legacy Systems:</strong> Old-fashioned workflows deeply embedded in the
-                                business.</li>
-                            <li><strong>Low UX Maturity:</strong> Parts of the organization lacked a user-centric
-                                development culture.</li>
-                            <li><strong>Bureaucracy:</strong> Heavy silos and cross-team dependencies slowed down
-                                releases.</li>
-                        </ul>
-                        <br>
-                        <h3 style="font-size: 1.6rem; margin-bottom: 1rem; color: var(--text-primary);">The Underlying
-                            Problem</h3>
+                        <h3 style="font-size: 1.4rem; margin: 2rem 0 1rem; color: white;">Phase 1: Gaming Origins</h3>
                         <p>
-                            Existing products handled millions of users but completely lacked a cohesive social
-                            interaction system. User value opportunities like community discussion and return behavior
-                            were under-leveraged. Product teams desperately needed reusable social patterns that could
-                            scale across multiple industries (from sportsbooks to retail prototypes like IKEA and
-                            Lindex).
+                            We shaped user-centric practices in the gaming division for giants like <strong>Betway</strong> and <strong>GGL</strong>, focusing on engagement in high-stakes environments (Sportsbook & Online Gaming).
                         </p>
+                        
+                        <h3 style="font-size: 1.4rem; margin: 2rem 0 1rem; color: white;">Phase 2: Global Expansion</h3>
                         <p>
-                            Success required not just strong independent design execution, but significant stakeholder
-                            alignment and UX advocacy.
+                            We successfully scaled these product concepts to major global brands including <strong>IKEA</strong>, <strong>Lindex</strong>, and <strong>MotoGP</strong>.
                         </p>
+
+                        <div class="feature-tags">
+                            <span class="tag">Feed-like content</span>
+                            <span class="tag">Likes & Reactions</span>
+                            <span class="tag">Group-chats</span>
+                            <span class="tag">Discovery flows</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- The Approach -->
+        <!-- My Contribution -->
         <section class="cs-section" style="background: rgba(255,255,255,0.01);">
             <div class="container">
-                <div style="text-align: center; max-width: 700px; margin: 0 auto 5rem; class=" animate-on-scroll"">
-                    <span class="cs-eyebrow">The Scope</span>
-                    <h2 style="font-size: 3rem; margin-bottom: 1.5rem;">End-to-End Execution</h2>
-                    <p>My role bridged strategy and delivery: taking abstract business objectives and turning them into
-                        implementable, polished UX.</p>
+                <div style="text-align: center; max-width: 700px; margin: 0 auto 5rem;" class="animate-on-scroll">
+                    <span class="cs-eyebrow">Strategic Impact</span>
+                    <h2 style="font-size: 3rem; margin-bottom: 1.5rem;">Leading Product Design & AI Prototyping</h2>
+                    <p>I led the product strategy and UX execution for multiple projects in parallel, bridging technical architecture with human interaction.</p>
                 </div>
 
                 <div class="cs-split-layout">
                     <div class="cs-content-side animate-on-scroll">
                         <div class="cs-process-step">
-                            <h3>1. Discover & Research</h3>
-                            <p>Understood behavior, technical constraints, and priorities. Ran quantitative and
-                                qualitative user research and synced with data analysts to pinpoint real user needs.</p>
+                            <h3>AI-Driven Product Definition</h3>
+                            <p>Used AI to generate high-fidelity, clickable prototypes for partners like IKEA and Lindex. This allowed us to align expectations instantly and show the potential of their ideas before a single line of code was written.</p>
                         </div>
                         <div class="cs-process-step">
-                            <h3>2. Map & Design</h3>
-                            <p>Defined high-impact social moments in the journey. Designed end-to-end interaction flows,
-                                created personas, and built patterns for feeds, reactions, and group chats.</p>
+                            <h3>Strategy & Sales Alignment</h3>
+                            <p>Translated business needs into clear product definitions. I participated in customer meetings to hear challenges first-hand, ensuring my designs were user-focused and realistic to build.</p>
                         </div>
                         <div class="cs-process-step">
-                            <h3>3. Prototype</h3>
-                            <p>Rapidly built high-fidelity UI concepts and AI-assisted prototypes (mobile-first) to
-                                visually align stakeholders and show the potential impact.</p>
+                            <h3>Technical Orchestration</h3>
+                            <p>Collaborated fluently with architects and engineers to design within technical constraints. Onboarded consultants and mentors to scale our design maturity globaly.</p>
                         </div>
-                        <div class="cs-process-step">
-                            <h3>4. Align & Lead</h3>
-                            <p>Communicated directly with the CEO and joined customer-facing sales discussions.
-                                Validated concepts early to mitigate risk and mentored global design teams.</p>
-                        </div>
-                        <div class="cs-process-step">
-                            <h3>5. Deliver</h3>
-                            <p>Handoff with implementation clarity and design consistency. Solved complex bureaucratic
-                                blocks without losing product momentum.</p>
+                        
+                        <div class="figma-links">
+                            <div class="figma-card">
+                                <i class="icon ion-logo-foursquare" style="color: #6366F1;"></i>
+                                <span>Betway</span>
+                            </div>
+                            <div class="figma-card">
+                                <i class="icon ion-logo-foursquare" style="color: #FBBF24;"></i>
+                                <span>IKEA</span>
+                            </div>
+                            <div class="figma-card">
+                                <i class="icon ion-logo-foursquare" style="color: #F87171;"></i>
+                                <span>Lindex</span>
+                            </div>
                         </div>
                     </div>
                     <div class="cs-sticky-side animate-on-scroll"
                         style="display: flex; align-items: center; justify-content: center;">
                         <div class="cs-glass-card"
                             style="padding: 3rem; text-align: center; border-color: rgba(99, 102, 241, 0.3);">
-                            <i class="icon ion-md-git-network"
+                            <i class="icon ion-md-flash"
                                 style="font-size: 4rem; color: var(--accent-highlight); margin-bottom: 1rem;"></i>
-                            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Cross-Functional Hub</h3>
-                            <p style="font-size: 1rem;">Collaborating fluently with the Design Team, CEO, Head of
-                                Product, Data Analysts, and Engineers.</p>
+                            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">AI-Accelerated</h3>
+                            <p style="font-size: 1rem;">Scaling early concepts to different industries (Fashion, Home Decor) with rapid AI prototyping.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- The Solution & Outcomes -->
+        <!-- Main Challenges -->
         <section class="cs-section">
             <div class="container">
                 <div class="animate-on-scroll">
+                    <span class="cs-eyebrow">Challenges</span>
+                    <h2 style="font-size: 3rem; margin-bottom: 3rem;">Navigating Complexity</h2>
+                </div>
+
+                <div class="cs-impact-grid animate-on-scroll">
+                    <div class="cs-glass-card cs-impact-card">
+                        <i class="icon ion-md-globe" style="font-size: 2.5rem; color: var(--accent-highlight); margin-bottom: 1rem; display: block;"></i>
+                        <h4 style="color: white; margin-bottom: 1rem;">Multi-Industry Ecosystems</h4>
+                        <p style="font-size: 0.95rem;">Adapting social layers for fashion, home decor, and gaming, each with unique goals and technical constraints.</p>
+                    </div>
+                    <div class="cs-glass-card cs-impact-card">
+                        <i class="icon ion-md-flash" style="font-size: 2.5rem; color: var(--accent-primary); margin-bottom: 1rem; display: block;"></i>
+                        <h4 style="color: white; margin-bottom: 1rem;">Creative AI Implementation</h4>
+                        <p style="font-size: 0.95rem;">Leveraging AI tools creatively even when they lacked specific cultural or domain-specific depth.</p>
+                    </div>
+                    <div class="cs-glass-card cs-impact-card">
+                        <i class="icon ion-md-git-compare" style="font-size: 2.5rem; color: var(--accent-secondary); margin-bottom: 1rem; display: block;"></i>
+                        <h4 style="color: white; margin-bottom: 1rem;">Workflow Modernization</h4>
+                        <p style="font-size: 0.95rem;">Updating legacy workflows and modernizing design systems without disrupting existing product momentum.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Section -->
+        <section class="cs-section" style="background: rgba(2, 6, 23, 0.2);">
+            <div class="container">
+                <div class="animate-on-scroll">
                     <span class="cs-eyebrow">Outcomes</span>
-                    <h2 style="font-size: 3rem; margin-bottom: 3rem;">Meaningful Scale <br> & Adoption</h2>
+                    <h2 style="font-size: 3rem; margin-bottom: 3rem;">Strategic Business Value</h2>
                 </div>
 
-                <div class="cs-split-layout">
-                    <div class="animate-on-scroll">
-                        <p
-                            style="font-size: 1.2rem; margin-bottom: 1.5rem; color: var(--text-secondary); line-height: 1.8;">
-                            We successfully delivered socialized product experiences centered on feed-like surfaces,
-                            group-chat patterns, and intuitive discovery.
-                        </p>
-                        <p style="font-size: 1.2rem; color: var(--text-secondary); line-height: 1.8;">
-                            These patterns were highly scalable and became reusable assets for enterprise prototypes
-                            beyond just the sportsbook vertical.
-                        </p>
-                    </div>
-                    <div class="animate-on-scroll" style="transition-delay: 0.2s;">
-                        <div style="padding-left: 2rem; border-left: 2px solid var(--accent-primary);">
-                            <h4 style="font-size: 1.3rem; margin-bottom: 1rem; color: white;">Why this demonstrates
-                                Seniority:</h4>
-                            <ul class="check-list">
-                                <li>Owned the full lifecycle, stretching beyond just UI screens.</li>
-                                <li>Operated fluidly between execution, strategy, and executive communication.</li>
-                                <li>Delivered a robust design system that scaled past a single use-case.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- KPI Placeholders -->
-                <div class="cs-impact-grid animate-on-scroll" style="margin-top: 5rem;">
+                <div class="cs-impact-grid animate-on-scroll">
                     <div class="cs-glass-card cs-impact-card">
-                        <span class="number">Millions</span>
-                        <span class="cs-eyebrow">of Active Users</span>
-                        <p style="font-size: 0.95rem;">Social interaction reached meaningful scale across the initial
-                            product pilot.</p>
-                    </div>
-                    <div class="cs-glass-card cs-impact-card">
-                        <span class="number">[XX]%</span>
-                        <span class="cs-eyebrow">Retention Lift</span>
-                        <p style="font-size: 0.95rem;">Placeholder: Demonstrating increased product stickiness via
-                            social layers.</p>
+                        <span class="number">Fast</span>
+                        <h4 style="color: white; margin-bottom: 1rem;">Confident Decisions</h4>
+                        <p style="font-size: 0.95rem;">Enabled partners to make high-stakes product decisions using our AI-driven high-fidelity prototypes.</p>
                     </div>
                     <div class="cs-glass-card cs-impact-card">
                         <span class="number">Scale</span>
-                        <span class="cs-eyebrow">Reusable Patterns</span>
-                        <p style="font-size: 0.95rem;">Social patterns rolled out to multiple enterprise prototypes.</p>
+                        <h4 style="color: white; margin-bottom: 1rem;">Modern Systems</h4>
+                        <p style="font-size: 0.95rem;">Improved internal design workflows and solidified user-centric thinking across multiple companies.</p>
                     </div>
+                    <div class="cs-glass-card cs-impact-card">
+                        <span class="number">Growth</span>
+                        <h4 style="color: white; margin-bottom: 1rem;">Winning Concepts</h4>
+                        <p style="font-size: 0.95rem;">Contributed to winning additional premium projects by presenting visionary early-stage results.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why it Matters -->
+        <section class="cs-section">
+            <div class="container animate-on-scroll">
+                <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Why this project matters to my practice</h2>
+                <div style="max-width: 800px;">
+                    <p style="font-size: 1.25rem; line-height: 1.8; color: var(--text-primary); margin-bottom: 2rem;">
+                        This project was a defining chapter in understanding how to design inside different partner ecosystems. I learned how to use <strong>AI as a Force Multiplier</strong> to speed up workflows and bridge technical architecture with human interaction.
+                    </p>
+                    <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-secondary);">
+                        Guiding projects from high-level ambiguity to structured, usable directions is a cornerstone of my approach—a skill essential for designing high-scale, multi-partner AI experiences at a staff level.
+                    </p>
                 </div>
             </div>
         </section>
