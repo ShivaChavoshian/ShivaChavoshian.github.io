@@ -15,11 +15,11 @@
     <style>
         /* Specific Case Study Overrides & Utilities */
         .cs-hero {
-            padding-top: calc(var(--header-height) + 6rem);
-            padding-bottom: 6rem;
-            min-height: 85vh;
+            padding-top: calc(var(--header-height) + 2.5rem);
+            padding-bottom: 4rem;
+            min-height: 75vh;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1.1fr 0.9fr;
             gap: 4rem;
             align-items: center;
             position: relative;
@@ -136,6 +136,33 @@
             font-size: 1.1rem;
             font-weight: 500;
             margin: 0;
+        }
+
+        /* Hero Pills */
+        .cs-hero-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1.5rem;
+        }
+
+        .cs-hero-pills .pill {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 0.5rem 1.2rem;
+            border-radius: var(--radius-full);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .cs-hero-pills .pill:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: var(--accent-highlight);
+            color: white;
+            transform: translateY(-2px);
         }
 
         /* Sections */
@@ -302,6 +329,99 @@
             margin-bottom: 0.8rem;
             display: block;
         }
+
+        /* Mobile Mockup - iPhone 15 Pro Style */
+        .mobile-mockup-wrapper {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            perspective: 1000px;
+        }
+
+        .mobile-mockup {
+            position: relative;
+            width: 280px;
+            height: 580px;
+            background: #050505;
+            border-radius: 46px;
+            border: 10px solid #1a1a1a;
+            box-shadow: 
+                0 0 0 2px #333,
+                0 30px 60px -12px rgba(0, 0, 0, 0.7),
+                0 18px 36px -18px rgba(0, 0, 0, 0.5),
+                inset 0 0 20px rgba(255, 255, 255, 0.05);
+            overflow: hidden;
+            z-index: 1;
+            transform: rotateY(-5deg) rotateX(2deg);
+            transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .mobile-mockup-wrapper:hover .mobile-mockup {
+            transform: rotateY(0) rotateX(0) scale(1.02);
+        }
+
+        /* Dynamic Island */
+        .mobile-mockup::before {
+            content: '';
+            position: absolute;
+            top: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 85px;
+            height: 25px;
+            background: #000;
+            border-radius: 20px;
+            z-index: 10;
+        }
+
+        .mobile-mockup video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Ambient Glow behind phone */
+        .mockup-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(99, 102, 241, 0.2) 0%, transparent 70%);
+            z-index: -1;
+            filter: blur(40px);
+            opacity: 0.6;
+        }
+
+        .mockup-link {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.7rem 1.4rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-full);
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .mockup-link:hover {
+            background: rgba(255, 255, 255, 0.06);
+            color: white;
+            border-color: var(--accent-highlight);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .mockup-link i {
+            font-size: 1.1rem;
+        }
     </style>
 </head>
 
@@ -327,36 +447,33 @@
                         <span class="cs-eyebrow">Product Designer</span>
                         <h1 class="text-gradient">Social Experience Platform</h1>
                         <p
-                            style="font-size: 1.3rem; margin-bottom: 2.5rem; color: var(--text-secondary); max-width: 500px; line-height: 1.4;">
+                            style="font-size: 1.3rem; margin-bottom: 2rem; color: var(--text-secondary); max-width: 500px; line-height: 1.4;">
                             Leading AI-driven product strategy and design for global brands. Helping partners socialize their CX with real interactions, not just messages.
                         </p>
-                        <a href="#details" class="link-arrow">Explore Case Study <i class="icon ion-md-arrow-down"></i></a>
+                        <div class="cs-hero-pills">
+                            <span class="pill">Product Design Lead</span>
+                            <span class="pill">2025</span>
+                            <span class="pill">Betway &bull; GGL &bull; IKEA &bull; Lindex &bull; MotoGP</span>
+                            <span class="pill">AI Driven Strategy</span>
+                        </div>
                     </div>
                     <div class="cs-hero-visual">
-                        <!-- AI Generated Mockup for Placeholder -->
-                        <img src="../img/projects/keep-social/hero-ai-mockup.png" alt="Keep.social Social Experience Platform Mockup" />
+                        <div class="mobile-mockup-wrapper">
+                            <div class="mockup-glow"></div>
+                            <div class="mobile-mockup">
+                                <video autoplay muted loop playsinline>
+                                    <source src="../vid/projects/keep-social/demo-feed.mp4" type="video/mp4">
+                                    <!-- Fallback if video is missing during dev -->
+                                    <img src="../img/projects/keep-social/hero-ai-mockup.png" alt="Keep.social Demo">
+                                </video>
+                            </div>
+                            <a href="https://keep.social" target="_blank" class="mockup-link">
+                                <i class="icon ion-md-open"></i> View Live Product
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Meta Information -->
-                <div class="cs-meta-grid animate-on-scroll" id="details">
-                    <div class="cs-glass-card">
-                        <h4>Role</h4>
-                        <p>Product Design Lead</p>
-                    </div>
-                    <div class="cs-glass-card">
-                        <h4>Timeline</h4>
-                        <p>2025 &ndash; Present</p>
-                    </div>
-                    <div class="cs-glass-card">
-                        <h4>Partner Focus</h4>
-                        <p>Betway, IKEA, Lindex, MotoGP</p>
-                    </div>
-                    <div class="cs-glass-card">
-                        <h4>Strategic Edge</h4>
-                        <p>AI-Driven Prototyping & UX Leadership</p>
-                    </div>
-                </div>
             </div>
         </section>
 
