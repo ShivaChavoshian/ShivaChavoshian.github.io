@@ -165,6 +165,67 @@
             transform: translateY(-2px);
         }
 
+        /* Phase Cards for Overview */
+        .phase-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1.2rem;
+            transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+            margin-bottom: 1rem;
+        }
+
+        .phase-card:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(99, 102, 241, 0.3);
+            transform: translateX(8px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .phase-card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--accent-highlight);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+        .phase-card-content h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .phase-card-content .phase-badge {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            background: var(--accent-gradient);
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: var(--radius-full);
+            font-weight: 700;
+        }
+
+        .phase-card-content p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
         /* Sections */
         .cs-section {
             padding: 5rem 0;
@@ -483,30 +544,47 @@
             <div class="container">
                 <div class="cs-split-layout">
                     <div class="cs-sticky-side animate-on-scroll">
-                        <span class="cs-eyebrow">The Evolution</span>
-                        <h2>"Break Free" from <br>One-Way Messages</h2>
+                        <span class="cs-eyebrow">Overview</span>
+                        <h2>Context</h2>
                         <div style="width: 50px; height: 3px; background: var(--accent-gradient); margin-top: 2rem;">
                         </div>
                     </div>
                     <div class="cs-content-side animate-on-scroll" style="transition-delay: 0.2s;">
-                        <p>
+                        <p style="font-size: 1.2rem; margin-bottom: 2.5rem; color: var(--text-primary); line-height: 1.6;">
                             We helped brands move beyond repetitive newsletters. By plugging in a social layer and
                             engagement engine, we turned customer experiences into living communities.
                         </p>
-                        <h3 style="font-size: 1.4rem; margin: 2rem 0 1rem; color: white;">Phase 1: Gaming Origins</h3>
-                        <p>
-                            We shaped user-centric practices in the gaming division for giants like
-                            <strong>Betway</strong> and <strong>GGL</strong>, focusing on engagement in high-stakes
-                            environments (Sportsbook & Online Gaming).
-                        </p>
+                        
+                        <!-- Phase 1 Card -->
+                        <div class="phase-card">
+                            <div class="phase-card-icon">
+                                <i class="icon ion-md-game-controller-b"></i>
+                            </div>
+                            <div class="phase-card-content">
+                                <h3>Gaming Origins <span class="phase-badge">Phase 1</span></h3>
+                                <p>
+                                    We shaped user-centric practices in the gaming division for giants like
+                                    <strong>Betway</strong> and <strong>GGL</strong>, focusing on engagement in high-stakes
+                                    environments (Sportsbook & Online Gaming).
+                                </p>
+                            </div>
+                        </div>
 
-                        <h3 style="font-size: 1.4rem; margin: 2rem 0 1rem; color: white;">Phase 2: Global Expansion</h3>
-                        <p>
-                            We successfully scaled these product concepts to major global brands including
-                            <strong>IKEA</strong>, <strong>Lindex</strong>, and <strong>MotoGP</strong>.
-                        </p>
+                        <!-- Phase 2 Card -->
+                        <div class="phase-card">
+                            <div class="phase-card-icon">
+                                <i class="icon ion-md-globe"></i>
+                            </div>
+                            <div class="phase-card-content">
+                                <h3>Global Expansion <span class="phase-badge">Phase 2</span></h3>
+                                <p>
+                                    We successfully scaled these product concepts to major global brands including
+                                    <strong>IKEA</strong>, <strong>Lindex</strong>, and <strong>MotoGP</strong>.
+                                </p>
+                            </div>
+                        </div>
 
-                        <div class="feature-tags">
+                        <div class="feature-tags" style="margin-top: 2.5rem;">
                             <span class="tag">Feed-like content</span>
                             <span class="tag">Likes & Reactions</span>
                             <span class="tag">Group-chats</span>
