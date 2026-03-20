@@ -537,8 +537,111 @@
             box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
         }
 
-        .mockup-link i {
+
+        /* Modular Contribution Layout */
+        .cs-contribution-container {
+            position: relative;
+            padding: 4rem 0;
+        }
+
+        .cs-contribution-row {
+            display: grid;
+            grid-template-columns: 200px 1fr 1.2fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 15rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cs-contribution-row:last-child {
+            margin-bottom: 4rem;
+        }
+
+        @media (max-width: 1100px) {
+            .cs-contribution-row {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+            .cs-tag-list {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cs-contribution-row {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        .cs-tag-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .cs-tag-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 0.8rem 1.2rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .cs-tag-item i {
+            color: var(--accent-highlight);
             font-size: 1.1rem;
+        }
+
+        .cs-tag-item:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: var(--accent-highlight);
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .cs-central-visual {
+            position: relative;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .cs-contribution-row:hover .cs-central-visual {
+            transform: scale(1.02);
+            border-color: var(--accent-highlight);
+        }
+
+        /* SVG Connector Lines */
+        .cs-connector-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .connector-path {
+            fill: none;
+            stroke: var(--accent-highlight);
+            stroke-width: 1.5;
+            stroke-dasharray: 2000;
+            stroke-dashoffset: 2000;
+            opacity: 0.4;
+            filter: drop-shadow(0 0 5px var(--accent-highlight));
+            transition: stroke-dashoffset 0.1s linear;
         }
     </style>
 </head>
@@ -679,157 +782,84 @@
             </div>
         </section>
 
-        <!-- My Contribution Redesign -->
-        <section class="cs-section contribution-interactive-container"
-            style="position: relative; overflow: visible; padding: 8rem 0; background: #020205;">
-            
-            <style>
-                .contribution-interactive-container .contribution-row {
-                    transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-                }
+        <!-- My Contribution -->
+        <section class="cs-section" style="position: relative; overflow: hidden; background: #050505;">
+            <div class="container cs-contribution-container">
                 
-                @media (max-width: 900px) {
-                    .contribution-interactive-container .contribution-row {
-                        flex-direction: column !important;
-                        gap: 2rem !important;
-                        margin-bottom: 8rem !important;
-                        text-align: center;
-                    }
-                    .contribution-interactive-container .contribution-satellite {
-                        display: none; /* Hide satellites on mobile for cleanliness */
-                    }
-                    .contribution-interactive-container .contribution-svg-connections {
-                        display: none; /* Hide lines on mobile */
-                    }
-                }
+                <!-- SVG Connector Overlay -->
+                <svg class="cs-connector-overlay" preserveAspectRatio="none">
+                    <path id="contribution-path" class="connector-path" d="" />
+                </svg>
 
-                @keyframes float-simple {
-                    0%, 100% { transform: translateY(0); }
-                    50% { transform: translateY(-20px); }
-                }
-
-                .contribution-satellite img {
-                    animation: float-simple 6s ease-in-out infinite;
-                }
-            </style>
-
-            <!-- SVG Connector Layer -->
-            <svg class="contribution-svg-connections"
-                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1;"
-                viewBox="0 0 1200 1800" preserveAspectRatio="none">
-                <path id="connector-path" d="M 600,100 C 600,300 150,300 150,600 C 150,900 1050,900 1050,1200 C 1050,1500 600,1500 600,1800" 
-                    fill="none" stroke="rgba(93, 231, 255, 0.1)" stroke-width="2" stroke-dasharray="8,8" />
-                <path id="active-path" d="M 600,100 C 600,300 150,300 150,600 C 150,900 1050,900 1050,1200 C 1050,1500 600,1500 600,1800" 
-                    fill="none" stroke="var(--accent-primary)" stroke-width="3" stroke-linecap="round" />
-            </svg>
-
-            <div class="container" style="position: relative; z-index: 2;">
                 <div style="text-align: center; max-width: 800px; margin: 0 auto 8rem;" class="animate-on-scroll">
                     <span class="cs-eyebrow" style="color: var(--accent-highlight);">My Contribution</span>
-                    <h2 style="font-size: clamp(2.5rem, 5vw, 4.5rem); margin-bottom: 1.5rem; line-height: 1; font-weight: 800;">
-                        The Strategic Bridge</h2>
-                    <p style="font-size: 1.25rem; color: var(--text-secondary);">I acted as the bridge between users, engineering, and global enterprise partners.</p>
+                    <h2 style="font-size: 3.5rem; margin-bottom: 1.5rem; line-height: 1.1;">Beyond the Canvas</h2>
+                    <p style="font-size: 1.25rem; color: var(--text-secondary);">I acted as the bridge between users,
+                        engineering, and global enterprise partners.</p>
                 </div>
 
                 <!-- Row 1: UX Strategy -->
-                <div class="contribution-row animate-on-scroll" data-step="1" style="display: flex; align-items: center; gap: 4rem; margin-bottom: 15rem;">
-                    <div class="contribution-satellite" style="flex: 0.5; position: relative;">
-                        <img src="/Users/shiva/.gemini/antigravity/brain/7a431560-13af-4d27-8a46-020388de217d/keepsocial_contribution_satellite_ui_elements_1774001293225.png" 
-                            style="width: 100%; filter: drop-shadow(0 0 20px rgba(93, 231, 255, 0.2)); animation: float 6s ease-in-out infinite;">
+                <div class="cs-contribution-row animate-on-scroll">
+                    <div class="cs-tag-list">
+                        <div class="cs-tag-item"><i class="icon ion-md-search"></i> User Surveys</div>
+                        <div class="cs-tag-item"><i class="icon ion-md-flame"></i> Heatmaps</div>
+                        <div class="cs-tag-item"><i class="icon ion-md-people"></i> Personas</div>
+                        <div class="cs-tag-item"><i class="icon ion-md-trending-up"></i> Growth Audits</div>
                     </div>
-                    <div class="contribution-main-card" style="flex: 1.2;">
-                        <div class="cs-glass-card" style="padding: 1rem; border-color: rgba(93, 231, 255, 0.2);">
-                            <img src="/Users/shiva/.gemini/antigravity/brain/7a431560-13af-4d27-8a46-020388de217d/keepsocial_contribution_ux_strategy_main_1774001236753.png" 
-                                alt="UX Strategy" style="width: 100%; border-radius: var(--radius-sm);">
-                        </div>
+                    <div class="cs-central-visual" id="viz-1">
+                        <img src="/Users/shiva/.gemini/antigravity/brain/7a431560-13af-4d27-8a46-020388de217d/ux_strategy_central_png_1774002167978.png" 
+                             alt="UX Strategy & Research Dashboard" style="width: 100%;">
                     </div>
-                    <div class="contribution-text" style="flex: 1;">
-                        <span style="font-size: 0.8rem; color: var(--accent-highlight); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;">Phase 01</span>
-                        <h3 style="font-size: 2.2rem; margin: 1rem 0; color: white;">UX Strategy & Research</h3>
-                        <p style="color: var(--text-secondary); line-height: 1.7;">Managed the end-to-end research lifecycle—from behavioral research and user interviews to defining the core profiles that guided our growth-focused feature development.</p>
+                    <div class="cs-content-side" style="padding-left: 2rem;">
+                        <h3 style="font-size: 2rem; color: white; margin-bottom: 1.5rem;">UX Strategy & Research</h3>
+                        <p style="font-size: 1.1rem; line-height: 1.6; color: var(--text-secondary);">
+                            Managed the end-to-end research lifecycle—from behavioral research and user interviews to
+                            defining the core profiles that guided our growth-focused feature development.
+                        </p>
                     </div>
                 </div>
 
-                <!-- Row 2: AI-Driven Prototyping -->
-                <div class="contribution-row animate-on-scroll" data-step="2" style="display: flex; flex-direction: row-reverse; align-items: center; gap: 4rem; margin-bottom: 15rem;">
-                    <div class="contribution-satellite" style="flex: 0.5; position: relative;">
-                        <!-- Using another part of the satellite image or just repeating with flip -->
-                        <img src="/Users/shiva/.gemini/antigravity/brain/7a431560-13af-4d27-8a46-020388de217d/keepsocial_contribution_satellite_ui_elements_1774001293225.png" 
-                            style="width: 100%; filter: hue-rotate(45deg) drop-shadow(0 0 20px rgba(168, 85, 247, 0.2)); animation: float 8s ease-in-out infinite reverse;">
+                <!-- Row 2: AI Prototyping -->
+                <div class="cs-contribution-row animate-on-scroll">
+                    <div class="cs-tag-list">
+                        <div class="cs-tag-item"><i class="icon ion-md-code"></i> Figma Make</div>
+                        <div class="cs-tag-item"><i class="icon ion-md-rocket"></i> Claude UXpilot</div>
+                        <div class="cs-tag-item"><i class="icon ion-md-jet"></i> Rapid Front-end</div>
+                        <div class="cs-tag-item"><i class="icon ion-md-checkmark-circle"></i> ROI Validation</div>
                     </div>
-                    <div class="contribution-main-card" style="flex: 1.2;">
-                        <div class="cs-glass-card" style="padding: 1rem; border-color: rgba(168, 85, 247, 0.2);">
-                            <img src="/Users/shiva/.gemini/antigravity/brain/7a431560-13af-4d27-8a46-020388de217d/keepsocial_contribution_ai_prototyping_main_1774001253466.png" 
-                                alt="AI Prototyping" style="width: 100%; border-radius: var(--radius-sm);">
-                        </div>
+                    <div class="cs-central-visual" id="viz-2">
+                        <img src="/Users/shiva/.gemini/antigravity/brain/7a431560-13af-4d27-8a46-020388de217d/ai_prototyping_central_png_1774002183203.png" 
+                             alt="AI-Driven Prototyping Workflow" style="width: 100%;">
                     </div>
-                    <div class="contribution-text" style="flex: 1;">
-                        <span style="font-size: 0.8rem; color: var(--accent-highlight); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;">Phase 02</span>
-                        <h3 style="font-size: 2.2rem; margin: 1rem 0; color: white;">AI-Driven Prototyping</h3>
-                        <p style="color: var(--text-secondary); line-height: 1.7;">Integrated tools like <strong>Figma Make, Claude UXpilot, and Lovable</strong> into my workflow. This allowed for rapid front-end prototyping, reducing validation cycles from weeks to just days.</p>
+                    <div class="cs-content-side" style="padding-left: 2rem;">
+                        <h3 style="font-size: 2rem; color: white; margin-bottom: 1.5rem;">AI-Driven Prototyping</h3>
+                        <p style="font-size: 1.1rem; line-height: 1.6; color: var(--text-secondary);">
+                            Integrated tools into my workflow for rapid front-end prototyping, reducing validation cycles from weeks to just days while maintaining high fidelity.
+                        </p>
                     </div>
                 </div>
 
                 <!-- Row 3: Boardroom Pitching -->
-                <div class="contribution-row animate-on-scroll" data-step="3" style="display: flex; align-items: center; gap: 4rem; margin-bottom: 5rem;">
-                    <div class="contribution-satellite" style="flex: 0.5; position: relative;">
-                        <img src="/Users/shiva/.gemini/antigravity/brain/7a431560-13af-4d27-8a46-020388de217d/keepsocial_contribution_satellite_ui_elements_1774001293225.png" 
-                            style="width: 100%; filter: hue-rotate(-45deg) drop-shadow(0 0 20px rgba(93, 231, 255, 0.2)); animation: float 7s ease-in-out infinite;">
+                <div class="cs-contribution-row animate-on-scroll">
+                    <div class="cs-tag-list">
+                        <div class="cs-tag-item"><i class="icon ion-md-briefcase"></i> Sales Strategy</div>
+                        <div class="cs-tag-item"><i class="icon ion-md-desktop"></i> Enterprise Demos</div>
+                        <div class="cs-tag-item"><i class="icon ion-md-trophy"></i> High-Stakes Pitch</div>
+                        <div class="cs-tag-item"><i class="icon ion-md-globe"></i> Global Scaling</div>
                     </div>
-                    <div class="contribution-main-card" style="flex: 1.2;">
-                        <div class="cs-glass-card" style="padding: 1rem; border-color: rgba(93, 231, 255, 0.2);">
-                            <img src="/Users/shiva/.gemini/antigravity/brain/7a431560-13af-4d27-8a46-020388de217d/keepsocial_contribution_pitching_main_1774001265801.png" 
-                                alt="Boardroom Pitching" style="width: 100%; border-radius: var(--radius-sm);">
-                        </div>
+                    <div class="cs-central-visual" id="viz-3">
+                        <img src="/Users/shiva/.gemini/antigravity/brain/7a431560-13af-4d27-8a46-020388de217d/boardroom_pitching_central_png_1774002197758.png" 
+                             alt="Boardroom Pitching & Strategy" style="width: 100%;">
                     </div>
-                    <div class="contribution-text" style="flex: 1;">
-                        <span style="font-size: 0.8rem; color: var(--accent-highlight); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;">Phase 03</span>
-                        <h3 style="font-size: 2.2rem; margin: 1rem 0; color: white;">Boardroom Pitching</h3>
-                        <p style="color: var(--text-secondary); line-height: 1.7;">Regularly joined the Head of Product in high-stakes sales meetings. Using live, high-fidelity prototypes, I directly pitched our vision and adjusted design strategy based on real-time enterprise feedback.</p>
+                    <div class="cs-content-side" style="padding-left: 2rem;">
+                        <h3 style="font-size: 2rem; color: white; margin-bottom: 1.5rem;">Boardroom Pitching</h3>
+                        <p style="font-size: 1.1rem; line-height: 1.6; color: var(--text-secondary);">
+                            Joined high-stakes sales meetings using live, high-fidelity prototypes. I directly pitched our vision and adjusted design strategy based on real-time feedback.
+                        </p>
                     </div>
                 </div>
+
             </div>
-
-            <!-- Scroll Animation Script -->
-            <script>
-                document.addEventListener('DOMContentLoaded', () => {
-                    // SVG Path Animation
-                    const activePath = document.getElementById('active-path');
-                    const pathLength = activePath.getTotalLength();
-                    
-                    activePath.style.strokeDasharray = pathLength;
-                    activePath.style.strokeDashoffset = pathLength;
-
-                    // Row Fade-in Observer
-                    const observerOptions = {
-                        threshold: 0.2
-                    };
-
-                    const rowObserver = new IntersectionObserver((entries) => {
-                        entries.forEach(entry => {
-                            if (entry.isIntersecting) {
-                                entry.target.style.opacity = '1';
-                                entry.target.style.transform = 'translateY(0)';
-                            }
-                        });
-                    }, observerOptions);
-
-                    document.querySelectorAll('.contribution-row').forEach(row => {
-                        row.style.opacity = '0';
-                        row.style.transform = 'translateY(40px)';
-                        rowObserver.observe(row);
-                    });
-
-                    window.addEventListener('scroll', () => {
-                        const container = document.querySelector('.contribution-interactive-container');
-                        const rect = container.getBoundingClientRect();
-                        const scrollDist = window.innerHeight - rect.top;
-                        const scrollPercentage = Math.max(0, Math.min(1, scrollDist / (rect.height + 200)));
-                        
-                        activePath.style.strokeDashoffset = pathLength - (pathLength * scrollPercentage);
-                    });
-                });
-            </script>
         </section>
 
         <!-- Phase 1: Gaming -->
@@ -1009,6 +1039,67 @@
     </footer>
 
     <script src="../js/main.js"></script>
+    <script>
+        // Contribution Path Animation
+        window.addEventListener('load', () => {
+            const path = document.getElementById('contribution-path');
+            const container = document.querySelector('.cs-contribution-container');
+            const viz1 = document.getElementById('viz-1');
+            const viz2 = document.getElementById('viz-2');
+            const viz3 = document.getElementById('viz-3');
+
+            function updatePath() {
+                if (!viz1 || !viz2 || !viz3 || !path) return;
+
+                const cRect = container.getBoundingClientRect();
+                const v1Rect = viz1.getBoundingClientRect();
+                const v2Rect = viz2.getBoundingClientRect();
+                const v3Rect = viz3.getBoundingClientRect();
+
+                // Center points relative to container
+                const x1 = (v1Rect.left + v1Rect.width / 2) - cRect.left;
+                const y1 = (v1Rect.top + v1Rect.height / 2) - cRect.top;
+                const x2 = (v2Rect.left + v2Rect.width / 2) - cRect.left;
+                const y2 = (v2Rect.top + v2Rect.height / 2) - cRect.top;
+                const x3 = (v3Rect.left + v3Rect.width / 2) - cRect.left;
+                const y3 = (v3Rect.top + v3Rect.height / 2) - cRect.top;
+
+                // Simple curve path
+                const d = `M ${x1} ${y1} L ${x2} ${y2} L ${x3} ${y3}`;
+                // For smoother curves, use Bezier
+                const curveD = `M ${x1} ${y1} Q ${x1} ${(y1 + y2) / 2} ${(x1 + x2) / 2} ${(y1 + y2) / 2} T ${x2} ${y2} Q ${x2} ${(y2 + y3) / 2} ${(x2 + x3) / 2} ${(y2 + y3) / 2} T ${x3} ${y3}`;
+                
+                path.setAttribute('d', curveD);
+
+                const pathLength = path.getTotalLength();
+                path.style.strokeDasharray = pathLength;
+                path.style.strokeDashoffset = pathLength;
+
+                return pathLength;
+            }
+
+            let pathLength = updatePath();
+
+            window.addEventListener('scroll', () => {
+                if (!pathLength || !container) return;
+                
+                const rect = container.getBoundingClientRect();
+                const winH = window.innerHeight;
+                
+                // Calculate progress based on container visibility
+                // Starts drawing when top of container is at bottom of screen
+                // Finishes when bottom of container is at top of screen
+                let progress = (winH - rect.top) / (winH + rect.height);
+                progress = Math.max(0, Math.min(1, progress));
+                
+                path.style.strokeDashoffset = pathLength * (1 - progress);
+            });
+
+            window.addEventListener('resize', () => {
+                pathLength = updatePath();
+            });
+        });
+    </script>
 </body>
 
 </html>
