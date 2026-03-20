@@ -87,11 +87,31 @@
 
             0%,
             100% {
-                transform: translateY(0);
+                transform: translateY(0) rotate(-5deg) rotateX(2deg);
+            }
+
+            33% {
+                transform: translateY(-15px) rotate(-3deg) rotateX(4deg);
+            }
+
+            66% {
+                transform: translateY(-5px) rotate(-6deg) rotateX(1deg);
+            }
+        }
+
+        @keyframes glow-pulse {
+
+            0%,
+            100% {
+                opacity: 0.4;
+                filter: blur(40px);
+                transform: scale(1);
             }
 
             50% {
-                transform: translateY(-15px);
+                opacity: 0.7;
+                filter: blur(60px);
+                transform: scale(1.1);
             }
         }
 
@@ -100,7 +120,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1.5rem;
-            margin-top: -3rem;
+            margin-top: -5rem;
             margin-bottom: 6rem;
             position: relative;
             z-index: 10;
@@ -224,6 +244,42 @@
             font-size: 0.95rem;
             color: var(--text-secondary);
             line-height: 1.6;
+        }
+
+        /* Problem/Solution Contrast */
+        .strategic-contrast {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .contrast-box {
+            padding: 2rem;
+            border-radius: var(--radius-md);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contrast-box.problem {
+            background: rgba(239, 68, 68, 0.03);
+            border: 1px solid rgba(239, 68, 68, 0.1);
+        }
+
+        .contrast-box.solution {
+            background: rgba(34, 197, 94, 0.03);
+            border: 1px solid rgba(34, 197, 94, 0.1);
+        }
+
+        .contrast-label {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 700;
+            opacity: 0.5;
         }
 
         /* Sections */
@@ -449,12 +505,13 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 120%;
-            height: 100%;
-            background: radial-gradient(circle at center, rgba(99, 102, 241, 0.2) 0%, transparent 70%);
+            width: 140%;
+            height: 120%;
+            background: radial-gradient(circle at center, var(--accent-primary) 0%, transparent 70%);
             z-index: -1;
             filter: blur(40px);
-            opacity: 0.6;
+            opacity: 0.4;
+            animation: glow-pulse 8s ease-in-out infinite;
         }
 
         .mockup-link {
@@ -504,33 +561,40 @@
         <section>
             <div class="container">
                 <div class="cs-hero animate-on-scroll">
+                    <!-- Background Light Leaks -->
+                    <div
+                        style="position: absolute; top: -10%; left: -10%; width: 40%; height: 60%; background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%); filter: blur(80px); z-index: -1;">
+                    </div>
+                    <div
+                        style="position: absolute; bottom: 0; right: -5%; width: 30%; height: 50%; background: radial-gradient(circle, rgba(168, 85, 247, 0.1) 0%, transparent 70%); filter: blur(60px); z-index: -1;">
+                    </div>
+
                     <div class="cs-hero-content">
-                        <span class="cs-eyebrow">Product Designer</span>
-                        <h1 class="text-gradient">Social Experience Platform</h1>
+                        <span class="cs-eyebrow">Strategic Case Study</span>
+                        <h1 class="text-gradient" style="font-weight: 800; letter-spacing: -0.04em;">Keep.social: Native
+                            <br> Community at Scale
+                        </h1>
                         <p
-                            style="font-size: 1.3rem; margin-bottom: 2rem; color: var(--text-secondary); max-width: 500px; line-height: 1.4;">
-                            Designing AI-driven product strategy and design for global brands. Helping partners
-                            socialize their CX with real interactions, not just messages.
+                            style="font-size: 1.25rem; margin-bottom: 2.5rem; color: var(--text-secondary); max-width: 520px; line-height: 1.6; font-weight: 400;">
+                            Create in-app communities that power growth through <strong>engagement and
+                                retention</strong>.
+                            A plug-and-play social engine for global brands like IKEA, MotoGP, and Lindex.
                         </p>
                         <div class="cs-hero-pills">
-                            <span class="pill">Product Design Lead</span>
-                            <span class="pill">2025</span>
-                            <span class="pill">Betway &bull; GGL &bull; IKEA &bull; Lindex &bull; MotoGP</span>
-                            <span class="pill">AI Driven Strategy</span>
-                            <a href="https://keep.social" target="_blank" class="mockup-link">
-                                <i class="icon ion-md-open"></i> View Live Product
-                            </a>
+                            <span class="pill" style="border-color: var(--accent-primary); color: white;">Lead Product
+                                Designer</span>
+                            <span class="pill">B2B2C SaaS</span>
+                            <span class="pill">iOS • Android • Web</span>
                         </div>
                     </div>
                     <div class="cs-hero-visual">
                         <div class="mobile-mockup-wrapper">
                             <div class="mockup-glow"></div>
-                            <div class="mobile-mockup">
-                                <video autoplay muted loop playsinline>
-                                    <source src="../vid/projects/keep-social/demo-feed.mp4" type="video/mp4">
-                                    <!-- Fallback if video is missing during dev -->
-                                    <img src="../img/projects/keep-social/hero-ai-mockup.png" alt="Keep.social Demo">
-                                </video>
+                            <div class="mobile-mockup"
+                                style="border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); width: 100%; height: auto; transform: none;">
+                                <img src="/Users/shiva/.gemini/antigravity/brain/7a431560-13af-4d27-8a46-020388de217d/keepsocial_hero_split_screen_1773957091923.png"
+                                    alt="Keep.social - Split screen showing Gaming and IKEA versatility"
+                                    style="border-radius: 12px; width: 100%;">
                             </div>
                         </div>
                     </div>
@@ -539,225 +603,408 @@
             </div>
         </section>
 
-        <!-- Overview Section -->
+        <!-- The Context -->
         <section class="cs-section">
             <div class="container">
                 <div class="cs-split-layout">
                     <div class="cs-sticky-side animate-on-scroll">
-                        <span class="cs-eyebrow">Overview</span>
-                        <h2>Context</h2>
+                        <span class="cs-eyebrow">The Context</span>
+                        <h2 style="font-size: 3rem; line-height: 1.1;">Building in-app <br> communities</h2>
                         <div style="width: 50px; height: 3px; background: var(--accent-gradient); margin-top: 2rem;">
                         </div>
                     </div>
-                    <div class="cs-content-side animate-on-scroll" style="transition-delay: 0.2s;">
-                        <p style="font-size: 1.2rem; margin-bottom: 2.5rem; color: var(--text-primary); line-height: 1.6;">
-                            We helped brands move beyond repetitive newsletters. By plugging in a social layer and
-                            engagement engine, we turned customer experiences into living communities.
+
+                    <div class="cs-content-side animate-on-scroll">
+                        <p style="font-size: 1.25rem; color: var(--text-primary);">
+                            Most apps suffer from "transactional" relationships. Users buy or play, then leave. To talk
+                            about it, they head to <strong>Reddit, Discord, or Instagram</strong>.
                         </p>
-                        
-                        <!-- Phase 1 Card -->
-                        <div class="phase-card">
-                            <div class="phase-card-icon">
-                                <i class="icon ion-md-game-controller-b"></i>
-                            </div>
-                            <div class="phase-card-content">
-                                <h3>Gaming Origins <span class="phase-badge">Phase 1</span></h3>
-                                <p>
-                                    We shaped user-centric practices in the gaming division for giants like
-                                    <strong>Betway</strong> and <strong>GGL</strong>, focusing on engagement in high-stakes
-                                    environments (Sportsbook & Online Gaming).
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Phase 2 Card -->
-                        <div class="phase-card">
-                            <div class="phase-card-icon">
-                                <i class="icon ion-md-globe"></i>
-                            </div>
-                            <div class="phase-card-content">
-                                <h3>Global Expansion <span class="phase-badge">Phase 2</span></h3>
-                                <p>
-                                    We successfully scaled these product concepts to major global brands including
-                                    <strong>IKEA</strong>, <strong>Lindex</strong>, and <strong>MotoGP</strong>.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="feature-tags" style="margin-top: 2.5rem;">
-                            <span class="tag">Feed-like content</span>
-                            <span class="tag">Likes & Reactions</span>
-                            <span class="tag">Group-chats</span>
-                            <span class="tag">Discovery flows</span>
-                        </div>
+                        <p>
+                            In gaming, users felt zero sense of belonging—they'd take the bonus and disappear. We needed
+                            to create a seamless, native social experience that keeps users <strong>inside the
+                                app</strong>, building trust and engagement where it matters most.
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- My Contribution -->
+        <!-- Core Features -->
+        <section class="cs-section" style="background: #000000; position: relative; overflow: hidden;">
+            <div class="container">
+                <div class="cs-split-layout" style="align-items: center; gap: 4rem;">
+                    <div class="cs-content-side animate-on-scroll">
+                        <span class="cs-eyebrow"
+                            style="color: var(--accent-highlight); margin-bottom: 1.5rem;">ENGAGE</span>
+                        <h2
+                            style="font-size: clamp(2.5rem, 5vw, 3.8rem); line-height: 1.1; margin-bottom: 2rem; font-weight: 800; letter-spacing: -0.03em;">
+                            Boost app engagement with <br> pre-built social features
+                        </h2>
+
+                        <ul style="list-style: none; padding: 0; margin-bottom: 3rem;">
+                            <li
+                                style="margin-bottom: 1.2rem; display: flex; align-items: center; gap: 1rem; color: var(--text-secondary); font-size: 1.1rem;">
+                                <div
+                                    style="width: 8px; height: 8px; border-radius: 50%; background: var(--accent-primary); box-shadow: 0 0 10px var(--accent-primary);">
+                                </div>
+                                Personalized feed
+                            </li>
+                            <li
+                                style="margin-bottom: 1.2rem; display: flex; align-items: center; gap: 1rem; color: var(--text-secondary); font-size: 1.1rem;">
+                                <div
+                                    style="width: 8px; height: 8px; border-radius: 50%; background: var(--accent-primary); box-shadow: 0 0 10px var(--accent-primary);">
+                                </div>
+                                Social Profile
+                            </li>
+                            <li
+                                style="display: flex; align-items: center; gap: 1rem; color: var(--text-secondary); font-size: 1.1rem;">
+                                <div
+                                    style="width: 8px; height: 8px; border-radius: 50%; background: var(--accent-primary); box-shadow: 0 0 10px var(--accent-primary);">
+                                </div>
+                                Group Chat
+                            </li>
+                        </ul>
+
+                        <a href="#" class="btn btn-outline"
+                            style="border-radius: var(--radius-full); padding: 0.8rem 2.2rem; display: inline-flex; align-items: center; gap: 0.8rem; font-weight: 600; border: 1px solid rgba(255,255,255,0.2);">
+                            Learn more <i class="icon ion-md-arrow-forward"></i>
+                        </a>
+                    </div>
+                    <div class="cs-hero-visual animate-on-scroll" style="position: relative;">
+                        <img src="/Users/shiva/.gemini/antigravity/brain/7a431560-13af-4d27-8a46-020388de217d/keepsocial_sports_minimalist_line_final_1773998141108.png"
+                            alt="Social Features Composition - Sportsbook Gaming Layered UI"
+                            style="width: 100%; border-radius: 0; transition: transform 0.5s ease;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- My Contribution Redesign -->
+        <section class="cs-section contribution-interactive-container"
+            style="position: relative; overflow: visible; padding: 8rem 0; background: #020205;">
+            
+            <style>
+                .contribution-interactive-container .contribution-row {
+                    transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+                }
+                
+                @media (max-width: 900px) {
+                    .contribution-interactive-container .contribution-row {
+                        flex-direction: column !important;
+                        gap: 2rem !important;
+                        margin-bottom: 8rem !important;
+                        text-align: center;
+                    }
+                    .contribution-interactive-container .contribution-satellite {
+                        display: none; /* Hide satellites on mobile for cleanliness */
+                    }
+                    .contribution-interactive-container .contribution-svg-connections {
+                        display: none; /* Hide lines on mobile */
+                    }
+                }
+
+                @keyframes float-simple {
+                    0%, 100% { transform: translateY(0); }
+                    50% { transform: translateY(-20px); }
+                }
+
+                .contribution-satellite img {
+                    animation: float-simple 6s ease-in-out infinite;
+                }
+            </style>
+
+            <!-- SVG Connector Layer -->
+            <svg class="contribution-svg-connections"
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1;"
+                viewBox="0 0 1200 1800" preserveAspectRatio="none">
+                <path id="connector-path" d="M 600,100 C 600,300 150,300 150,600 C 150,900 1050,900 1050,1200 C 1050,1500 600,1500 600,1800" 
+                    fill="none" stroke="rgba(93, 231, 255, 0.1)" stroke-width="2" stroke-dasharray="8,8" />
+                <path id="active-path" d="M 600,100 C 600,300 150,300 150,600 C 150,900 1050,900 1050,1200 C 1050,1500 600,1500 600,1800" 
+                    fill="none" stroke="var(--accent-primary)" stroke-width="3" stroke-linecap="round" />
+            </svg>
+
+            <div class="container" style="position: relative; z-index: 2;">
+                <div style="text-align: center; max-width: 800px; margin: 0 auto 8rem;" class="animate-on-scroll">
+                    <span class="cs-eyebrow" style="color: var(--accent-highlight);">My Contribution</span>
+                    <h2 style="font-size: clamp(2.5rem, 5vw, 4.5rem); margin-bottom: 1.5rem; line-height: 1; font-weight: 800;">
+                        The Strategic Bridge</h2>
+                    <p style="font-size: 1.25rem; color: var(--text-secondary);">I acted as the bridge between users, engineering, and global enterprise partners.</p>
+                </div>
+
+                <!-- Row 1: UX Strategy -->
+                <div class="contribution-row animate-on-scroll" data-step="1" style="display: flex; align-items: center; gap: 4rem; margin-bottom: 15rem;">
+                    <div class="contribution-satellite" style="flex: 0.5; position: relative;">
+                        <img src="/Users/shiva/.gemini/antigravity/brain/7a431560-13af-4d27-8a46-020388de217d/keepsocial_contribution_satellite_ui_elements_1774001293225.png" 
+                            style="width: 100%; filter: drop-shadow(0 0 20px rgba(93, 231, 255, 0.2)); animation: float 6s ease-in-out infinite;">
+                    </div>
+                    <div class="contribution-main-card" style="flex: 1.2;">
+                        <div class="cs-glass-card" style="padding: 1rem; border-color: rgba(93, 231, 255, 0.2);">
+                            <img src="/Users/shiva/.gemini/antigravity/brain/7a431560-13af-4d27-8a46-020388de217d/keepsocial_contribution_ux_strategy_main_1774001236753.png" 
+                                alt="UX Strategy" style="width: 100%; border-radius: var(--radius-sm);">
+                        </div>
+                    </div>
+                    <div class="contribution-text" style="flex: 1;">
+                        <span style="font-size: 0.8rem; color: var(--accent-highlight); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;">Phase 01</span>
+                        <h3 style="font-size: 2.2rem; margin: 1rem 0; color: white;">UX Strategy & Research</h3>
+                        <p style="color: var(--text-secondary); line-height: 1.7;">Managed the end-to-end research lifecycle—from behavioral research and user interviews to defining the core profiles that guided our growth-focused feature development.</p>
+                    </div>
+                </div>
+
+                <!-- Row 2: AI-Driven Prototyping -->
+                <div class="contribution-row animate-on-scroll" data-step="2" style="display: flex; flex-direction: row-reverse; align-items: center; gap: 4rem; margin-bottom: 15rem;">
+                    <div class="contribution-satellite" style="flex: 0.5; position: relative;">
+                        <!-- Using another part of the satellite image or just repeating with flip -->
+                        <img src="/Users/shiva/.gemini/antigravity/brain/7a431560-13af-4d27-8a46-020388de217d/keepsocial_contribution_satellite_ui_elements_1774001293225.png" 
+                            style="width: 100%; filter: hue-rotate(45deg) drop-shadow(0 0 20px rgba(168, 85, 247, 0.2)); animation: float 8s ease-in-out infinite reverse;">
+                    </div>
+                    <div class="contribution-main-card" style="flex: 1.2;">
+                        <div class="cs-glass-card" style="padding: 1rem; border-color: rgba(168, 85, 247, 0.2);">
+                            <img src="/Users/shiva/.gemini/antigravity/brain/7a431560-13af-4d27-8a46-020388de217d/keepsocial_contribution_ai_prototyping_main_1774001253466.png" 
+                                alt="AI Prototyping" style="width: 100%; border-radius: var(--radius-sm);">
+                        </div>
+                    </div>
+                    <div class="contribution-text" style="flex: 1;">
+                        <span style="font-size: 0.8rem; color: var(--accent-highlight); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;">Phase 02</span>
+                        <h3 style="font-size: 2.2rem; margin: 1rem 0; color: white;">AI-Driven Prototyping</h3>
+                        <p style="color: var(--text-secondary); line-height: 1.7;">Integrated tools like <strong>Figma Make, Claude UXpilot, and Lovable</strong> into my workflow. This allowed for rapid front-end prototyping, reducing validation cycles from weeks to just days.</p>
+                    </div>
+                </div>
+
+                <!-- Row 3: Boardroom Pitching -->
+                <div class="contribution-row animate-on-scroll" data-step="3" style="display: flex; align-items: center; gap: 4rem; margin-bottom: 5rem;">
+                    <div class="contribution-satellite" style="flex: 0.5; position: relative;">
+                        <img src="/Users/shiva/.gemini/antigravity/brain/7a431560-13af-4d27-8a46-020388de217d/keepsocial_contribution_satellite_ui_elements_1774001293225.png" 
+                            style="width: 100%; filter: hue-rotate(-45deg) drop-shadow(0 0 20px rgba(93, 231, 255, 0.2)); animation: float 7s ease-in-out infinite;">
+                    </div>
+                    <div class="contribution-main-card" style="flex: 1.2;">
+                        <div class="cs-glass-card" style="padding: 1rem; border-color: rgba(93, 231, 255, 0.2);">
+                            <img src="/Users/shiva/.gemini/antigravity/brain/7a431560-13af-4d27-8a46-020388de217d/keepsocial_contribution_pitching_main_1774001265801.png" 
+                                alt="Boardroom Pitching" style="width: 100%; border-radius: var(--radius-sm);">
+                        </div>
+                    </div>
+                    <div class="contribution-text" style="flex: 1;">
+                        <span style="font-size: 0.8rem; color: var(--accent-highlight); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;">Phase 03</span>
+                        <h3 style="font-size: 2.2rem; margin: 1rem 0; color: white;">Boardroom Pitching</h3>
+                        <p style="color: var(--text-secondary); line-height: 1.7;">Regularly joined the Head of Product in high-stakes sales meetings. Using live, high-fidelity prototypes, I directly pitched our vision and adjusted design strategy based on real-time enterprise feedback.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll Animation Script -->
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    // SVG Path Animation
+                    const activePath = document.getElementById('active-path');
+                    const pathLength = activePath.getTotalLength();
+                    
+                    activePath.style.strokeDasharray = pathLength;
+                    activePath.style.strokeDashoffset = pathLength;
+
+                    // Row Fade-in Observer
+                    const observerOptions = {
+                        threshold: 0.2
+                    };
+
+                    const rowObserver = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.style.opacity = '1';
+                                entry.target.style.transform = 'translateY(0)';
+                            }
+                        });
+                    }, observerOptions);
+
+                    document.querySelectorAll('.contribution-row').forEach(row => {
+                        row.style.opacity = '0';
+                        row.style.transform = 'translateY(40px)';
+                        rowObserver.observe(row);
+                    });
+
+                    window.addEventListener('scroll', () => {
+                        const container = document.querySelector('.contribution-interactive-container');
+                        const rect = container.getBoundingClientRect();
+                        const scrollDist = window.innerHeight - rect.top;
+                        const scrollPercentage = Math.max(0, Math.min(1, scrollDist / (rect.height + 200)));
+                        
+                        activePath.style.strokeDashoffset = pathLength - (pathLength * scrollPercentage);
+                    });
+                });
+            </script>
+        </section>
+
+        <!-- Phase 1: Gaming -->
         <section class="cs-section" style="background: rgba(255,255,255,0.01);">
             <div class="container">
-                <div style="text-align: center; max-width: 700px; margin: 0 auto 5rem;" class="animate-on-scroll">
-                    <span class="cs-eyebrow">Strategic Impact</span>
-                    <h2 style="font-size: 3rem; margin-bottom: 1.5rem;">Leading Product Design & AI Prototyping</h2>
-                    <p>I led the product strategy and UX execution for multiple projects in parallel, bridging technical
-                        architecture with human interaction.</p>
+                <div class="cs-split-layout">
+                    <div class="cs-content-side animate-on-scroll">
+                        <span class="cs-eyebrow">Phase 01: The Proof</span>
+                        <h2>The Gaming Engine</h2>
+                        <p>We started where communities are most demanding. Gamers expect high performance, real-time
+                            interaction, and deep gamification.</p>
+
+                        <div class="phase-card">
+                            <div class="phase-card-content">
+                                <h3>High-Density Feeds</h3>
+                                <p>Optimized for rich media (gameplay clips, screenshots) and quick interactions like
+                                    upvotes and threaded replies.</p>
+                            </div>
+                        </div>
+                        <div class="phase-card">
+                            <div class="phase-card-content">
+                                <h3>Modular Gamification</h3>
+                                <p>A flexible badge and leaderboard system that developers could tweak on the fly to
+                                    drive retention.</p>
+                            </div>
+                        </div>
+
+                        <p style="margin-top: 2rem; font-style: italic; color: var(--accent-highlight);">
+                            Success in Canada led to EU, Australia, and Africa. But it raised the ultimate design
+                            question: <strong>How does this scale to any industry?</strong>
+                        </p>
+                    </div>
+                    <div class="cs-hero-visual animate-on-scroll">
+                        <img src="/Users/shiva/.gemini/antigravity/brain/7a431560-13af-4d27-8a46-020388de217d/keepsocial_gaming_suite_mockups_1773957126345.png"
+                            alt="Gaming Suite Mockups" style="width: 100%;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Pivot: Scaling to Global Brands -->
+        <section class="cs-section">
+            <div class="container">
+                <div class="animate-on-scroll" style="margin-bottom: 4rem;">
+                    <span class="cs-eyebrow">The Evolution</span>
+                    <h2 style="font-size: 3.5rem; line-height: 1.1;">Scaling to Global Brands</h2>
+                    <p style="font-size: 1.25rem; margin-top: 1rem;">Once proven in Gaming, we pivoted to enterprise
+                        retail and sports, adapting the engine for <strong>IKEA, Lindex, and MotoGP</strong>.</p>
                 </div>
 
                 <div class="cs-split-layout">
+                    <div class="cs-sticky-side animate-on-scroll">
+                        <div
+                            style="margin-bottom: 2rem; border-radius: var(--radius-md); overflow: hidden; border: 1px solid rgba(255,255,255,0.05);">
+                            <img src="/Users/shiva/.gemini/antigravity/brain/7a431560-13af-4d27-8a46-020388de217d/keepsocial_design_system_tokens_1773957145576.png"
+                                alt="Modular Design System Visualization" style="width: 100%;">
+                        </div>
+                    </div>
                     <div class="cs-content-side animate-on-scroll">
-                        <div class="cs-process-step">
-                            <h3>AI-Driven Product Definition</h3>
-                            <p>Used AI to generate high-fidelity, clickable prototypes for partners like IKEA and
-                                Lindex. This allowed us to align expectations instantly and show the potential of their
-                                ideas before a single line of code was written.</p>
-                        </div>
-                        <div class="cs-process-step">
-                            <h3>Strategy & Sales Alignment</h3>
-                            <p>Translated business needs into clear product definitions. I participated in customer
-                                meetings to hear challenges first-hand, ensuring my designs were user-focused and
-                                realistic to build.</p>
-                        </div>
-                        <div class="cs-process-step">
-                            <h3>Technical Orchestration</h3>
-                            <p>Collaborated fluently with architects and engineers to design within technical
-                                constraints. Onboarded consultants and mentors to scale our design maturity globaly.</p>
-                        </div>
-
-                        <div class="figma-links">
-                            <div class="figma-card">
-                                <i class="icon ion-logo-foursquare" style="color: #6366F1;"></i>
-                                <span>Betway</span>
+                        <div class="phase-card">
+                            <div class="phase-card-content">
+                                <h3>The White-Label Architecture</h3>
+                                <p>I refactored the entire UI into a scalable <strong>Design System</strong> using
+                                    semantic tokens. This allowed diverse brands to customize colors, radii, and vibe
+                                    globally via a simple dashboard.</p>
                             </div>
-                            <div class="figma-card">
-                                <i class="icon ion-logo-foursquare" style="color: #FBBF24;"></i>
-                                <span>IKEA</span>
-                            </div>
-                            <div class="figma-card">
-                                <i class="icon ion-logo-foursquare" style="color: #F87171;"></i>
-                                <span>Lindex</span>
+                        </div>
+                        <div class="phase-card">
+                            <div class="phase-card-content">
+                                <h3>Industry-Agnostic Validation</h3>
+                                <p>Led tailored research initiatives for each suite. By validating retail (IKEA) vs.
+                                    sports (MotoGP), we ensured our core features solved industry-specific problems
+                                    without breaking the modular layout.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="cs-sticky-side animate-on-scroll"
-                        style="display: flex; align-items: center; justify-content: center;">
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Impact & Results -->
+        <section class="cs-section" style="background: var(--accent-gradient); color: white; border: none;">
+            <div class="container">
+                <div class="cs-split-layout">
+                    <div class="cs-content-side animate-on-scroll">
+                        <span class="cs-eyebrow" style="color: rgba(255,255,255,0.8);">Outcomes</span>
+                        <h2 style="color: white; font-size: 4rem;">Business Impact</h2>
+                        <ul style="list-style: none; padding: 0; margin-top: 3rem;">
+                            <li style="margin-bottom: 2rem; display: flex; gap: 1.5rem; align-items: flex-start;">
+                                <i class="icon ion-md-flash" style="font-size: 1.5rem;"></i>
+                                <span><strong>Onboarding Velocity:</strong> Client launch times reduced from weeks to
+                                    days via the modular white-label system.</span>
+                            </li>
+                            <li style="margin-bottom: 2rem; display: flex; gap: 1.5rem; align-items: flex-start;">
+                                <i class="icon ion-md-trending-up" style="font-size: 1.5rem;"></i>
+                                <span><strong>Sales Success:</strong> Visual demos in exact brand colors directly
+                                    contributed to signing IKEA and Lindex.</span>
+                            </li>
+                            <li style="display: flex; gap: 1.5rem; align-items: flex-start;">
+                                <i class="icon ion-md-leaf" style="font-size: 1.5rem;"></i>
+                                <span><strong>Sustainable Growth:</strong> Empowered users with a voice and created
+                                    resale ecosystems through internal brand feeds.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="cs-content-side animate-on-scroll"
+                        style="display: flex; flex-direction: column; justify-content: center; gap: 2rem;">
                         <div class="cs-glass-card"
-                            style="padding: 3rem; text-align: center; border-color: rgba(99, 102, 241, 0.3);">
-                            <i class="icon ion-md-flash"
-                                style="font-size: 4rem; color: var(--accent-highlight); margin-bottom: 1rem;"></i>
-                            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">AI-Accelerated</h3>
-                            <p style="font-size: 1rem;">Scaling early concepts to different industries (Fashion, Home
-                                Decor) with rapid AI prototyping.</p>
+                            style="background: rgba(255, 255, 255, 0.1); border: none; padding: 2.5rem;">
+                            <p style="font-style: italic; font-size: 1.1rem;">“With Keep.Social's tools, our content
+                                speaks to users. Engagement is way up, and we're building a real community.”</p>
+                            <p
+                                style="font-weight: 700; margin-top: 1rem; font-size: 0.8rem; text-transform: uppercase;">
+                                — MotoGP Enterprise Partner</p>
+                        </div>
+                        <div class="cs-glass-card"
+                            style="background: rgba(255, 255, 255, 0.1); border: none; padding: 2.5rem;">
+                            <p style="font-style: italic; font-size: 1.1rem;">“the real value came after launch, the
+                                flexibility of their APIs allowed us to create entirely new user views and features we
+                                hadn't even planned for initially.”</p>
+                            <p
+                                style="font-weight: 700; margin-top: 1rem; font-size: 0.8rem; text-transform: uppercase;">
+                                — Retail Partner Lead</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Main Challenges -->
-        <section class="cs-section">
-            <div class="container">
-                <div class="animate-on-scroll">
-                    <span class="cs-eyebrow">Challenges</span>
-                    <h2 style="font-size: 3rem; margin-bottom: 3rem;">Navigating Complexity</h2>
-                </div>
-
-                <div class="cs-impact-grid animate-on-scroll">
-                    <div class="cs-glass-card cs-impact-card">
-                        <i class="icon ion-md-globe"
-                            style="font-size: 2.5rem; color: var(--accent-highlight); margin-bottom: 1rem; display: block;"></i>
-                        <h4 style="color: white; margin-bottom: 1rem;">Multi-Industry Ecosystems</h4>
-                        <p style="font-size: 0.95rem;">Adapting social layers for fashion, home decor, and gaming, each
-                            with unique goals and technical constraints.</p>
-                    </div>
-                    <div class="cs-glass-card cs-impact-card">
-                        <i class="icon ion-md-flash"
-                            style="font-size: 2.5rem; color: var(--accent-primary); margin-bottom: 1rem; display: block;"></i>
-                        <h4 style="color: white; margin-bottom: 1rem;">Creative AI Implementation</h4>
-                        <p style="font-size: 0.95rem;">Leveraging AI tools creatively even when they lacked specific
-                            cultural or domain-specific depth.</p>
-                    </div>
-                    <div class="cs-glass-card cs-impact-card">
-                        <i class="icon ion-md-git-compare"
-                            style="font-size: 2.5rem; color: var(--accent-secondary); margin-bottom: 1rem; display: block;"></i>
-                        <h4 style="color: white; margin-bottom: 1rem;">Workflow Modernization</h4>
-                        <p style="font-size: 0.95rem;">Updating legacy workflows and modernizing design systems without
-                            disrupting existing product momentum.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Impact Section -->
-        <section class="cs-section" style="background: rgba(2, 6, 23, 0.2);">
-            <div class="container">
-                <div class="animate-on-scroll">
-                    <span class="cs-eyebrow">Outcomes</span>
-                    <h2 style="font-size: 3rem; margin-bottom: 3rem;">Strategic Business Value</h2>
-                </div>
-
-                <div class="cs-impact-grid animate-on-scroll">
-                    <div class="cs-glass-card cs-impact-card">
-                        <span class="number">Fast</span>
-                        <h4 style="color: white; margin-bottom: 1rem;">Confident Decisions</h4>
-                        <p style="font-size: 0.95rem;">Enabled partners to make high-stakes product decisions using our
-                            AI-driven high-fidelity prototypes.</p>
-                    </div>
-                    <div class="cs-glass-card cs-impact-card">
-                        <span class="number">Scale</span>
-                        <h4 style="color: white; margin-bottom: 1rem;">Modern Systems</h4>
-                        <p style="font-size: 0.95rem;">Improved internal design workflows and solidified user-centric
-                            thinking across multiple companies.</p>
-                    </div>
-                    <div class="cs-glass-card cs-impact-card">
-                        <span class="number">Growth</span>
-                        <h4 style="color: white; margin-bottom: 1rem;">Winning Concepts</h4>
-                        <p style="font-size: 0.95rem;">Contributed to winning additional premium projects by presenting
-                            visionary early-stage results.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Why it Matters -->
+        <!-- Reflections -->
         <section class="cs-section">
             <div class="container animate-on-scroll">
-                <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Why this project matters to my practice</h2>
-                <div style="max-width: 800px;">
-                    <p style="font-size: 1.25rem; line-height: 1.8; color: var(--text-primary); margin-bottom: 2rem;">
-                        This project was a defining chapter in understanding how to design inside different partner
-                        ecosystems. I learned how to use <strong>AI as a Force Multiplier</strong> to speed up workflows
-                        and bridge technical architecture with human interaction.
-                    </p>
-                    <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-secondary);">
-                        Guiding projects from high-level ambiguity to structured, usable directions is a cornerstone of
-                        my approach—a skill essential for designing high-scale, multi-partner AI experiences at a staff
-                        level.
-                    </p>
+                <div style="text-align: center; margin-bottom: 4rem;">
+                    <span class="cs-eyebrow">Reflections</span>
+                    <h2>Senior Product Perspective</h2>
+                </div>
+                <div class="cs-impact-grid">
+                    <div class="cs-glass-card" style="text-align: left; padding: 2.5rem;">
+                        <h4 style="color: var(--accent-highlight); margin-bottom: 1rem;">Invisible UI</h4>
+                        <p style="font-size: 0.95rem;">In B2B2C products, the best design lets the client’s brand shine
+                            while our engine provides the silent social power.</p>
+                    </div>
+                    <div class="cs-glass-card" style="text-align: left; padding: 2.5rem;">
+                        <h4 style="color: var(--accent-primary); margin-bottom: 1rem;">AI Workflow</h4>
+                        <p style="font-size: 0.95rem;">Integrating AI tools proved that designers can move at the speed
+                            of thought if they use the right technical leverage.</p>
+                    </div>
+                    <div class="cs-glass-card" style="text-align: left; padding: 2.5rem;">
+                        <h4 style="color: var(--accent-secondary); margin-bottom: 1rem;">Sales Alignment</h4>
+                        <p style="font-size: 0.95rem;">Being in sale meetings gave me a broad understanding of how
+                            different corporate cultures drive user needs.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Footer Nav -->
-        <section>
+        <section style="padding: 4rem 0;">
             <div class="container">
                 <div class="cs-nav-footer">
-                    <a href="../index.html#work" class="link-arrow">
-                        <i class="icon ion-md-arrow-back"></i> Back to All Projects
+                    <a href="../index.html#work" class="back-link">
+                        <i class="icon ion-md-arrow-back"></i> Back to Work
                     </a>
-                    <!-- Replace this with real next project link when ready -->
-                    <a href="portfolio-music-sharing-app.html" class="btn btn-outline">
-                        Next Project <i class="icon ion-md-arrow-forward" style="margin-left: 8px;"></i>
+                    <a href="derivco-global-gaming-case-study.html" class="btn btn-outline">
+                        Next Story <i class="icon ion-md-arrow-forward" style="margin-left:8px;"></i>
                     </a>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer style="padding: 2rem 0; border-top: 1px solid rgba(255,255,255,0.05); text-align: center;">
+    <footer style="padding: 4rem 0; border-top: 1px solid rgba(255,255,255,0.05); text-align: center;">
         <div class="container animate-on-scroll">
-            <p style="font-size: 0.9rem; opacity: 0.5;">&copy; 2026 Shiva Chavoshian. Designed with intention.</p>
+            <p style="font-size: 0.9rem; opacity: 0.5;">&copy; 2026 Shiva Chavoshian. Crafted with Strategy.</p>
         </div>
     </footer>
 
