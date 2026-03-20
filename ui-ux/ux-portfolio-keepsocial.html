@@ -650,7 +650,8 @@
             margin-bottom: 1.5rem;
             background: rgba(168, 85, 247, 0.05);
             backdrop-filter: blur(8px);
-            position: relative; /* For SVG border */
+            position: relative;
+            /* For SVG border */
             overflow: visible;
         }
 
@@ -772,8 +773,8 @@
             <div class="container">
                 <div class="cs-split-layout">
                     <div class="cs-sticky-side animate-on-scroll">
-                        <span class="cs-eyebrow">The Context</span>
-                        <h2 style="font-size: 3rem; line-height: 1.1;">Building in-app <br> communities</h2>
+                        <span class="cs-eyebrow">Problem</span>
+                        <h2 style="font-size: 3rem; line-height: 1.1;">The "Play and Leave" <br> Problem</h2>
                         <div style="width: 50px; height: 3px; background: var(--accent-gradient); margin-top: 2rem;">
                         </div>
                     </div>
@@ -799,10 +800,10 @@
                 <div class="cs-split-layout" style="align-items: center; gap: 4rem;">
                     <div class="cs-content-side animate-on-scroll">
                         <span class="cs-eyebrow"
-                            style="color: var(--accent-highlight); margin-bottom: 1.5rem;">ENGAGE</span>
+                            style="color: var(--accent-highlight); margin-bottom: 1.5rem;">Solution</span>
                         <h2
                             style="font-size: clamp(2.5rem, 5vw, 3.8rem); line-height: 1.1; margin-bottom: 2rem; font-weight: 800; letter-spacing: -0.03em;">
-                            Boost app engagement with <br> pre-built social features
+                            Boost app engagement with <br> social features
                         </h2>
 
                         <ul style="list-style: none; padding: 0; margin-bottom: 3rem;">
@@ -1206,7 +1207,7 @@
                 let current = start;
                 let duration = 600; // ms
                 let stepTime = Math.abs(Math.floor(duration / end));
-                
+
                 setTimeout(() => {
                     let timer = setInterval(() => {
                         current++;
@@ -1259,7 +1260,7 @@
                     const midX = isReversed ? (endX + 50) : (endX - 50);
                     const rowRect = row.getBoundingClientRect();
                     const rowMiddle = rowRect.top + rowRect.height / 2;
-                    
+
                     let rowProgress = (winH * 0.95 - rowMiddle) / (winH * 0.45);
                     rowProgress = Math.max(0, Math.min(1, rowProgress));
 
