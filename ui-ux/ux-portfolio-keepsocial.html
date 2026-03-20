@@ -15,14 +15,16 @@
     <style>
         /* Specific Case Study Overrides & Utilities */
         .cs-hero {
-            padding-top: calc(var(--header-height) + 2.5rem);
-            padding-bottom: 4rem;
-            min-height: 75vh;
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 4rem;
+            padding-top: calc(var(--header-height) + 4rem);
+            padding-bottom: 5rem;
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
+            text-align: center;
             position: relative;
+            overflow: hidden;
         }
 
         /* Standardized Case Study Header */
@@ -50,16 +52,23 @@
 
         @media (max-width: 900px) {
             .cs-hero {
-                grid-template-columns: 1fr;
                 padding-top: calc(var(--header-height) + 3rem);
+                min-height: 70vh;
             }
         }
 
+        .cs-hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         .cs-hero-content h1 {
-            font-size: clamp(3rem, 6vw, 5.5rem);
+            font-size: clamp(2.8rem, 6vw, 5rem);
             margin-bottom: 1.5rem;
-            line-height: 1.1;
-            letter-spacing: -0.02em;
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+            max-width: 800px;
         }
 
         .cs-eyebrow {
@@ -72,42 +81,92 @@
             display: block;
         }
 
-        .cs-hero-visual {
+        /* ── Animated Icon Carousel ── */
+        .hero-icon-carousel {
+            width: 56px;
+            height: 56px;
             position: relative;
+            margin-bottom: 2.5rem;
+            border-radius: 16px;
+            background: rgba(99, 102, 241, 0.12);
+            border: 1px solid rgba(99, 102, 241, 0.25);
+            box-shadow: 0 0 30px rgba(99, 102, 241, 0.2);
         }
 
-        .cs-hero-visual img {
-            border-radius: var(--radius-lg);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 40px rgba(99, 102, 241, 0.15);
-            animation: float 6s ease-in-out infinite;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+        .hero-icon-carousel .carousel-icon {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            opacity: 0;
+            transform: scale(0.5) translateY(8px);
+            transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                        transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            color: var(--accent-highlight);
         }
 
-        @keyframes float {
+        .hero-icon-carousel .carousel-icon.active {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
 
-            0%,
-            100% {
-                transform: translateY(0) rotate(-5deg) rotateX(2deg);
-            }
+        .hero-icon-carousel .carousel-icon.exit {
+            opacity: 0;
+            transform: scale(0.5) translateY(-8px);
+        }
 
-            33% {
-                transform: translateY(-15px) rotate(-3deg) rotateX(4deg);
-            }
+        @keyframes gentle-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
 
-            66% {
-                transform: translateY(-5px) rotate(-6deg) rotateX(1deg);
-            }
+        .hero-icon-carousel {
+            animation: gentle-float 3s ease-in-out infinite;
+        }
+
+        /* ── Typewriter ── */
+        .typewriter-word {
+            color: var(--accent-highlight);
+            -webkit-text-fill-color: var(--accent-highlight);
+            position: relative;
+            display: inline;
+        }
+
+        .typewriter-cursor {
+            display: inline-block;
+            width: 3px;
+            height: 0.75em;
+            background: var(--accent-highlight);
+            margin-left: 3px;
+            vertical-align: baseline;
+            animation: blink-cursor 0.75s step-end infinite;
+            border-radius: 2px;
+            position: relative;
+            top: 0.02em;
+        }
+
+        @keyframes blink-cursor {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* ── Hero Sub-text ── */
+        .cs-hero-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 550px;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
         }
 
         @keyframes glow-pulse {
-
-            0%,
-            100% {
+            0%, 100% {
                 opacity: 0.4;
                 filter: blur(40px);
                 transform: scale(1);
             }
-
             50% {
                 opacity: 0.7;
                 filter: blur(60px);
@@ -757,45 +816,43 @@
                 <div class="cs-hero animate-on-scroll">
                     <!-- Background Light Leaks -->
                     <div
-                        style="position: absolute; top: -10%; left: -10%; width: 40%; height: 60%; background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%); filter: blur(80px); z-index: -1;">
+                        style="position: absolute; top: -10%; left: 20%; width: 40%; height: 60%; background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%); filter: blur(80px); z-index: -1;">
                     </div>
                     <div
-                        style="position: absolute; bottom: 0; right: -5%; width: 30%; height: 50%; background: radial-gradient(circle, rgba(168, 85, 247, 0.1) 0%, transparent 70%); filter: blur(60px); z-index: -1;">
+                        style="position: absolute; bottom: 0; right: 20%; width: 30%; height: 50%; background: radial-gradient(circle, rgba(168, 85, 247, 0.1) 0%, transparent 70%); filter: blur(60px); z-index: -1;">
                     </div>
 
+                    <!-- 1. Animated Icon Carousel -->
+                    <div class="hero-icon-carousel" id="heroIconCarousel">
+                        <span class="carousel-icon active"><i class="icon ion-md-chatbubbles"></i></span>
+                        <span class="carousel-icon"><i class="icon ion-md-thumbs-up"></i></span>
+                        <span class="carousel-icon"><i class="icon ion-md-heart"></i></span>
+                        <span class="carousel-icon"><i class="icon ion-md-notifications"></i></span>
+                        <span class="carousel-icon"><i class="icon ion-md-megaphone"></i></span>
+                    </div>
+
+                    <!-- 2. Hero Heading with Typewriter -->
                     <div class="cs-hero-content">
-                        <span class="cs-eyebrow">Strategic Case Study</span>
-                        <h1 class="text-gradient" style="font-weight: 800; letter-spacing: -0.04em;">Keep.social: Native
-                            <br> Community at Scale
+                        <h1 class="text-gradient" style="font-weight: 800;">
+                            Socialise your customers that powers <span class="typewriter-word" id="typewriterTarget"></span><span class="typewriter-cursor"></span>
                         </h1>
-                        <p
-                            style="font-size: 1.25rem; margin-bottom: 2.5rem; color: var(--text-secondary); max-width: 520px; line-height: 1.6; font-weight: 400;">
-                            Create in-app communities that power growth through <strong>engagement and
-                                retention</strong>.
-                            A plug-and-play social engine for global brands like IKEA, MotoGP, and Lindex.
+
+                        <p class="cs-hero-subtitle">
+                            A plug-and-play social engine for global brands.
+                            Drive engagement, collect data and grow revenues — directly inside your app.
                         </p>
+
+                        <!-- 3. Pills -->
                         <div class="cs-hero-pills">
-                            <span class="pill" style="border-color: var(--accent-primary); color: white;">Lead Product
-                                Designer</span>
-                            <span class="pill">B2B2C SaaS</span>
+                            <span class="pill" style="border-color: var(--accent-primary); color: white;">Product Design</span>
+                            <span class="pill">UX Lead</span>
                             <span class="pill">iOS • Android • Web</span>
                         </div>
                     </div>
-                    <div class="cs-hero-visual">
-                        <div class="mobile-mockup-wrapper">
-                            <div class="mockup-glow"></div>
-                            <div class="mobile-mockup"
-                                style="border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); width: 100%; height: auto; transform: none;">
-                                <img src="/Users/shiva/.gemini/antigravity/brain/7a431560-13af-4d27-8a46-020388de217d/keepsocial_hero_split_screen_1773957091923.png"
-                                    alt="Keep.social - Split screen showing Gaming and IKEA versatility"
-                                    style="border-radius: 12px; width: 100%;">
-                            </div>
-                        </div>
-                    </div>
                 </div>
-
             </div>
         </section>
+
 
         <!-- The Context -->
         <section class="cs-section">
@@ -1337,6 +1394,63 @@
             syncAllPaths();
             window.addEventListener('scroll', syncAllPaths);
             window.addEventListener('resize', syncAllPaths);
+        });
+    </script>
+
+    <!-- Hero Animations: Typewriter + Icon Carousel -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // ── Icon Carousel ──
+            const carousel = document.getElementById('heroIconCarousel');
+            if (carousel) {
+                const icons = carousel.querySelectorAll('.carousel-icon');
+                let currentIcon = 0;
+                setInterval(() => {
+                    icons[currentIcon].classList.remove('active');
+                    icons[currentIcon].classList.add('exit');
+                    setTimeout(() => icons[currentIcon].classList.remove('exit'), 500);
+                    currentIcon = (currentIcon + 1) % icons.length;
+                    icons[currentIcon].classList.add('active');
+                }, 2000);
+            }
+
+            // ── Typewriter ──
+            const target = document.getElementById('typewriterTarget');
+            if (target) {
+                const words = ['growth', 'engagement', 'retention'];
+                let wordIdx = 0;
+                let charIdx = 0;
+                let isDeleting = false;
+                const TYPING_SPEED = 100;
+                const DELETING_SPEED = 60;
+                const PAUSE_AFTER_WORD = 1800;
+                const PAUSE_AFTER_DELETE = 400;
+
+                function tick() {
+                    const currentWord = words[wordIdx];
+                    if (!isDeleting) {
+                        charIdx++;
+                        target.textContent = currentWord.substring(0, charIdx);
+                        if (charIdx === currentWord.length) {
+                            isDeleting = true;
+                            setTimeout(tick, PAUSE_AFTER_WORD);
+                            return;
+                        }
+                        setTimeout(tick, TYPING_SPEED);
+                    } else {
+                        charIdx--;
+                        target.textContent = currentWord.substring(0, charIdx);
+                        if (charIdx === 0) {
+                            isDeleting = false;
+                            wordIdx = (wordIdx + 1) % words.length;
+                            setTimeout(tick, PAUSE_AFTER_DELETE);
+                            return;
+                        }
+                        setTimeout(tick, DELETING_SPEED);
+                    }
+                }
+                tick();
+            }
         });
     </script>
 </body>
