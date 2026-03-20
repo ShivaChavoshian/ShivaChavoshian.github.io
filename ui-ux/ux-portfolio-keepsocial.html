@@ -102,7 +102,7 @@
             opacity: 0;
             transform: scale(0.5) translateY(8px);
             transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-                        transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+                transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             color: var(--accent-highlight);
         }
 
@@ -117,8 +117,15 @@
         }
 
         @keyframes gentle-float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-6px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-6px);
+            }
         }
 
         .hero-icon-carousel {
@@ -147,8 +154,15 @@
         }
 
         @keyframes blink-cursor {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
         }
 
         /* ── Hero Sub-text ── */
@@ -193,11 +207,14 @@
         }
 
         @keyframes glow-pulse {
-            0%, 100% {
+
+            0%,
+            100% {
                 opacity: 0.4;
                 filter: blur(40px);
                 transform: scale(1);
             }
+
             50% {
                 opacity: 0.7;
                 filter: blur(60px);
@@ -865,7 +882,8 @@
                     <!-- 2. Hero Heading with Typewriter -->
                     <div class="cs-hero-content">
                         <h1 class="text-gradient" style="font-weight: 800;">
-                            Socialise your customers that powers <span class="typewriter-word" id="typewriterTarget"></span><span class="typewriter-cursor"></span>
+                            Socialise your customers that powers <span class="typewriter-word"
+                                id="typewriterTarget"></span><span class="typewriter-cursor"></span>
                         </h1>
 
                         <p class="cs-hero-subtitle">
@@ -875,7 +893,8 @@
 
                         <!-- 3. Pills -->
                         <div class="cs-hero-pills">
-                            <span class="pill" style="border-color: var(--accent-primary); color: white;">Product Design</span>
+                            <span class="pill" style="border-color: var(--accent-primary); color: white;">Product
+                                Design</span>
                             <span class="pill">UX Lead</span>
                             <span class="pill">iOS • Android • Web</span>
                         </div>
@@ -974,7 +993,8 @@
                     <span class="cs-eyebrow">My Contribution</span>
                     <h2>From Strategy to Execution</h2>
                     <div class="accent-bar" style="margin-bottom: 1.5rem;"></div>
-                    <p style="font-size: 1.25rem; color: var(--text-secondary); max-width: 650px; margin-top: 1.5rem;">I acted as the bridge
+                    <p style="font-size: 1.25rem; color: var(--text-secondary); max-width: 650px; margin-top: 1.5rem;">I
+                        acted as the bridge
                         between users, engineering, and global enterprise partners.</p>
                 </div>
 
@@ -1034,17 +1054,18 @@
                         <div class="cs-tag-item"><i class="icon ion-md-globe"></i> Global Scaling</div>
                     </div>
                     <div class="cs-central-visual" id="viz-3">
-                        <img src="/Users/shiva/.gemini/antigravity/brain/7a431560-13af-4d27-8a46-020388de217d/boardroom_pitching_central_png_1774002197758.png"
-                            alt="Boardroom Pitching & Strategy" style="width: 100%;">
+                        <img src="../img/projects/keepsocial/customers-pitching.png"
+                            alt="Customers Pitching & Strategy" style="width: 100%;">
                     </div>
                     <div class="cs-content-side" style="padding-left: 2rem;">
                         <div class="cs-step-marker">
                             <span class="cs-step-number" data-target="03">00</span>
                         </div>
-                        <h3 style="font-size: 2rem; color: white; margin-bottom: 1.5rem;">Boardroom Pitching</h3>
+                        <h3 style="font-size: 2rem; color: white; margin-bottom: 1.5rem;">Customers Pitching</h3>
                         <p style="font-size: 1.1rem; line-height: 1.6; color: var(--text-secondary);">
                             Joined high-stakes sales meetings using live, high-fidelity prototypes. I directly pitched
-                            our vision and adjusted design strategy based on real-time feedback.
+                            our vision and solution to customers and adjusted design strategy based on real-time
+                            feedback.
                         </p>
                     </div>
                 </div>
@@ -1343,7 +1364,7 @@
             }
 
             function syncAllPaths() {
-                if (window.innerWidth < 992) return; 
+                if (window.innerWidth < 992) return;
                 if (!mainPath || !svgOverlay || !container) return;
                 const svgRect = svgOverlay.getBoundingClientRect();
                 const winH = window.innerHeight;
