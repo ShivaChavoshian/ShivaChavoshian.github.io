@@ -650,8 +650,7 @@
             margin-bottom: 1.5rem;
             background: rgba(168, 85, 247, 0.05);
             backdrop-filter: blur(8px);
-            position: relative;
-            /* For SVG border */
+            position: relative; /* For SVG border */
             overflow: visible;
         }
 
@@ -672,7 +671,7 @@
 
         .cs-contribution-row:hover .cs-central-visual {
             transform: scale(1.02);
-            /* Removed blue border-color on hover as requested */
+            border-color: var(--accent-highlight);
         }
 
         /* SVG Connector Lines */
@@ -1207,7 +1206,7 @@
                 let current = start;
                 let duration = 600; // ms
                 let stepTime = Math.abs(Math.floor(duration / end));
-
+                
                 setTimeout(() => {
                     let timer = setInterval(() => {
                         current++;
@@ -1260,7 +1259,7 @@
                     const midX = isReversed ? (endX + 50) : (endX - 50);
                     const rowRect = row.getBoundingClientRect();
                     const rowMiddle = rowRect.top + rowRect.height / 2;
-
+                    
                     let rowProgress = (winH * 0.95 - rowMiddle) / (winH * 0.45);
                     rowProgress = Math.max(0, Math.min(1, rowProgress));
 
