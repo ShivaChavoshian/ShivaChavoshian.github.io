@@ -567,6 +567,7 @@
                 grid-template-columns: 1fr 1fr;
                 gap: 2rem;
             }
+
             .cs-tag-list {
                 display: none;
             }
@@ -586,34 +587,54 @@
             justify-content: center;
         }
 
-        .cs-tag-item {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1.5px solid var(--accent-primary);
-            padding: 0.6rem 1.4rem;
-            border-radius: var(--radius-full);
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: white;
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-            box-shadow: 0 0 20px rgba(168, 85, 247, 0.15);
-        }
+    .cs-tag-item {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        padding: 0.7rem 1.4rem;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: var(--radius-full);
+        color: white;
+        font-size: 0.95rem;
+        font-weight: 500;
+        transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+        white-space: nowrap;
+        backdrop-filter: blur(12px);
+        position: relative; /* For SVG border overlay */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
 
-        .cs-tag-item i {
-            color: var(--accent-primary);
-            font-size: 1.1rem;
-        }
+    .cs-tag-border-svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        overflow: visible;
+        z-index: 1;
+    }
 
-        .cs-tag-item:hover {
-            background: rgba(168, 85, 247, 0.15);
-            border-color: white;
-            transform: scale(1.05);
-            box-shadow: 0 0 30px rgba(168, 85, 247, 0.4);
-        }
+    .cs-tag-border-path {
+        fill: none;
+        stroke: var(--accent-primary);
+        stroke-width: 1.5px;
+        stroke-linecap: round;
+        filter: drop-shadow(0 0 6px rgba(139, 92, 246, 0.6));
+    }
+
+    .cs-tag-item i {
+        color: var(--accent-primary);
+        font-size: 1.1rem;
+        position: relative;
+        z-index: 2;
+    }
+
+    .cs-tag-item:hover {
+        background: rgba(139, 92, 246, 0.1);
+        transform: translateY(-4px) scale(1.02);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
 
         .cs-step-marker {
             display: inline-flex;
@@ -637,7 +658,7 @@
             border-radius: var(--radius-md);
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
             transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
 
@@ -818,7 +839,7 @@
         <!-- My Contribution -->
         <section class="cs-section" style="position: relative; overflow: hidden; background: #050505;">
             <div class="container cs-contribution-container">
-                
+
                 <!-- SVG Connector Overlay -->
                 <svg class="cs-connector-overlay" preserveAspectRatio="none">
                     <path id="contribution-path" class="connector-path" d="" />
@@ -834,14 +855,14 @@
                 <!-- Row 1: UX Strategy -->
                 <div class="cs-contribution-row animate-on-scroll">
                     <div class="cs-tag-list">
-                        <div class="cs-tag-item"><i class="icon ion-md-search"></i> User Surveys</div>
+                        <div class="cs-tag-item"><i class="icon ion-md-search"></i> User Research</div>
                         <div class="cs-tag-item"><i class="icon ion-md-flame"></i> Heatmaps</div>
                         <div class="cs-tag-item"><i class="icon ion-md-people"></i> Personas</div>
                         <div class="cs-tag-item"><i class="icon ion-md-trending-up"></i> Growth Audits</div>
                     </div>
                     <div class="cs-central-visual" id="viz-1">
-                        <img src="/Users/shiva/.gemini/antigravity/brain/7a431560-13af-4d27-8a46-020388de217d/ux_strategy_central_png_1774002167978.png" 
-                             alt="UX Strategy & Research Dashboard" style="width: 100%;">
+                        <img src="/Users/shiva/.gemini/antigravity/brain/7a431560-13af-4d27-8a46-020388de217d/ux_strategy_central_png_1774002167978.png"
+                            alt="UX Strategy & Research Dashboard" style="width: 100%;">
                     </div>
                     <div class="cs-content-side" style="padding-left: 2rem;">
                         <div class="cs-step-marker">01</div>
@@ -859,17 +880,18 @@
                         <div class="cs-step-marker">02</div>
                         <h3 style="font-size: 2rem; color: white; margin-bottom: 1.5rem;">AI-Driven Prototyping</h3>
                         <p style="font-size: 1.1rem; line-height: 1.6; color: var(--text-secondary);">
-                            Integrated tools into my workflow for rapid front-end prototyping, reducing validation cycles from weeks to just days while maintaining high fidelity.
+                            Integrated tools into my workflow for rapid front-end prototyping, reducing validation
+                            cycles from weeks to just days while maintaining high fidelity.
                         </p>
                     </div>
                     <div class="cs-central-visual" id="viz-2">
-                        <img src="/Users/shiva/.gemini/antigravity/brain/7a431560-13af-4d27-8a46-020388de217d/ai_prototyping_central_png_1774002183203.png" 
-                             alt="AI-Driven Prototyping Workflow" style="width: 100%;">
+                        <img src="/Users/shiva/.gemini/antigravity/brain/7a431560-13af-4d27-8a46-020388de217d/ai_prototyping_central_png_1774002183203.png"
+                            alt="AI-Driven Prototyping Workflow" style="width: 100%;">
                     </div>
                     <div class="cs-tag-list" style="align-items: flex-start;">
-                        <div class="cs-tag-item"><i class="icon ion-md-code"></i> Figma Make</div>
-                        <div class="cs-tag-item"><i class="icon ion-md-rocket"></i> Claude UXpilot</div>
-                        <div class="cs-tag-item"><i class="icon ion-md-jet"></i> Rapid Front-end</div>
+                        <div class="cs-tag-item"><i class="icon ion-md-code"></i> AI </div>
+                        <div class="cs-tag-item"><i class="icon ion-md-rocket"></i> Communication</div>
+                        <div class="cs-tag-item"><i class="icon ion-md-jet"></i> Rapid Prototyping</div>
                         <div class="cs-tag-item"><i class="icon ion-md-checkmark-circle"></i> ROI Validation</div>
                     </div>
                 </div>
@@ -879,18 +901,19 @@
                     <div class="cs-tag-list">
                         <div class="cs-tag-item"><i class="icon ion-md-briefcase"></i> Sales Strategy</div>
                         <div class="cs-tag-item"><i class="icon ion-md-desktop"></i> Enterprise Demos</div>
-                        <div class="cs-tag-item"><i class="icon ion-md-trophy"></i> High-Stakes Pitch</div>
+                        <div class="cs-tag-item"><i class="icon ion-md-trophy"></i> Onboarding Consultants</div>
                         <div class="cs-tag-item"><i class="icon ion-md-globe"></i> Global Scaling</div>
                     </div>
                     <div class="cs-central-visual" id="viz-3">
-                        <img src="/Users/shiva/.gemini/antigravity/brain/7a431560-13af-4d27-8a46-020388de217d/boardroom_pitching_central_png_1774002197758.png" 
-                             alt="Boardroom Pitching & Strategy" style="width: 100%;">
+                        <img src="/Users/shiva/.gemini/antigravity/brain/7a431560-13af-4d27-8a46-020388de217d/boardroom_pitching_central_png_1774002197758.png"
+                            alt="Boardroom Pitching & Strategy" style="width: 100%;">
                     </div>
                     <div class="cs-content-side" style="padding-left: 2rem;">
                         <div class="cs-step-marker">03</div>
                         <h3 style="font-size: 2rem; color: white; margin-bottom: 1.5rem;">Boardroom Pitching</h3>
                         <p style="font-size: 1.1rem; line-height: 1.6; color: var(--text-secondary);">
-                            Joined high-stakes sales meetings using live, high-fidelity prototypes. I directly pitched our vision and adjusted design strategy based on real-time feedback.
+                            Joined high-stakes sales meetings using live, high-fidelity prototypes. I directly pitched
+                            our vision and adjusted design strategy based on real-time feedback.
                         </p>
                     </div>
                 </div>
@@ -1091,11 +1114,11 @@
             function getRoundedPath(points, radius = 12) {
                 if (points.length < 2) return "";
                 let d = `M ${points[0].x} ${points[0].y}`;
-                
+
                 for (let i = 1; i < points.length - 1; i++) {
-                    const pPrev = points[i-1];
+                    const pPrev = points[i - 1];
                     const pCurr = points[i];
-                    const pNext = points[i+1];
+                    const pNext = points[i + 1];
 
                     // Points for the curve
                     const angle1 = Math.atan2(pPrev.y - pCurr.y, pPrev.x - pCurr.x);
@@ -1108,129 +1131,114 @@
 
                     d += ` L ${x1} ${y1} Q ${pCurr.x} ${pCurr.y} ${x2} ${y2}`;
                 }
-                
+
                 d += ` L ${points[points.length - 1].x} ${points[points.length - 1].y}`;
                 return d;
             }
 
-            let tagPaths = [];
+            let connectorPaths = [];
+            let borderPaths = [];
 
-            function updateAllPaths() {
-                if (!sections[0] || !sections[1] || !sections[2] || !mainPath || !svgOverlay) return;
+            // Initialize All Path Elements Once
+            function initElements() {
+                const rows = document.querySelectorAll('.cs-contribution-row');
+                rows.forEach((row) => {
+                    const tags = row.querySelectorAll('.cs-tag-item');
+                    tags.forEach((tag) => {
+                        // 1. Create Connector Path (in main SVG overlay)
+                        const p = document.createElementNS("http://www.w3.org/2000/svg", "path");
+                        p.setAttribute('class', 'tag-connector');
+                        svgOverlay.appendChild(p);
+                        connectorPaths.push(p);
 
-                const cRect = container.getBoundingClientRect();
-                
-                // Clear existing tag connectors
-                document.querySelectorAll('.tag-connector').forEach(el => el.remove());
-                tagPaths = [];
+                        // 2. Create Tag Border SVG (inside individual tag)
+                        const bSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                        bSvg.setAttribute('class', 'cs-tag-border-svg');
+                        const bRect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+                        bRect.setAttribute('class', 'cs-tag-border-path');
+                        bRect.setAttribute('x', '0'); bRect.setAttribute('y', '0');
+                        bRect.setAttribute('width', '100%'); bRect.setAttribute('height', '100%');
+                        bRect.setAttribute('rx', '25'); bRect.setAttribute('ry', '25');
+                        bSvg.appendChild(bRect);
+                        tag.appendChild(bSvg);
+                        borderPaths.push(bRect);
+                    });
+                });
+            }
 
-                // 1. Update Main Path
+            initElements();
+
+            function syncAllPaths() {
+                if (!mainPath || !svgOverlay || !container) return;
+                const svgRect = svgOverlay.getBoundingClientRect();
+                const winH = window.innerHeight;
+
+                // 1. Sync Main Path
                 const coords = sections.map(s => {
+                    if (!s) return { x: 0, y: 0 };
                     const r = s.getBoundingClientRect();
                     return {
-                        x: (r.left + r.width / 2) - cRect.left,
-                        y: (r.top + r.height / 2) - cRect.top
+                        x: (r.left + r.width / 2) - svgRect.left,
+                        y: (r.top + r.height / 2) - svgRect.top
                     };
                 });
-
                 let mainPoints = [coords[0]];
                 for (let i = 0; i < coords.length - 1; i++) {
-                    const midY = (coords[i].y + coords[i+1].y) / 2;
-                    mainPoints.push({x: coords[i].x, y: midY});
-                    mainPoints.push({x: coords[i+1].x, y: midY});
-                    mainPoints.push(coords[i+1]);
+                    const midY = (coords[i].y + coords[i + 1].y) / 2;
+                    mainPoints.push({ x: coords[i].x, y: midY });
+                    mainPoints.push({ x: coords[i + 1].x, y: midY });
+                    mainPoints.push(coords[i + 1]);
                 }
-                
                 mainPath.setAttribute('d', getRoundedPath(mainPoints));
                 const mainLength = mainPath.getTotalLength();
+                const cRect = container.getBoundingClientRect();
+                let mainProgress = (winH - cRect.top) / (winH * 0.8 + cRect.height);
+                mainProgress = Math.max(0, Math.min(1, mainProgress));
                 mainPath.style.strokeDasharray = mainLength;
-                mainPath.style.strokeDashoffset = mainLength;
+                mainPath.style.strokeDashoffset = mainLength * (1 - mainProgress);
 
-                // 2. Update Tag Connectors
+                // 2. Sync Tag Connectors & Borders
                 const rows = document.querySelectorAll('.cs-contribution-row');
+                let tagIdx = 0;
                 rows.forEach((row) => {
                     const viz = row.querySelector('.cs-central-visual');
                     const tags = row.querySelectorAll('.cs-tag-item');
                     if (!viz || !tags.length) return;
-
                     const vizRect = viz.getBoundingClientRect();
                     const isReversed = row.classList.contains('cs-row-reversed');
-
-                    // Center point of the visual
-                    const endX = (isReversed ? vizRect.right : vizRect.left) - cRect.left;
-                    const endY = (vizRect.top + vizRect.height / 2) - cRect.top;
-                    
-                    // Turning point for tags
+                    const endX = (isReversed ? vizRect.right : vizRect.left) - svgRect.left;
+                    const endY = (vizRect.top + vizRect.height / 2) - svgRect.top;
                     const midX = isReversed ? (endX + 50) : (endX - 50);
+                    const rowRect = row.getBoundingClientRect();
+                    const rowMiddle = rowRect.top + rowRect.height / 2;
+                    let rowProgress = (winH * 0.95 - rowMiddle) / (winH * 0.45);
+                    rowProgress = Math.max(0, Math.min(1, rowProgress));
 
                     tags.forEach(tag => {
                         const tagRect = tag.getBoundingClientRect();
-                        // Horizontal start point: right edge of tag for normal, left edge for reversed
-                        const startX = (isReversed ? tagRect.left : tagRect.right) - cRect.left;
-                        // Vertical start point: precisely centered
-                        const startY = (tagRect.top + tagRect.height / 2) - cRect.top;
-
-                        const points = [
-                            {x: startX, y: startY},
-                            {x: midX, y: startY},
-                            {x: midX, y: endY},
-                            {x: endX, y: endY}
-                        ];
-
-                        const p = document.createElementNS("http://www.w3.org/2000/svg", "path");
-                        p.setAttribute('class', 'tag-connector');
-                        p.setAttribute('d', getRoundedPath(points, 12));
-                        
-                        const len = p.getTotalLength();
-                        p.style.strokeDasharray = len;
-                        p.style.strokeDashoffset = len;
-                        
-                        svgOverlay.appendChild(p);
-                        tagPaths.push({el: p, length: len});
+                        const startX = (isReversed ? tagRect.left : tagRect.right) - svgRect.left;
+                        const startY = (tagRect.top + tagRect.height / 2) - svgRect.top;
+                        const points = [{ x: startX, y: startY }, { x: midX, y: startY }, { x: midX, y: endY }, { x: endX, y: endY }];
+                        const cp = connectorPaths[tagIdx];
+                        const bp = borderPaths[tagIdx];
+                        tagIdx++;
+                        if (cp) {
+                            cp.setAttribute('d', getRoundedPath(points, 12));
+                            const len = cp.getTotalLength();
+                            cp.style.strokeDasharray = len;
+                            cp.style.strokeDashoffset = len * (1 - rowProgress);
+                        }
+                        if (bp) {
+                            const bLen = bp.getTotalLength();
+                            bp.style.strokeDasharray = bLen;
+                            bp.style.strokeDashoffset = bLen * (1 - rowProgress);
+                        }
                     });
                 });
-
-                return mainLength;
             }
-
-            let mainLength = updateAllPaths();
-
-            window.addEventListener('scroll', () => {
-                const winH = window.innerHeight;
-                const cRect = container.getBoundingClientRect();
-                
-                // 1. Overall progress for main path (make it finish earlier)
-                let mainProgress = (winH - cRect.top) / (winH * 0.8 + cRect.height);
-                mainProgress = Math.max(0, Math.min(1, mainProgress));
-                mainPath.style.strokeDashoffset = mainLength * (1 - mainProgress);
-                
-                // 2. Individual row progress for tag connectors
-                const rows = document.querySelectorAll('.cs-contribution-row');
-                let tagIdx = 0;
-                rows.forEach((row) => {
-                    const rowRect = row.getBoundingClientRect();
-                    const tags = row.querySelectorAll('.cs-tag-item');
-                    if (!tags.length) return;
-
-                    // Calculate progress for this row: 
-                    // 0 when row top is at 90% of viewport
-                    // 1 when row middle is at 40% of viewport
-                    const rowMiddle = rowRect.top + rowRect.height / 2;
-                    let rowProgress = (winH * 0.9 - rowMiddle) / (winH * 0.5);
-                    rowProgress = Math.max(0, Math.min(1, rowProgress));
-
-                    for (let i = 0; i < tags.length; i++) {
-                        const tp = tagPaths[tagIdx++];
-                        if (tp) {
-                            tp.el.style.strokeDashoffset = tp.length * (1 - rowProgress);
-                        }
-                    }
-                });
-            });
-
-            window.addEventListener('resize', () => {
-                mainLength = updateAllPaths();
-            });
+            syncAllPaths();
+            window.addEventListener('scroll', syncAllPaths);
+            window.addEventListener('resize', syncAllPaths);
         });
     </script>
 </body>
