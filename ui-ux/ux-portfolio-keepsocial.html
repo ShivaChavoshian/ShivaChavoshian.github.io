@@ -29,7 +29,6 @@
 
         /* Standardized Case Study Header */
         .case-study-header {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             padding: 1.5rem 0;
             background: var(--bg-color);
             position: sticky;
@@ -159,6 +158,38 @@
             max-width: 550px;
             line-height: 1.7;
             margin-bottom: 2.5rem;
+        }
+
+        /* ── Alternating Background ── */
+        .cs-bg-alt {
+            background: #0B1120;
+        }
+
+        /* ── Unified Section Header ── */
+        .cs-section-header {
+            margin-bottom: 3rem;
+        }
+
+        .cs-section-header .cs-eyebrow {
+            margin-bottom: 1rem;
+        }
+
+        .cs-section-header h2 {
+            font-size: 3rem;
+            line-height: 1.1;
+            margin-bottom: 0;
+        }
+
+        .cs-section-header .accent-bar {
+            width: 50px;
+            height: 3px;
+            background: var(--accent-gradient);
+            margin-top: 2rem;
+        }
+
+        /* ── Section border cleanup ── */
+        .cs-section {
+            border-bottom: none;
         }
 
         @keyframes glow-pulse {
@@ -855,13 +886,14 @@
 
 
         <!-- The Context -->
-        <section class="cs-section">
+        <section class="cs-section cs-bg-alt">
             <div class="container">
                 <div class="cs-split-layout">
                     <div class="cs-sticky-side animate-on-scroll">
-                        <span class="cs-eyebrow">Problem</span>
-                        <h2 style="font-size: 3rem; line-height: 1.1;">The "Play and Leave" <br> Problem</h2>
-                        <div style="width: 50px; height: 3px; background: var(--accent-gradient); margin-top: 2rem;">
+                        <div class="cs-section-header">
+                            <span class="cs-eyebrow">Problem</span>
+                            <h2>The "Play and Leave" <br> Problem</h2>
+                            <div class="accent-bar"></div>
                         </div>
                     </div>
 
@@ -881,16 +913,15 @@
         </section>
 
         <!-- Core Features -->
-        <section class="cs-section" style="background: #000000; position: relative; overflow: hidden;">
+        <section class="cs-section" style="position: relative; overflow: hidden;">
             <div class="container">
                 <div class="cs-split-layout" style="align-items: center; gap: 4rem;">
                     <div class="cs-content-side animate-on-scroll">
-                        <span class="cs-eyebrow"
-                            style="color: var(--accent-highlight); margin-bottom: 1.5rem;">Solution</span>
-                        <h2
-                            style="font-size: clamp(2.5rem, 5vw, 3.8rem); line-height: 1.1; margin-bottom: 2rem; font-weight: 800; letter-spacing: -0.03em;">
-                            Boost app engagement with <br> social features
-                        </h2>
+                        <div class="cs-section-header">
+                            <span class="cs-eyebrow">Solution</span>
+                            <h2>Boost app engagement with <br> social features</h2>
+                            <div class="accent-bar" style="margin-bottom: 2rem;"></div>
+                        </div>
 
                         <ul style="list-style: none; padding: 0; margin-bottom: 3rem;">
                             <li
@@ -922,7 +953,7 @@
                         </a>
                     </div>
                     <div class="cs-hero-visual animate-on-scroll" style="position: relative;">
-                        <img src="/Users/shiva/.gemini/antigravity/brain/7a431560-13af-4d27-8a46-020388de217d/keepsocial_sports_minimalist_line_final_1773998141108.png"
+                        <img src="../img/projects/keepsocial/solution-social-features.png"
                             alt="Social Features Composition - Sportsbook Gaming Layered UI"
                             style="width: 100%; border-radius: 0; transition: transform 0.5s ease;">
                     </div>
@@ -931,7 +962,7 @@
         </section>
 
         <!-- My Contribution -->
-        <section class="cs-section" style="position: relative; overflow: hidden; background: #050505;">
+        <section class="cs-section cs-bg-alt" style="position: relative; overflow: hidden;">
             <div class="container cs-contribution-container">
 
                 <!-- SVG Connector Overlay -->
@@ -939,13 +970,11 @@
                     <path id="contribution-path" class="connector-path" d="" />
                 </svg>
 
-                <div style="text-align: left; max-width: 800px; margin: 0 0 8rem 0;" class="animate-on-scroll">
-                    <span class="cs-eyebrow"
-                        style="color: var(--accent-highlight); margin-bottom: 1rem; display: block;">My
-                        Contribution</span>
-                    <h2 style="font-size: 3.5rem; margin-bottom: 1.5rem; line-height: 1.1;">From Strategy to Execution
-                    </h2>
-                    <p style="font-size: 1.25rem; color: var(--text-secondary); max-width: 650px;">I acted as the bridge
+                <div class="cs-section-header animate-on-scroll" style="max-width: 800px;">
+                    <span class="cs-eyebrow">My Contribution</span>
+                    <h2>From Strategy to Execution</h2>
+                    <div class="accent-bar" style="margin-bottom: 1.5rem;"></div>
+                    <p style="font-size: 1.25rem; color: var(--text-secondary); max-width: 650px; margin-top: 1.5rem;">I acted as the bridge
                         between users, engineering, and global enterprise partners.</p>
                 </div>
 
@@ -985,7 +1014,7 @@
                         </p>
                     </div>
                     <div class="cs-central-visual" id="viz-2">
-                        <img src="/Users/shiva/.gemini/antigravity/brain/7a431560-13af-4d27-8a46-020388de217d/ai_prototyping_central_png_1774002183203.png"
+                        <img src="../img/projects/keepsocial/ai-driven-prototyping.png"
                             alt="AI-Driven Prototyping Workflow" style="width: 100%;">
                     </div>
                     <div class="cs-tag-list" style="align-items: flex-start;">
@@ -1024,12 +1053,15 @@
         </section>
 
         <!-- Phase 1: Gaming -->
-        <section class="cs-section" style="background: rgba(255,255,255,0.01);">
+        <section class="cs-section">
             <div class="container">
                 <div class="cs-split-layout">
                     <div class="cs-content-side animate-on-scroll">
-                        <span class="cs-eyebrow">Phase 01: The Proof</span>
-                        <h2>The Gaming Industry</h2>
+                        <div class="cs-section-header">
+                            <span class="cs-eyebrow">Phase 01: The Proof</span>
+                            <h2>The Gaming Industry</h2>
+                            <div class="accent-bar"></div>
+                        </div>
                         <p>We started where communities are most demanding. Gamers expect high performance, real-time
                             interaction, and deep gamification.</p>
 
@@ -1062,11 +1094,12 @@
         </section>
 
         <!-- The Pivot: Scaling to Global Brands -->
-        <section class="cs-section">
+        <section class="cs-section cs-bg-alt">
             <div class="container">
-                <div class="animate-on-scroll" style="margin-bottom: 4rem;">
+                <div class="cs-section-header animate-on-scroll">
                     <span class="cs-eyebrow">Phase 02: the expnastion</span>
-                    <h2 style="font-size: 3.5rem; line-height: 1.1;">Scaling to Global Brands</h2>
+                    <h2>Scaling to Global Brands</h2>
+                    <div class="accent-bar" style="margin-bottom: 1.5rem;"></div>
                     <p style="font-size: 1.25rem; margin-top: 1rem;">Once proven in Gaming, we pivoted to enterprise
                         retail and sports, adapting the engine for <strong>IKEA, Lindex, and MotoGP</strong>.</p>
                 </div>
@@ -1103,12 +1136,14 @@
 
 
         <!-- Impact & Results -->
-        <section class="cs-section" style="background: var(--accent-gradient); color: white; border: none;">
+        <section class="cs-section" style="background: var(--accent-gradient); color: white;">
             <div class="container">
                 <div class="cs-split-layout">
                     <div class="cs-content-side animate-on-scroll">
-                        <span class="cs-eyebrow" style="color: rgba(255,255,255,0.8);">Outcomes</span>
-                        <h2 style="color: white; font-size: 4rem;">Business Impact</h2>
+                        <div class="cs-section-header">
+                            <span class="cs-eyebrow" style="color: rgba(255,255,255,0.8);">Outcomes</span>
+                            <h2 style="color: white;">Business Impact</h2>
+                        </div>
                         <ul style="list-style: none; padding: 0; margin-top: 3rem;">
                             <li style="margin-bottom: 2rem; display: flex; gap: 1.5rem; align-items: flex-start;">
                                 <i class="icon ion-md-flash" style="font-size: 1.5rem;"></i>
@@ -1154,9 +1189,10 @@
         <!-- Reflections -->
         <section class="cs-section">
             <div class="container animate-on-scroll">
-                <div style="text-align: center; margin-bottom: 4rem;">
+                <div class="cs-section-header" style="text-align: center;">
                     <span class="cs-eyebrow">Reflections</span>
                     <h2>Senior Product Perspective</h2>
+                    <div class="accent-bar" style="margin: 2rem auto 0;"></div>
                 </div>
                 <div class="cs-impact-grid">
                     <div class="cs-glass-card" style="text-align: left; padding: 2.5rem;">
