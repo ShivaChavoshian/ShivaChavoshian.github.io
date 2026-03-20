@@ -644,6 +644,54 @@
             box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
         }
 
+        /* ── Floating Social Icons ── */
+        .solution-mockup-container {
+            position: relative;
+            width: 100%;
+            perspective: 1200px;
+        }
+
+        .floating-social-icon {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+            color: white;
+            font-size: 1.8rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+            animation: float-particle 4s ease-in-out infinite;
+            transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        @keyframes float-particle {
+            0%, 100% { transform: translateY(0) rotate(0); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        .icon-heart { background: linear-gradient(135deg, #ff4d6d, #ff758f); top: 5%; left: 15%; animation-delay: 0s; }
+        .icon-like { background: linear-gradient(135deg, #3a86ff, #4cc9f0); bottom: 25%; left: 10%; animation-delay: 1s; }
+        .icon-share { background: linear-gradient(135deg, #4361ee, #4895ef); top: 30%; right: 10%; animation-delay: 0.5s; width: 55px; height: 55px; }
+        .icon-send { background: linear-gradient(135deg, #fb8500, #ffb703); bottom: 10%; right: 15%; animation-delay: 1.5s; width: 65px; height: 65px; }
+        .icon-chat { background: linear-gradient(135deg, #06d6a0, #118ab2); bottom: 40%; right: 35%; animation-delay: 2s; width: 50px; height: 50px; }
+
+        .solution-mockup-wrapper {
+            transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .solution-mockup-container:hover .solution-mockup-wrapper {
+            transform: rotateY(-3deg) rotateX(1deg) scale(1.02);
+        }
+
+        .solution-mockup-container:hover .floating-social-icon {
+            transform: translateZ(60px) scale(1.1);
+        }
+
 
         /* Modular Contribution Layout */
         .cs-contribution-container {
@@ -972,9 +1020,20 @@
                         </a>
                     </div>
                     <div class="cs-hero-visual animate-on-scroll" style="position: relative;">
-                        <img src="../img/projects/keepsocial/solution-social-features.png"
-                            alt="Social Features Composition - Sportsbook Gaming Layered UI"
-                            style="width: 100%; border-radius: 0; transition: transform 0.5s ease;">
+                        <div class="solution-mockup-container">
+                            <!-- Animated Floating Icons for Depth -->
+                            <div class="floating-social-icon icon-heart"><i class="icon ion-md-heart"></i></div>
+                            <div class="floating-social-icon icon-like"><i class="icon ion-md-thumbs-up"></i></div>
+                            <div class="floating-social-icon icon-share"><i class="icon ion-md-share"></i></div>
+                            <div class="floating-social-icon icon-send"><i class="icon ion-md-paper-plane"></i></div>
+                            <div class="floating-social-icon icon-chat"><i class="icon ion-md-chatbubbles"></i></div>
+                            
+                            <div class="solution-mockup-wrapper">
+                                <img src="../img/projects/keepsocial/solution-social-features.png"
+                                    alt="Social Features Composition - Sportsbook Gaming Layered UI"
+                                    style="width: 100%; border-radius: 0; transition: transform 0.5s ease;">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
