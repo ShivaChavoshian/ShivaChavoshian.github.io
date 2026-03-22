@@ -1136,40 +1136,242 @@
         <!-- Phase 1: Gaming -->
         <section class="cs-section">
             <div class="container">
-                <div class="cs-split-layout">
-                    <div class="cs-content-side animate-on-scroll">
-                        <div class="cs-section-header">
-                            <span class="cs-eyebrow">Phase 01: The Proof</span>
-                            <h2>The Gaming Industry</h2>
-                            <div class="accent-bar"></div>
-                        </div>
-                        <p>We started where communities are most demanding. Gamers expect high performance, real-time
-                            interaction, and deep gamification.</p>
+                <!-- New Layout Content -->
+                <div class="cs-section-header animate-on-scroll" style="text-align: center; max-width: 800px; margin: 0 auto 4rem;">
+                    <span class="cs-eyebrow">Phase 01: The Proof</span>
+                    <h2 style="font-size: 3rem; margin-bottom: 1.5rem;">The Gaming Industry</h2>
+                    <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.7;">
+                        We started where communities are most demanding. Gamers expect high performance, real-time interaction, and deep gamification. Success in Canada led to EU, Australia, and Africa.
+                    </p>
+                </div>
 
-                        <div class="phase-card">
-                            <div class="phase-card-content">
-                                <h3>Betway</h3>
-                                <p>Optimized for rich media (gameplay clips, screenshots) and quick interactions like
-                                    upvotes and threaded replies.</p>
+                <div class="grid animate-on-scroll" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 5rem;">
+                    <style>
+                        @keyframes spin-self {
+                            100% { transform: rotate(360deg); }
+                        }
+                        .animate-ball { display: inline-block; animation: spin-self 4s linear infinite; transform-origin: center; }
+
+                        .dice-scene {
+                            width: 20px; height: 20px;
+                            perspective: 100px;
+                            display: inline-block;
+                        }
+                        .dice-cube {
+                            width: 100%; height: 100%;
+                            position: relative;
+                            transform-style: preserve-3d;
+                            animation: roll-3d 5s infinite linear;
+                        }
+                        .dice-face {
+                            position: absolute;
+                            width: 20px; height: 20px;
+                            background: var(--accent-primary);
+                            border: 1px solid rgba(255,255,255,0.4);
+                            border-radius: 3px;
+                            box-sizing: border-box;
+                        }
+                        .dice-face::after {
+                            content: '';
+                            position: absolute;
+                            width: 3px; height: 3px;
+                            background: transparent;
+                            border-radius: 50%;
+                            left: 0; top: 0;
+                        }
+                        .face-1 { transform: rotateY(0deg) translateZ(10px); }
+                        .face-2 { transform: rotateX(90deg) translateZ(10px); }
+                        .face-3 { transform: rotateY(90deg) translateZ(10px); }
+                        .face-4 { transform: rotateY(-90deg) translateZ(10px); }
+                        .face-5 { transform: rotateX(-90deg) translateZ(10px); }
+                        .face-6 { transform: rotateY(180deg) translateZ(10px); }
+
+                        .face-1::after { box-shadow: 7.5px 7.5px 0 white; }
+                        .face-2::after { box-shadow: 3.5px 3.5px 0 white, 11.5px 11.5px 0 white; }
+                        .face-3::after { box-shadow: 3.5px 3.5px 0 white, 7.5px 7.5px 0 white, 11.5px 11.5px 0 white; }
+                        .face-4::after { box-shadow: 3.5px 3.5px 0 white, 11.5px 3.5px 0 white, 3.5px 11.5px 0 white, 11.5px 11.5px 0 white; }
+                        .face-5::after { box-shadow: 3.5px 3.5px 0 white, 11.5px 3.5px 0 white, 7.5px 7.5px 0 white, 3.5px 11.5px 0 white, 11.5px 11.5px 0 white; }
+                        .face-6::after { box-shadow: 3.5px 3.5px 0 white, 11.5px 3.5px 0 white, 3.5px 7.5px 0 white, 11.5px 7.5px 0 white, 3.5px 11.5px 0 white, 11.5px 11.5px 0 white; }
+
+                        @keyframes roll-3d {
+                            0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+                            100% { transform: rotateX(360deg) rotateY(720deg) rotateZ(360deg); }
+                        }
+                    </style>
+                    <div class="phase-card" style="margin-bottom: 0;">
+                        <div class="phase-card-content">
+                            <h3 style="color: white; margin-bottom: 1rem; font-size: 1.3rem; display: flex; align-items: center; gap: 0.5rem;">
+                                <span style="display:inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: rgba(99, 102, 241, 0.2); border-radius: 8px; color: var(--accent-primary);"><i class="icon ion-md-football animate-ball"></i></span>Betway
+                            </h3>
+                            <p style="font-size: 1rem; color: var(--text-secondary); line-height: 1.6;">We successfully launched a social layer on Betway, one of the biggest sportsbooks with millions of users. It featured search, a personalized feed, clips, a social bar, user interaction, and social profiles.</p>
+                        </div>
+                    </div>
+                    <div class="phase-card" style="margin-bottom: 0;">
+                        <div class="phase-card-content">
+                            <h3 style="color: white; margin-bottom: 1rem; font-size: 1.3rem; display: flex; align-items: center; gap: 0.5rem;">
+                                <span style="display:inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: rgba(99, 102, 241, 0.2); border-radius: 8px; color: var(--accent-primary);">
+                                    <div class="dice-scene">
+                                        <div class="dice-cube">
+                                            <div class="dice-face face-1"></div>
+                                            <div class="dice-face face-2"></div>
+                                            <div class="dice-face face-3"></div>
+                                            <div class="dice-face face-4"></div>
+                                            <div class="dice-face face-5"></div>
+                                            <div class="dice-face face-6"></div>
+                                        </div>
+                                    </div>
+                                </span>Games Global
+                            </h3>
+                            <p style="font-size: 1rem; color: var(--text-secondary); line-height: 1.6;">As pioneers in online gaming socialization, we deeply studied player behavior. We found that social profiles, group chats, and comments on online gaming were the best fit for these users.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The App Screens Carousel (8 screens) -->
+                <div class="animate-on-scroll" style="position: relative; width: 100%; margin: 2rem auto 4rem; display: flex; align-items: center; justify-content: center; padding: 0 50px;">
+                    
+                    <!-- Left Arrow -->
+                    <button id="scrollLeftBtn" style="position: absolute; left: 0; z-index: 10; width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); color: var(--text-primary); cursor: pointer; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(8px); transition: all 0.3s ease;"><i class="icon ion-md-arrow-back" style="font-size: 1.2rem;"></i></button>
+
+                    <!-- Scroll Track -->
+                    <div id="screenCarousel" style="display: flex; gap: 1.5rem; overflow-x: auto; scroll-behavior: smooth; padding: 1rem 0 2rem; scroll-snap-type: x mandatory; scrollbar-width: none; -ms-overflow-style: none; width: 100%;">
+                        <style>
+                            #screenCarousel::-webkit-scrollbar { display: none; }
+                            .thin-screen-wrapper {
+                                flex: 0 0 calc(25% - 1.125rem);
+                                min-width: 240px;
+                                max-width: 280px;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                scroll-snap-align: start;
+                            }
+                            @media (max-width: 1024px) {
+                                .thin-screen-wrapper { flex: 0 0 calc(33.333% - 1rem); }
+                            }
+                            @media (max-width: 768px) {
+                                .thin-screen-wrapper { flex: 0 0 calc(50% - 0.75rem); }
+                            }
+                            @media (max-width: 480px) {
+                                .thin-screen-wrapper { flex: 0 0 85%; }
+                            }
+                            .thin-screen {
+                                width: 100%;
+                                aspect-ratio: 9/19;
+                                border: 1px solid rgba(255,255,255,0.1);
+                                border-radius: 20px;
+                                overflow: hidden;
+                                background: #050505;
+                                box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+                                transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.4s ease;
+                            }
+                            .thin-screen-wrapper:hover .thin-screen {
+                                transform: translateY(-8px);
+                                border-color: rgba(99, 102, 241, 0.4);
+                                box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+                            }
+                        </style>
+
+                        <!-- Screen 1: Feeds -->
+                        <div class="thin-screen-wrapper">
+                            <span class="cs-eyebrow" style="text-align: center; margin-bottom: 1.2rem; color: var(--text-secondary); letter-spacing: 0.05em; font-size: 0.9rem;">Activity Feeds</span>
+                            <div class="thin-screen">
+                                <img src="../img/placeholder.jpg" alt="Activity Feeds" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.3;">
                             </div>
                         </div>
-                        <div class="phase-card">
-                            <div class="phase-card-content">
-                                <h3>Games Global</h3>
-                                <p>A flexible badge and leaderboard system that developers could tweak on the fly to
-                                    drive retention.</p>
+
+                        <!-- Screen 2: Explore -->
+                        <div class="thin-screen-wrapper">
+                            <span class="cs-eyebrow" style="text-align: center; margin-bottom: 1.2rem; color: var(--text-secondary); letter-spacing: 0.05em; font-size: 0.9rem;">Explore</span>
+                            <div class="thin-screen">
+                                <img src="../img/placeholder.jpg" alt="Explore" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.3;">
                             </div>
                         </div>
 
-                        <p style="margin-top: 2rem; font-style: italic; color: var(--accent-highlight);">
-                            Success in Canada led to EU, Australia, and Africa. But it raised the ultimate design
-                            question: <strong>How does this scale to any industry?</strong>
-                        </p>
+                        <!-- Screen 3: Groups -->
+                        <div class="thin-screen-wrapper">
+                            <span class="cs-eyebrow" style="text-align: center; margin-bottom: 1.2rem; color: var(--text-secondary); letter-spacing: 0.05em; font-size: 0.9rem;">Groups</span>
+                            <div class="thin-screen">
+                                <img src="../img/placeholder.jpg" alt="Groups" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.3;">
+                            </div>
+                        </div>
+
+                        <!-- Screen 4: Profiles -->
+                        <div class="thin-screen-wrapper">
+                            <span class="cs-eyebrow" style="text-align: center; margin-bottom: 1.2rem; color: var(--text-secondary); letter-spacing: 0.05em; font-size: 0.9rem;">Profiles</span>
+                            <div class="thin-screen">
+                                <img src="../img/placeholder.jpg" alt="Profiles" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.3;">
+                            </div>
+                        </div>
+
+                        <!-- Screen 5: Livestream -->
+                        <div class="thin-screen-wrapper">
+                            <span class="cs-eyebrow" style="text-align: center; margin-bottom: 1.2rem; color: var(--text-secondary); letter-spacing: 0.05em; font-size: 0.9rem;">Livestream</span>
+                            <div class="thin-screen">
+                                <img src="../img/placeholder.jpg" alt="Livestream" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.3;">
+                            </div>
+                        </div>
+
+                        <!-- Screen 6: Group Chat -->
+                        <div class="thin-screen-wrapper">
+                            <span class="cs-eyebrow" style="text-align: center; margin-bottom: 1.2rem; color: var(--text-secondary); letter-spacing: 0.05em; font-size: 0.9rem;">Group Chat</span>
+                            <div class="thin-screen">
+                                <img src="../img/placeholder.jpg" alt="Group Chat" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.3;">
+                            </div>
+                        </div>
+
+                        <!-- Screen 7: Stories -->
+                        <div class="thin-screen-wrapper">
+                            <span class="cs-eyebrow" style="text-align: center; margin-bottom: 1.2rem; color: var(--text-secondary); letter-spacing: 0.05em; font-size: 0.9rem;">Stories</span>
+                            <div class="thin-screen">
+                                <img src="../img/placeholder.jpg" alt="Stories" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.3;">
+                            </div>
+                        </div>
+
+                        <!-- Screen 8: Discover -->
+                        <div class="thin-screen-wrapper">
+                            <span class="cs-eyebrow" style="text-align: center; margin-bottom: 1.2rem; color: var(--text-secondary); letter-spacing: 0.05em; font-size: 0.9rem;">Discover</span>
+                            <div class="thin-screen">
+                                <img src="../img/placeholder.jpg" alt="Discover" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.3;">
+                            </div>
+                        </div>
                     </div>
-                    <div class="cs-hero-visual animate-on-scroll">
-                        <img src="/Users/shiva/.gemini/antigravity/brain/7a431560-13af-4d27-8a46-020388de217d/keepsocial_gaming_suite_mockups_1773957126345.png"
-                            alt="Gaming Suite Mockups" style="width: 100%;">
-                    </div>
+
+                    <!-- Right Arrow -->
+                    <button id="scrollRightBtn" style="position: absolute; right: 0; z-index: 10; width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); color: var(--text-primary); cursor: pointer; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(8px); transition: all 0.3s ease;"><i class="icon ion-md-arrow-forward" style="font-size: 1.2rem;"></i></button>
+
+                    <script>
+                        document.addEventListener('DOMContentLoaded', () => {
+                            const container = document.getElementById('screenCarousel');
+                            const leftBtn = document.getElementById('scrollLeftBtn');
+                            const rightBtn = document.getElementById('scrollRightBtn');
+                            
+                            // Simple styles on hover for buttons
+                            [leftBtn, rightBtn].forEach(btn => {
+                                btn.addEventListener('mouseenter', () => {
+                                    btn.style.background = 'rgba(99, 102, 241, 0.4)';
+                                    btn.style.borderColor = 'var(--accent-primary)';
+                                });
+                                btn.addEventListener('mouseleave', () => {
+                                    btn.style.background = 'rgba(255,255,255,0.05)';
+                                    btn.style.borderColor = 'rgba(255,255,255,0.15)';
+                                });
+                            });
+
+                            if(leftBtn && rightBtn && container) {
+                                leftBtn.addEventListener('click', () => {
+                                    const itemWidth = container.querySelector('.thin-screen-wrapper').offsetWidth;
+                                    const gap = 24; // 1.5rem
+                                    container.scrollBy({ left: -(itemWidth + gap), behavior: 'smooth' });
+                                });
+                                rightBtn.addEventListener('click', () => {
+                                    const itemWidth = container.querySelector('.thin-screen-wrapper').offsetWidth;
+                                    const gap = 24; 
+                                    container.scrollBy({ left: (itemWidth + gap), behavior: 'smooth' });
+                                });
+                            }
+                        });
+                    </script>
                 </div>
             </div>
         </section>
