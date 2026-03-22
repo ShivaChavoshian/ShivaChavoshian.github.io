@@ -1474,40 +1474,153 @@
         </section>
 
         <!-- The Pivot: Scaling to Global Brands -->
-        <section class="cs-section cs-bg-alt">
+        <section class="cs-section cs-bg-alt" id="expansion-section">
+            <style>
+                #expansion-section {
+                    position: relative;
+                    overflow: hidden;
+                }
+
+                .brand-ticker-title {
+                    text-align: center;
+                    font-size: 0.8rem;
+                    color: var(--text-secondary);
+                    text-transform: uppercase;
+                    letter-spacing: 0.2em;
+                    margin-bottom: 1rem;
+                    opacity: 0.4;
+                }
+
+                .brand-logo-ticker {
+                    margin-bottom: 5rem;
+                }
+
+                .brand-logo-ticker .logo-ticker-track span {
+                    font-family: 'Playfair Display', serif;
+                    font-size: 2.2rem;
+                    font-weight: 800;
+                    color: rgba(255, 255, 255, 0.15);
+                    transition: color 0.3s ease, transform 0.3s ease;
+                }
+
+                .brand-logo-ticker .logo-ticker-track span:hover {
+                    color: var(--accent-highlight);
+                    transform: scale(1.1);
+                }
+
+                /* Cards Horizontal Grid */
+                .cards-horizontal-grid {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 1.5rem;
+                    margin-top: 4rem;
+                }
+
+                .phase-card-v2 {
+                    padding: 2.5rem;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .phase-icon-box {
+                    width: 48px;
+                    height: 48px;
+                    background: rgba(99, 102, 241, 0.1);
+                    border: 1px solid rgba(99, 102, 241, 0.2);
+                    border-radius: 12px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 1.4rem;
+                    color: var(--accent-highlight);
+                    margin-bottom: 1.2rem;
+                }
+
+                .phase-card-content h3 {
+                    font-size: 1.3rem;
+                    color: white;
+                    margin-bottom: 0.8rem;
+                }
+
+                .phase-card-content p {
+                    font-size: 1rem;
+                    line-height: 1.6;
+                    color: var(--text-secondary);
+                }
+
+                @media (max-width: 1024px) {
+                    .cards-horizontal-grid {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    .cards-horizontal-grid {
+                        grid-template-columns: 1fr;
+                    }
+                }
+            </style>
+
             <div class="container">
-                <div class="cs-section-header animate-on-scroll">
-                    <span class="cs-eyebrow">Phase 02: the expnastion</span>
+                <div class="cs-section-header animate-on-scroll" style="text-align: center; margin-bottom: 4rem;">
+                    <span class="cs-eyebrow">Phase 02: Market Exploration</span>
                     <h2>Scaling to Global Brands</h2>
-                    <div class="accent-bar" style="margin-bottom: 1.5rem;"></div>
-                    <p style="font-size: 1.25rem; margin-top: 1rem;">Once proven in Gaming, we pivoted to enterprise
-                        retail and sports, adapting the engine for <strong>IKEA, Lindex, and MotoGP</strong>.</p>
+                    <div class="accent-bar" style="margin: 1.5rem auto;"></div>
+                    <p style="font-size: 1.2rem; max-width: 750px; margin: 1rem auto 0; line-height: 1.6;">Following
+                        success in Gaming, we investigated scaling our social engine into enterprise retail and sports,
+                        analyzing requirements for potential partners like IKEA, Lindex and MotoGP.</p>
                 </div>
 
-                <div class="cs-split-layout">
-                    <div class="cs-sticky-side animate-on-scroll">
-                        <div
-                            style="margin-bottom: 2rem; border-radius: var(--radius-md); overflow: hidden; border: 1px solid rgba(255,255,255,0.05);">
-                            <img src="/Users/shiva/.gemini/antigravity/brain/7a431560-13af-4d27-8a46-020388de217d/keepsocial_design_system_tokens_1773957145576.png"
-                                alt="Modular Design System Visualization" style="width: 100%;">
+                <div class="brand-logo-ticker animate-on-scroll" style="transition-delay: 0.1s;">
+                    <p class="brand-ticker-title">Analyzing expansion potential</p>
+                    <div class="logo-ticker-container">
+                        <div class="logo-ticker-track">
+                            <span>IKEA</span>
+                            <span>MOTOGP</span>
+                            <span>LINDEX</span>
+                            <span>DERIVCO</span>
+                            <span>BETWAY</span>
+                            <span>LuttoNuts</span>
+                            <span>Vagabond</span>
+                            <span>Retails</span>
+                            <span>Sports</span>
+                            <span>Casino</span>
+                            <span>Gaming</span>
                         </div>
                     </div>
-                    <div class="cs-content-side animate-on-scroll">
-                        <div class="phase-card">
-                            <div class="phase-card-content">
-                                <h3>The White-Label Architecture</h3>
-                                <p>I refactored the entire UI into a scalable <strong>Design System</strong> using
-                                    semantic tokens. This allowed diverse brands to customize colors, radii, and vibe
-                                    globally via a simple dashboard.</p>
-                            </div>
+                </div>
+
+                <div class="cards-horizontal-grid">
+                    <div class="phase-card-v2 cs-glass-card hover-glow animate-on-scroll"
+                        style="transition-delay: 0.2s;">
+                        <div class="phase-icon-box"><i class="icon ion-md-cube"></i></div>
+                        <div class="phase-card-content">
+                            <h3>Product-Wide White-Label Strategy</h3>
+                            <p>Collaborating with developers and architects, We defined a scalable design system
+                                using semantic tokens. This strategic framework allowed the entire product ecosystem
+                                to adapt to diverse brand identities.</p>
                         </div>
-                        <div class="phase-card">
-                            <div class="phase-card-content">
-                                <h3>Industry-Agnostic Validation</h3>
-                                <p>Led tailored research initiatives for each suite. By validating retail (IKEA) vs.
-                                    sports (MotoGP), we ensured our core features solved industry-specific problems
-                                    without breaking the modular layout.</p>
-                            </div>
+                    </div>
+                    <div class="phase-card-v2 cs-glass-card hover-glow animate-on-scroll"
+                        style="transition-delay: 0.3s;">
+                        <div class="phase-icon-box"><i class="icon ion-md-globe"></i></div>
+                        <div class="phase-card-content">
+                            <h3>Industry-Agnostic User Research</h3>
+                            <p>I led the UX research phase, conducting in-depth interviews with potential enterprise
+                                customers to solve real-world needs. This ensured our modular features added value
+                                across different industries before any technical commitment.</p>
+                        </div>
+                    </div>
+                    <div class="phase-card-v2 cs-glass-card hover-glow animate-on-scroll"
+                        style="transition-delay: 0.4s;">
+                        <div class="phase-icon-box"><i class="icon ion-md-microphone"></i></div>
+                        <div class="phase-card-content">
+                            <h3>Sales Alignment & AI Prototyping</h3>
+                            <p>Worked closely with Sales and Product leadership to create high-stakes presentation
+                                strategies. I developed <strong>AI-powered personalized prototypes</strong> to
+                                visualize the product's value within each brand's ecosystem, facilitating key
+                                stakeholder meetings.</p>
                         </div>
                     </div>
                 </div>
@@ -1631,10 +1744,15 @@
                         <div style="flex: 1; border-left: 1px solid rgba(255,255,255,0.1); padding-left: 3rem;">
                             <h4 style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.85rem;">Partner
                                 Validation</h4>
-                            <p style="font-size: 1.2rem; color: white; line-height: 1.6; margin: 0; font-family: 'Playfair Display', serif; font-style: italic;">&ldquo;The integrated
+                            <p
+                                style="font-size: 1.2rem; color: white; line-height: 1.6; margin: 0; font-family: 'Playfair Display', serif; font-style: italic;">
+                                &ldquo;The integrated
                                 social commenting and tailored feeds perfectly align with our engagement strategy,
-                                keeping players deeply immersed in the ecosystem without needing external channels.&rdquo;</p>
-                            <p style="font-weight: 700; margin-top: 1.5rem; font-size: 0.9rem; color: var(--accent-highlight); text-transform: uppercase; letter-spacing: 0.05em;">— Head of Social Product</p>
+                                keeping players deeply immersed in the ecosystem without needing external
+                                channels.&rdquo;</p>
+                            <p
+                                style="font-weight: 700; margin-top: 1.5rem; font-size: 0.9rem; color: var(--accent-highlight); text-transform: uppercase; letter-spacing: 0.05em;">
+                                — Head of Social Product</p>
                         </div>
                     </div>
 

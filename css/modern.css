@@ -164,6 +164,37 @@ section {
     position: relative;
     overflow: hidden;
 }
+/* -------------------------------------------------------------------------- */
+/*                                Logo Ticker                                 */
+/* -------------------------------------------------------------------------- */
+
+@keyframes logo-ticker-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.logo-ticker-container {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    position: relative;
+    padding: 1.5rem 0;
+}
+
+.logo-ticker-track {
+    display: inline-flex;
+    align-items: center;
+    gap: 4rem;
+    animation: logo-ticker-scroll 40s linear infinite;
+}
+
+.logo-ticker-track:hover {
+    animation-play-state: paused;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 Hover Glow                                 */
+/* -------------------------------------------------------------------------- */
 
 /* -------------------------------------------------------------------------- */
 /*                                 Components                                 */
@@ -1190,4 +1221,34 @@ section {
         max-width: 100%;
         aspect-ratio: 1 / 1;
     }
+}
+
+
+
+
+.hover-glow {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.hover-glow::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px; /* Size of the glow */
+    height: 300px; /* Size of the glow */
+    background: radial-gradient(circle, var(--accent-highlight) 0%, transparent 70%);
+    filter: blur(60px);
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.hover-glow:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.15;
 }
