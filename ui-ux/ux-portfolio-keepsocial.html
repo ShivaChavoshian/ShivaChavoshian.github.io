@@ -1521,6 +1521,51 @@
                     height: 100%;
                     display: flex;
                     flex-direction: column;
+                    position: relative;
+                    overflow: hidden;
+                }
+
+                .phase-card-v2::before {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 90%;
+                    height: 90%;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    opacity: 0.05;
+                    z-index: 0;
+                    transition: opacity 0.4s ease;
+                    filter: grayscale(1);
+                    pointer-events: none;
+                }
+
+                .phase-card-v2:hover::before {
+                    opacity: 0;
+                }
+
+                .phase-card-v2:hover {
+                    background: rgba(255, 255, 255, 0.08); /* A subtle solid background color on hover */
+                }
+
+                .card-bg-1::before {
+                    background-image: url('../img/projects/derivco/Derivco-Global-Gaming-Sample-Work/card-bg-design-system.png');
+                }
+
+                .card-bg-2::before {
+                    background-image: url('../img/projects/derivco/Derivco-Global-Gaming-Sample-Work/card-bg-user-research.png');
+                }
+
+                .card-bg-3::before {
+                    background-image: url('../img/projects/derivco/Derivco-Global-Gaming-Sample-Work/card-bg-brands-feed.png');
+                }
+
+                .phase-card-v2 > * {
+                    position: relative;
+                    z-index: 1;
                 }
 
                 .phase-icon-box {
@@ -1592,7 +1637,7 @@
                 </div>
 
                 <div class="cards-horizontal-grid">
-                    <div class="phase-card-v2 cs-glass-card hover-glow animate-on-scroll"
+                    <div class="phase-card-v2 card-bg-1 cs-glass-card hover-glow animate-on-scroll"
                         style="transition-delay: 0.2s;">
                         <div class="phase-icon-box"><i class="icon ion-md-cube"></i></div>
                         <div class="phase-card-content">
@@ -1602,7 +1647,7 @@
                                 to adapt to diverse brand identities.</p>
                         </div>
                     </div>
-                    <div class="phase-card-v2 cs-glass-card hover-glow animate-on-scroll"
+                    <div class="phase-card-v2 card-bg-2 cs-glass-card hover-glow animate-on-scroll"
                         style="transition-delay: 0.3s;">
                         <div class="phase-icon-box"><i class="icon ion-md-globe"></i></div>
                         <div class="phase-card-content">
@@ -1612,7 +1657,7 @@
                                 across different industries before any technical commitment.</p>
                         </div>
                     </div>
-                    <div class="phase-card-v2 cs-glass-card hover-glow animate-on-scroll"
+                    <div class="phase-card-v2 card-bg-3 cs-glass-card hover-glow animate-on-scroll"
                         style="transition-delay: 0.4s;">
                         <div class="phase-icon-box"><i class="icon ion-md-microphone"></i></div>
                         <div class="phase-card-content">
