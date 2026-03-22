@@ -1084,18 +1084,6 @@ section {
     position: relative;
 }
 
-/* Vertical Spine Alignment - Muted for Direction A */
-.impact-row::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 1px;
-    background: var(--text-secondary);
-    opacity: 0.15;
-}
-
 .impact-badge {
     display: flex;
     align-items: center;
