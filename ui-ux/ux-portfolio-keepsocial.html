@@ -670,15 +670,57 @@
         }
 
         @keyframes float-particle {
-            0%, 100% { transform: translateY(0) rotate(0); }
-            50% { transform: translateY(-20px) rotate(5deg); }
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
         }
 
-        .icon-heart { background: linear-gradient(135deg, #ff4d6d, #ff758f); top: 5%; left: 15%; animation-delay: 0s; }
-        .icon-like { background: linear-gradient(135deg, #3a86ff, #4cc9f0); bottom: 25%; left: 10%; animation-delay: 1s; }
-        .icon-share { background: linear-gradient(135deg, #4361ee, #4895ef); top: 30%; right: 10%; animation-delay: 0.5s; width: 55px; height: 55px; }
-        .icon-send { background: linear-gradient(135deg, #fb8500, #ffb703); bottom: 10%; right: 15%; animation-delay: 1.5s; width: 65px; height: 65px; }
-        .icon-chat { background: linear-gradient(135deg, #06d6a0, #118ab2); bottom: 40%; right: 35%; animation-delay: 2s; width: 50px; height: 50px; }
+        .icon-heart {
+            background: linear-gradient(135deg, #ff4d6d, #ff758f);
+            top: 5%;
+            left: 15%;
+            animation-delay: 0s;
+        }
+
+        .icon-like {
+            background: linear-gradient(135deg, #3a86ff, #4cc9f0);
+            bottom: 25%;
+            left: 10%;
+            animation-delay: 1s;
+        }
+
+        .icon-share {
+            background: linear-gradient(135deg, #4361ee, #4895ef);
+            top: 30%;
+            right: 10%;
+            animation-delay: 0.5s;
+            width: 55px;
+            height: 55px;
+        }
+
+        .icon-send {
+            background: linear-gradient(135deg, #fb8500, #ffb703);
+            bottom: 10%;
+            right: 15%;
+            animation-delay: 1.5s;
+            width: 65px;
+            height: 65px;
+        }
+
+        .icon-chat {
+            background: linear-gradient(135deg, #06d6a0, #118ab2);
+            bottom: 40%;
+            right: 35%;
+            animation-delay: 2s;
+            width: 50px;
+            height: 50px;
+        }
 
         .solution-mockup-wrapper {
             transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -1028,7 +1070,7 @@
                             <div class="floating-social-icon icon-share"><i class="icon ion-md-share"></i></div>
                             <div class="floating-social-icon icon-send"><i class="icon ion-md-paper-plane"></i></div>
                             <div class="floating-social-icon icon-chat"><i class="icon ion-md-chatbubbles"></i></div>
-                            
+
                             <div class="solution-mockup-wrapper">
                                 <img src="../img/projects/keepsocial/solution-social-features.png"
                                     alt="Social Features Composition - Sportsbook Gaming Layered UI"
@@ -1114,8 +1156,8 @@
                         <div class="cs-tag-item"><i class="icon ion-md-globe"></i> Global Scaling</div>
                     </div>
                     <div class="cs-central-visual" id="viz-3">
-                        <img src="../img/projects/keepsocial/customers-pitching.png"
-                            alt="Customers Pitching & Strategy" style="width: 100%;">
+                        <img src="../img/projects/keepsocial/customers-pitching.png" alt="Customers Pitching & Strategy"
+                            style="width: 100%;">
                     </div>
                     <div class="cs-content-side" style="padding-left: 2rem;">
                         <div class="cs-step-marker">
@@ -1137,78 +1179,128 @@
         <section class="cs-section">
             <div class="container">
                 <!-- New Layout Content -->
-                <div class="cs-section-header animate-on-scroll" style="text-align: center; max-width: 800px; margin: 0 auto 4rem;">
+                <div class="cs-section-header animate-on-scroll"
+                    style="text-align: center; max-width: 800px; margin: 0 auto 4rem;">
                     <span class="cs-eyebrow">Phase 01: The Proof</span>
                     <h2 style="font-size: 3rem; margin-bottom: 1.5rem;">The Gaming Industry</h2>
                     <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.7;">
-                        We started where communities are most demanding. Gamers expect high performance, real-time interaction, and deep gamification. Success in Canada led to EU, Australia, and Africa.
+                        We started where communities are most demanding. Gamers expect high performance, real-time
+                        interaction, and deep gamification. Success in Canada led to EU, Australia, and Africa.
                     </p>
                 </div>
 
-                <div class="grid animate-on-scroll" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 5rem;">
+                <div class="grid animate-on-scroll"
+                    style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 5rem;">
                     <style>
                         @keyframes spin-self {
-                            100% { transform: rotate(360deg); }
+                            100% {
+                                transform: rotate(360deg);
+                            }
                         }
+
                         @keyframes roll-dice {
-                            0% { transform: translateY(0) rotate(0deg); }
-                            25% { transform: translateY(-3px) rotate(90deg); }
-                            50% { transform: translateY(0) rotate(180deg); }
-                            75% { transform: translateY(-3px) rotate(270deg); }
-                            100% { transform: translateY(0) rotate(360deg); }
+                            0% {
+                                transform: translateY(0) rotate(0deg);
+                            }
+
+                            25% {
+                                transform: translateY(-3px) rotate(90deg);
+                            }
+
+                            50% {
+                                transform: translateY(0) rotate(180deg);
+                            }
+
+                            75% {
+                                transform: translateY(-3px) rotate(270deg);
+                            }
+
+                            100% {
+                                transform: translateY(0) rotate(360deg);
+                            }
                         }
-                        .animate-ball { display: inline-block; animation: spin-self 4s linear infinite; transform-origin: center; }
-                        .animate-dice { display: inline-block; animation: roll-dice 4s linear infinite; transform-origin: center; }
+
+                        .animate-ball {
+                            display: inline-block;
+                            animation: spin-self 4s linear infinite;
+                            transform-origin: center;
+                        }
+
+                        .animate-dice {
+                            display: inline-block;
+                            animation: roll-dice 4s linear infinite;
+                            transform-origin: center;
+                        }
                     </style>
                     <div class="phase-card" style="margin-bottom: 0;">
                         <div class="phase-card-content">
-                            <h3 style="color: white; margin-bottom: 1rem; font-size: 1.3rem; display: flex; align-items: center; gap: 0.5rem;">
-                                <span style="display:inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: rgba(99, 102, 241, 0.2); border-radius: 8px; color: var(--accent-primary);"><i class="icon ion-md-football animate-ball"></i></span>Betway
+                            <h3
+                                style="color: white; margin-bottom: 1rem; font-size: 1.3rem; display: flex; align-items: center; gap: 0.5rem;">
+                                <span
+                                    style="display:inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: rgba(99, 102, 241, 0.2); border-radius: 8px; color: var(--accent-primary);"><i
+                                        class="icon ion-md-football animate-ball"></i></span>Betway
                             </h3>
-                            <p style="font-size: 1rem; color: var(--text-secondary); line-height: 1.6;">We successfully launched a social layer on Betway, one of the biggest sportsbooks with millions of users. It featured search, a personalized feed, clips, a social bar, user interaction, and social profiles.</p>
+                            <p style="font-size: 1rem; color: var(--text-secondary); line-height: 1.6;">We successfully
+                                launched a social layer on Betway, one of the biggest sportsbooks with millions of
+                                users. It featured search, a personalized feed, clips, a social bar, user interaction,
+                                and social profiles.</p>
                         </div>
                     </div>
                     <div class="phase-card" style="margin-bottom: 0;">
                         <div class="phase-card-content">
-                            <h3 style="color: white; margin-bottom: 1rem; font-size: 1.3rem; display: flex; align-items: center; gap: 0.5rem;">
-                                <span style="display:inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: rgba(99, 102, 241, 0.2); border-radius: 8px; color: var(--accent-primary);">
-                                    <svg class="animate-dice" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round">
+                            <h3
+                                style="color: white; margin-bottom: 1rem; font-size: 1.3rem; display: flex; align-items: center; gap: 0.5rem;">
+                                <span
+                                    style="display:inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: rgba(99, 102, 241, 0.2); border-radius: 8px; color: var(--accent-primary);">
+                                    <svg class="animate-dice" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="1.2" stroke-linejoin="round">
                                         <!-- Isometric Top face -->
-                                        <polygon points="12,2 21,7 12,12 3,7" fill="currentColor" fill-opacity="0.3"/>
+                                        <polygon points="12,2 21,7 12,12 3,7" fill="currentColor" fill-opacity="0.3" />
                                         <!-- Isometric Left face -->
-                                        <polygon points="3,7 12,12 12,22 3,17" fill="currentColor" fill-opacity="0.1"/>
+                                        <polygon points="3,7 12,12 12,22 3,17" fill="currentColor" fill-opacity="0.1" />
                                         <!-- Isometric Right face -->
-                                        <polygon points="21,7 12,12 12,22 21,17" fill="currentColor" fill-opacity="0.2"/>
-                                        
+                                        <polygon points="21,7 12,12 12,22 21,17" fill="currentColor"
+                                            fill-opacity="0.2" />
+
                                         <!-- Dots (Top: 2) -->
-                                        <circle cx="9" cy="6.5" r="1.2" fill="var(--bg-card, #222)" stroke="none"/>
-                                        <circle cx="15" cy="8.5" r="1.2" fill="var(--bg-card, #222)" stroke="none"/>
-                                        
+                                        <circle cx="9" cy="6.5" r="1.2" fill="var(--bg-card, #222)" stroke="none" />
+                                        <circle cx="15" cy="8.5" r="1.2" fill="var(--bg-card, #222)" stroke="none" />
+
                                         <!-- Dots (Left: 3) -->
-                                        <circle cx="6" cy="11.5" r="1.2" fill="currentColor" stroke="none"/>
-                                        <circle cx="8" cy="14" r="1.2" fill="currentColor" stroke="none"/>
-                                        <circle cx="10" cy="16.5" r="1.2" fill="currentColor" stroke="none"/>
-                                        
+                                        <circle cx="6" cy="11.5" r="1.2" fill="currentColor" stroke="none" />
+                                        <circle cx="8" cy="14" r="1.2" fill="currentColor" stroke="none" />
+                                        <circle cx="10" cy="16.5" r="1.2" fill="currentColor" stroke="none" />
+
                                         <!-- Dots (Right: 1) -->
-                                        <circle cx="16.5" cy="15" r="1.2" fill="currentColor" stroke="none"/>
+                                        <circle cx="16.5" cy="15" r="1.2" fill="currentColor" stroke="none" />
                                     </svg>
                                 </span>Games Global
                             </h3>
-                            <p style="font-size: 1rem; color: var(--text-secondary); line-height: 1.6;">As pioneers in online gaming socialization, we deeply studied player behavior. We found that social profiles, group chats, and comments on online gaming were the best fit for these users.</p>
+                            <p style="font-size: 1rem; color: var(--text-secondary); line-height: 1.6;">As pioneers in
+                                online gaming socialization, we deeply studied player behavior. We found that social
+                                profiles, group chats, and comments on online gaming were the best fit for these users.
+                            </p>
                         </div>
                     </div>
                 </div>
 
                 <!-- The App Screens Carousel (8 screens) -->
-                <div class="animate-on-scroll" style="position: relative; width: 100%; margin: 2rem auto 4rem; display: flex; align-items: center; justify-content: center; padding: 0 50px;">
-                    
+                <div class="animate-on-scroll"
+                    style="position: relative; width: 100%; margin: 2rem auto 4rem; display: flex; align-items: center; justify-content: center; padding: 0 50px;">
+
                     <!-- Left Arrow -->
-                    <button id="scrollLeftBtn" style="position: absolute; left: 0; z-index: 10; width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); color: var(--text-primary); cursor: pointer; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(8px); transition: all 0.3s ease;"><i class="icon ion-md-arrow-back" style="font-size: 1.2rem;"></i></button>
+                    <button id="scrollLeftBtn"
+                        style="position: absolute; left: 0; z-index: 10; width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); color: var(--text-primary); cursor: pointer; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(8px); transition: all 0.3s ease;"><i
+                            class="icon ion-md-arrow-back" style="font-size: 1.2rem;"></i></button>
 
                     <!-- Scroll Track -->
-                    <div id="screenCarousel" style="display: flex; gap: 1.5rem; overflow-x: auto; scroll-behavior: smooth; padding: 1rem 0 2rem; scroll-snap-type: x mandatory; scrollbar-width: none; -ms-overflow-style: none; width: 100%;">
+                    <div id="screenCarousel"
+                        style="display: flex; gap: 1.5rem; overflow-x: auto; scroll-behavior: smooth; padding: 1rem 0 2rem; scroll-snap-type: x mandatory; scrollbar-width: none; -ms-overflow-style: none; width: 100%;">
                         <style>
-                            #screenCarousel::-webkit-scrollbar { display: none; }
+                            #screenCarousel::-webkit-scrollbar {
+                                display: none;
+                            }
+
                             .thin-screen-wrapper {
                                 flex: 0 0 calc(25% - 1.125rem);
                                 min-width: 240px;
@@ -1218,108 +1310,139 @@
                                 align-items: center;
                                 scroll-snap-align: start;
                             }
+
                             @media (max-width: 1024px) {
-                                .thin-screen-wrapper { flex: 0 0 calc(33.333% - 1rem); }
+                                .thin-screen-wrapper {
+                                    flex: 0 0 calc(33.333% - 1rem);
+                                }
                             }
+
                             @media (max-width: 768px) {
-                                .thin-screen-wrapper { flex: 0 0 calc(50% - 0.75rem); }
+                                .thin-screen-wrapper {
+                                    flex: 0 0 calc(50% - 0.75rem);
+                                }
                             }
+
                             @media (max-width: 480px) {
-                                .thin-screen-wrapper { flex: 0 0 85%; }
+                                .thin-screen-wrapper {
+                                    flex: 0 0 85%;
+                                }
                             }
+
                             .thin-screen {
                                 width: 100%;
                                 aspect-ratio: 9/19;
-                                border: 1px solid rgba(255,255,255,0.1);
+                                border: 1px solid rgba(255, 255, 255, 0.1);
                                 border-radius: 20px;
                                 overflow: hidden;
                                 background: #050505;
-                                box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+                                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
                                 transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.4s ease;
                             }
+
                             .thin-screen-wrapper:hover .thin-screen {
                                 transform: translateY(-8px);
                                 border-color: rgba(99, 102, 241, 0.4);
-                                box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+                                box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
                             }
-                            
+
                             /* Feed specific styles removed for static image approach */
                         </style>
 
                         <!-- Screen 1: Feeds -->
                         <div class="thin-screen-wrapper">
-                            <span class="cs-eyebrow" style="text-align: center; margin-bottom: 1.2rem; color: var(--text-secondary); letter-spacing: 0.05em; font-size: 0.9rem;">Activity Feeds</span>
+                            <span class="cs-eyebrow"
+                                style="text-align: center; margin-bottom: 1.2rem; color: var(--text-secondary); letter-spacing: 0.05em; font-size: 0.9rem;">Activity
+                                Feeds</span>
                             <div class="thin-screen" style="position: relative; overflow: hidden; background: #111827;">
-                                <img src="../img/sportsbook-feed-ui.png" alt="Activity Feeds" style="display: block; position: absolute; width: 260%; height: auto; top: -14%; left: -8%;">
+                                <img src="../img/sportsbook-feed-ui.png" alt="Activity Feeds"
+                                    style="display: block; position: absolute; width: 260%; height: auto; top: -14%; left: -8%;">
                             </div>
                         </div>
 
                         <!-- Screen 2: Explore -->
                         <div class="thin-screen-wrapper">
-                            <span class="cs-eyebrow" style="text-align: center; margin-bottom: 1.2rem; color: var(--text-secondary); letter-spacing: 0.05em; font-size: 0.9rem;">Explore</span>
+                            <span class="cs-eyebrow"
+                                style="text-align: center; margin-bottom: 1.2rem; color: var(--text-secondary); letter-spacing: 0.05em; font-size: 0.9rem;">Explore</span>
                             <div class="thin-screen" style="position: relative; overflow: hidden; background: #111827;">
-                                <img src="../img/sportsbook-feed-ui.png" alt="Explore" style="display: block; position: absolute; width: 260%; height: auto; top: -14%; right: -8%;">
+                                <img src="../img/sportsbook-feed-ui.png" alt="Explore"
+                                    style="display: block; position: absolute; width: 260%; height: auto; top: -14%; right: -8%;">
                             </div>
                         </div>
 
                         <!-- Screen 3: Groups -->
                         <div class="thin-screen-wrapper">
-                            <span class="cs-eyebrow" style="text-align: center; margin-bottom: 1.2rem; color: var(--text-secondary); letter-spacing: 0.05em; font-size: 0.9rem;">Groups</span>
+                            <span class="cs-eyebrow"
+                                style="text-align: center; margin-bottom: 1.2rem; color: var(--text-secondary); letter-spacing: 0.05em; font-size: 0.9rem;">Groups</span>
                             <div class="thin-screen">
-                                <img src="../img/placeholder.jpg" alt="Groups" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.3;">
+                                <img src="../img/placeholder.jpg" alt="Groups"
+                                    style="width: 100%; height: 100%; object-fit: cover; opacity: 0.3;">
                             </div>
                         </div>
 
                         <!-- Screen 4: Profiles -->
                         <div class="thin-screen-wrapper">
-                            <span class="cs-eyebrow" style="text-align: center; margin-bottom: 1.2rem; color: var(--text-secondary); letter-spacing: 0.05em; font-size: 0.9rem;">Profiles</span>
+                            <span class="cs-eyebrow"
+                                style="text-align: center; margin-bottom: 1.2rem; color: var(--text-secondary); letter-spacing: 0.05em; font-size: 0.9rem;">Profiles</span>
                             <div class="thin-screen">
-                                <img src="../img/placeholder.jpg" alt="Profiles" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.3;">
+                                <img src="../img/placeholder.jpg" alt="Profiles"
+                                    style="width: 100%; height: 100%; object-fit: cover; opacity: 0.3;">
                             </div>
                         </div>
 
                         <!-- Screen 5: Livestream -->
                         <div class="thin-screen-wrapper">
-                            <span class="cs-eyebrow" style="text-align: center; margin-bottom: 1.2rem; color: var(--text-secondary); letter-spacing: 0.05em; font-size: 0.9rem;">Livestream</span>
+                            <span class="cs-eyebrow"
+                                style="text-align: center; margin-bottom: 1.2rem; color: var(--text-secondary); letter-spacing: 0.05em; font-size: 0.9rem;">Livestream</span>
                             <div class="thin-screen">
-                                <img src="../img/placeholder.jpg" alt="Livestream" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.3;">
+                                <img src="../img/placeholder.jpg" alt="Livestream"
+                                    style="width: 100%; height: 100%; object-fit: cover; opacity: 0.3;">
                             </div>
                         </div>
 
                         <!-- Screen 6: Group Chat -->
                         <div class="thin-screen-wrapper">
-                            <span class="cs-eyebrow" style="text-align: center; margin-bottom: 1.2rem; color: var(--text-secondary); letter-spacing: 0.05em; font-size: 0.9rem;">Group Chat</span>
+                            <span class="cs-eyebrow"
+                                style="text-align: center; margin-bottom: 1.2rem; color: var(--text-secondary); letter-spacing: 0.05em; font-size: 0.9rem;">Group
+                                Chat</span>
                             <div class="thin-screen">
-                                <img src="../img/placeholder.jpg" alt="Group Chat" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.3;">
+                                <img src="../img/placeholder.jpg" alt="Group Chat"
+                                    style="width: 100%; height: 100%; object-fit: cover; opacity: 0.3;">
                             </div>
                         </div>
 
                         <!-- Screen 7: Stories -->
                         <div class="thin-screen-wrapper">
-                            <span class="cs-eyebrow" style="text-align: center; margin-bottom: 1.2rem; color: var(--text-secondary); letter-spacing: 0.05em; font-size: 0.9rem;">Stories</span>
+                            <span class="cs-eyebrow"
+                                style="text-align: center; margin-bottom: 1.2rem; color: var(--text-secondary); letter-spacing: 0.05em; font-size: 0.9rem;">Stories</span>
                             <div class="thin-screen">
-                                <img src="../img/placeholder.jpg" alt="Stories" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.3;">
+                                <img src="../img/placeholder.jpg" alt="Stories"
+                                    style="width: 100%; height: 100%; object-fit: cover; opacity: 0.3;">
                             </div>
                         </div>
 
                         <!-- Screen 8: Discover -->
                         <div class="thin-screen-wrapper">
-                            <span class="cs-eyebrow" style="text-align: center; margin-bottom: 1.2rem; color: var(--text-secondary); letter-spacing: 0.05em; font-size: 0.9rem;">Discover</span>
+                            <span class="cs-eyebrow"
+                                style="text-align: center; margin-bottom: 1.2rem; color: var(--text-secondary); letter-spacing: 0.05em; font-size: 0.9rem;">Discover</span>
                             <div class="thin-screen">
-                                <img src="../img/placeholder.jpg" alt="Discover" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.3;">
+                                <img src="../img/placeholder.jpg" alt="Discover"
+                                    style="width: 100%; height: 100%; object-fit: cover; opacity: 0.3;">
                             </div>
                         </div>
                     </div>
 
                     <!-- Right Arrow -->
-                    <button id="scrollRightBtn" style="position: absolute; right: 0; z-index: 10; width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); color: var(--text-primary); cursor: pointer; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(8px); transition: all 0.3s ease;"><i class="icon ion-md-arrow-forward" style="font-size: 1.2rem;"></i></button>
+                    <button id="scrollRightBtn"
+                        style="position: absolute; right: 0; z-index: 10; width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); color: var(--text-primary); cursor: pointer; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(8px); transition: all 0.3s ease;"><i
+                            class="icon ion-md-arrow-forward" style="font-size: 1.2rem;"></i></button>
 
                     <script>
                         document.addEventListener('DOMContentLoaded', () => {
                             const container = document.getElementById('screenCarousel');
                             const leftBtn = document.getElementById('scrollLeftBtn');
                             const rightBtn = document.getElementById('scrollRightBtn');
-                            
+
                             // Simple styles on hover for buttons
                             [leftBtn, rightBtn].forEach(btn => {
                                 btn.addEventListener('mouseenter', () => {
@@ -1332,7 +1455,7 @@
                                 });
                             });
 
-                            if(leftBtn && rightBtn && container) {
+                            if (leftBtn && rightBtn && container) {
                                 leftBtn.addEventListener('click', () => {
                                     const itemWidth = container.querySelector('.thin-screen-wrapper').offsetWidth;
                                     const gap = 24; // 1.5rem
@@ -1340,7 +1463,7 @@
                                 });
                                 rightBtn.addEventListener('click', () => {
                                     const itemWidth = container.querySelector('.thin-screen-wrapper').offsetWidth;
-                                    const gap = 24; 
+                                    const gap = 24;
                                     container.scrollBy({ left: (itemWidth + gap), behavior: 'smooth' });
                                 });
                             }
@@ -1395,101 +1518,149 @@
         <!-- Impact & Results (Bento Grid) -->
         <section class="cs-section">
             <div class="container animate-on-scroll">
-                
+
                 <div class="cs-section-header" style="text-align: center; margin-bottom: 4rem;">
                     <span class="cs-eyebrow" style="color: var(--accent-highlight);">Business Impact & Outcomes</span>
-                    <h2>Proving the Value of Social Betting</h2>
+                    <h2>Proving the Value of Socializing</h2>
                     <div class="accent-bar" style="margin: 1.5rem auto 0;"></div>
                 </div>
 
                 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
-                    
+
                     <!-- Card 1: Data Metrics -->
-                    <div class="cs-glass-card" style="position: relative; overflow: hidden; padding: 3rem; display: flex; flex-direction: column; justify-content: center;">
+                    <div class="cs-glass-card"
+                        style="position: relative; overflow: hidden; padding: 3rem; display: flex; flex-direction: column; justify-content: center;">
                         <div style="position: absolute; bottom: -20px; right: -20px; opacity: 0.1; width: 100%;">
                             <!-- Background sparkline -->
-                            <svg viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width: 100%; height: 120px;">
-                                <path d="M0 100C30 80 60 90 90 60C120 30 150 40 180 10C190 0 200 10 200 10V100H0Z" fill="url(#sparkGradient)"/>
+                            <svg viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                preserveAspectRatio="none" style="width: 100%; height: 120px;">
+                                <path d="M0 100C30 80 60 90 90 60C120 30 150 40 180 10C190 0 200 10 200 10V100H0Z"
+                                    fill="url(#sparkGradient)" />
                                 <defs>
-                                    <linearGradient id="sparkGradient" x1="100" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
-                                        <stop stop-color="var(--accent-primary)"/>
-                                        <stop offset="1" stop-color="var(--accent-primary)" stop-opacity="0"/>
+                                    <linearGradient id="sparkGradient" x1="100" y1="0" x2="100" y2="100"
+                                        gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="var(--accent-primary)" />
+                                        <stop offset="1" stop-color="var(--accent-primary)" stop-opacity="0" />
                                     </linearGradient>
                                 </defs>
                             </svg>
                         </div>
-                        <h4 style="color: var(--accent-highlight); margin-bottom: 1rem; font-size: 0.85rem;">Impact Metrics</h4>
-                        <div style="font-size: 4.5rem; font-weight: 700; line-height: 1; margin-bottom: 0.5rem; background: var(--accent-gradient); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">+45%</div>
+                        <h4 style="color: var(--accent-highlight); margin-bottom: 1rem; font-size: 0.85rem;">Impact
+                            Metrics</h4>
+                        <div
+                            style="font-size: 4.5rem; font-weight: 700; line-height: 1; margin-bottom: 0.5rem; background: var(--accent-gradient); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
+                            +28%</div>
                         <div style="font-size: 1.25rem; font-weight: 600; color: white;">Retention Increase</div>
                     </div>
 
                     <!-- Card 2: Behavioral Shifts -->
                     <div class="cs-glass-card" style="padding: 3rem;">
-                        <h4 style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.85rem;">Behavioral Shifts</h4>
-                        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1.5rem;">
+                        <h4 style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.85rem;">Behavioral
+                            Shifts</h4>
+                        <ul
+                            style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1.5rem;">
                             <li style="display: flex; gap: 1rem; align-items: center;">
-                                <span style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 10px; background: rgba(34, 197, 94, 0.1); color: #22c55e;"><i class="icon ion-md-trending-up" style="font-size: 1.2rem;"></i></span>
-                                <span style="font-size: 1.1rem; color: white; font-weight: 500;">App stickiness significantly improved</span>
+                                <span
+                                    style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 10px; background: rgba(34, 197, 94, 0.1); color: #22c55e;"><i
+                                        class="icon ion-md-trending-up" style="font-size: 1.2rem;"></i></span>
+                                <span style="font-size: 1.1rem; color: white; font-weight: 500;">App stickiness
+                                    significantly improved</span>
                             </li>
                             <li style="display: flex; gap: 1rem; align-items: center;">
-                                <span style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 10px; background: rgba(59, 130, 246, 0.1); color: #3b82f6;"><i class="icon ion-md-share" style="font-size: 1.2rem;"></i></span>
-                                <span style="font-size: 1.1rem; color: white; font-weight: 500;">Organic bet sharing surged</span>
+                                <span
+                                    style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 10px; background: rgba(59, 130, 246, 0.1); color: #3b82f6;"><i
+                                        class="icon ion-md-share" style="font-size: 1.2rem;"></i></span>
+                                <span style="font-size: 1.1rem; color: white; font-weight: 500;">Organic bet sharing
+                                    surged</span>
                             </li>
                             <li style="display: flex; gap: 1rem; align-items: center;">
-                                <span style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 10px; background: rgba(168, 85, 247, 0.1); color: #a855f7;"><i class="icon ion-md-chatbubbles" style="font-size: 1.2rem;"></i></span>
-                                <span style="font-size: 1.1rem; color: white; font-weight: 500;">Users sharing codes in our comment section (replacing WhatsApp)</span>
+                                <span
+                                    style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 10px; background: rgba(168, 85, 247, 0.1); color: #a855f7;"><i
+                                        class="icon ion-md-chatbubbles" style="font-size: 1.2rem;"></i></span>
+                                <span style="font-size: 1.1rem; color: white; font-weight: 500;">Users sharing codes in
+                                    our comment section (replacing WhatsApp)</span>
                             </li>
                         </ul>
                     </div>
 
                     <!-- Card 3: CTO Testimonial -->
                     <div class="cs-glass-card" style="padding: 3rem;">
-                        <h4 style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.85rem;">Engineering Alignment</h4>
+                        <h4 style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.85rem;">Engineering
+                            Alignment</h4>
                         <div style="position: relative;">
-                            <span style="position: absolute; top: -20px; left: -15px; font-size: 4rem; font-family: 'Playfair Display', serif; color: rgba(255,255,255,0.05); line-height: 1;">&ldquo;</span>
-                            <p style="font-family: 'Playfair Display', serif; font-size: 1.35rem; font-style: italic; color: white; line-height: 1.6; position: relative; z-index: 1;">A massive thank you for radically improving the UX of the product. The new interface has completely changed how users interact with the platform.</p>
-                            <p style="font-weight: 700; margin-top: 1.5rem; font-size: 0.9rem; color: var(--accent-highlight); text-transform: uppercase; letter-spacing: 0.05em;">— Q, CTO</p>
+                            <span
+                                style="position: absolute; top: -20px; left: -15px; font-size: 4rem; font-family: 'Playfair Display', serif; color: rgba(255,255,255,0.05); line-height: 1;">&ldquo;</span>
+                            <p
+                                style="font-family: 'Playfair Display', serif; font-size: 1.35rem; font-style: italic; color: white; line-height: 1.6; position: relative; z-index: 1;">
+                                &ldquo;Shiva, a massive thank you for pushing our company&rsquo;s UX maturity to a new
+                                level. Your vision didn&rsquo;t just help the users; it improves how we build products
+                                as a whole.&rdquo;</p>
+                            <p
+                                style="font-weight: 700; margin-top: 1.5rem; font-size: 0.9rem; color: var(--accent-highlight); text-transform: uppercase; letter-spacing: 0.05em;">
+                                — Q, Derivco's CTO</p>
                         </div>
                     </div>
 
                     <!-- Card 4: Product Excellence (Screenshot) -->
-                    <div class="cs-glass-card" style="padding: 0; overflow: hidden; display: flex; flex-direction: column; position: relative;">
+                    <div class="cs-glass-card"
+                        style="padding: 0; overflow: hidden; display: flex; flex-direction: column; position: relative;">
                         <div style="padding: 2rem 2rem 1.5rem;">
-                            <h4 style="color: var(--text-secondary); margin-bottom: 0; font-size: 0.85rem;">Product Excellence</h4>
-                            <p style="font-size: 1rem; color: white; margin-top: 0.5rem; font-weight: 500;">Kudos from the Head of Product</p>
+                            <h4 style="color: var(--text-secondary); margin-bottom: 0; font-size: 0.85rem;">Product
+                                Excellence</h4>
+                            <p style="font-size: 1rem; color: white; margin-top: 0.5rem; font-weight: 500;">Kudos from
+                                the Head of Product</p>
                         </div>
-                        <div style="flex: 1; background: #0a0a0a; display: flex; align-items: flex-end; justify-content: center; padding: 0 2rem 0;">
-                            <img src="../img/projects/derivco/Derivco-Global-Gaming-Sample-Work/4. Mentoring.png" alt="Head of Product Feedback" style="width: 100%; border-radius: 12px 12px 0 0; border: 1px solid rgba(255,255,255,0.1); border-bottom: none; box-shadow: 0 -10px 30px rgba(0,0,0,0.5); object-fit: cover; object-position: top; max-height: 250px; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                        <div
+                            style="flex: 1; background: #0a0a0a; display: flex; align-items: flex-end; justify-content: center; padding: 0 2rem 0;">
+                            <img src="../img/projects/derivco/Derivco-Global-Gaming-Sample-Work/4. Mentoring.png"
+                                alt="Head of Product Feedback"
+                                style="width: 100%; border-radius: 12px 12px 0 0; border: 1px solid rgba(255,255,255,0.1); border-bottom: none; box-shadow: 0 -10px 30px rgba(0,0,0,0.5); object-fit: cover; object-position: top; max-height: 250px; transition: transform 0.3s ease;"
+                                onmouseover="this.style.transform='translateY(-5px)'"
+                                onmouseout="this.style.transform='translateY(0)'">
                         </div>
                     </div>
-                    
+
                     <!-- Card 5: Partner Validation -->
-                    <div class="cs-glass-card" style="grid-column: span 2; padding: 3rem; display: flex; align-items: center; gap: 3rem; background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(99, 102, 241, 0.05) 100%);">
+                    <div class="cs-glass-card"
+                        style="grid-column: span 2; padding: 3rem; display: flex; align-items: center; gap: 3rem; background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(99, 102, 241, 0.05) 100%);">
                         <div style="flex: 0 0 160px; text-align: center;">
-                            <h3 style="font-size: 2.2rem; margin: 0; font-weight: 800; letter-spacing: -1px; background: linear-gradient(to right, #cfcfcf, #888); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">betway</h3>
+                            <h3
+                                style="font-size: 2.2rem; margin: 0; font-weight: 800; letter-spacing: -1px; background: linear-gradient(to right, #cfcfcf, #888); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
+                                betway</h3>
                         </div>
                         <div style="flex: 1; border-left: 1px solid rgba(255,255,255,0.1); padding-left: 3rem;">
-                            <h4 style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.85rem;">Partner Validation</h4>
-                            <p style="font-size: 1.2rem; color: white; line-height: 1.6; margin: 0;">The integrated social commenting and tailored feeds perfectly align with our engagement strategy, keeping players deeply immersed in the ecosystem without needing external channels.</p>
+                            <h4 style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.85rem;">Partner
+                                Validation</h4>
+                            <p style="font-size: 1.2rem; color: white; line-height: 1.6; margin: 0; font-family: 'Playfair Display', serif; font-style: italic;">&ldquo;The integrated
+                                social commenting and tailored feeds perfectly align with our engagement strategy,
+                                keeping players deeply immersed in the ecosystem without needing external channels.&rdquo;</p>
+                            <p style="font-weight: 700; margin-top: 1.5rem; font-size: 0.9rem; color: var(--accent-highlight); text-transform: uppercase; letter-spacing: 0.05em;">— Head of Social Product</p>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
-            
+
             <style>
                 @media (max-width: 900px) {
-                    .cs-section { padding-top: 4rem; }
-                    .cs-glass-card { grid-column: span 1 !important; }
+                    .cs-section {
+                        padding-top: 4rem;
+                    }
+
+                    .cs-glass-card {
+                        grid-column: span 1 !important;
+                    }
+
                     .cs-glass-card[style*="grid-column: span 2"] {
                         flex-direction: column;
                         text-align: center;
                         gap: 1.5rem;
                     }
-                    .cs-glass-card[style*="grid-column: span 2"] > div:last-child {
+
+                    .cs-glass-card[style*="grid-column: span 2"]>div:last-child {
                         border-left: none !important;
                         padding-left: 0 !important;
-                        border-top: 1px solid rgba(255,255,255,0.1);
+                        border-top: 1px solid rgba(255, 255, 255, 0.1);
                         padding-top: 1.5rem;
                     }
                 }
