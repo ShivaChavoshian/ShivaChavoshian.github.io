@@ -1392,55 +1392,108 @@
         </section>
 
 
-        <!-- Impact & Results -->
-        <section class="cs-section" style="background: var(--accent-gradient); color: white;">
-            <div class="container">
-                <div class="cs-split-layout">
-                    <div class="cs-content-side animate-on-scroll">
-                        <div class="cs-section-header">
-                            <span class="cs-eyebrow" style="color: rgba(255,255,255,0.8);">Outcomes</span>
-                            <h2 style="color: white;">Business Impact</h2>
+        <!-- Impact & Results (Bento Grid) -->
+        <section class="cs-section">
+            <div class="container animate-on-scroll">
+                
+                <div class="cs-section-header" style="text-align: center; margin-bottom: 4rem;">
+                    <span class="cs-eyebrow" style="color: var(--accent-highlight);">Business Impact & Outcomes</span>
+                    <h2>Proving the Value of Social Betting</h2>
+                    <div class="accent-bar" style="margin: 1.5rem auto 0;"></div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
+                    
+                    <!-- Card 1: Data Metrics -->
+                    <div class="cs-glass-card" style="position: relative; overflow: hidden; padding: 3rem; display: flex; flex-direction: column; justify-content: center;">
+                        <div style="position: absolute; bottom: -20px; right: -20px; opacity: 0.1; width: 100%;">
+                            <!-- Background sparkline -->
+                            <svg viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width: 100%; height: 120px;">
+                                <path d="M0 100C30 80 60 90 90 60C120 30 150 40 180 10C190 0 200 10 200 10V100H0Z" fill="url(#sparkGradient)"/>
+                                <defs>
+                                    <linearGradient id="sparkGradient" x1="100" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="var(--accent-primary)"/>
+                                        <stop offset="1" stop-color="var(--accent-primary)" stop-opacity="0"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
                         </div>
-                        <ul style="list-style: none; padding: 0; margin-top: 3rem;">
-                            <li style="margin-bottom: 2rem; display: flex; gap: 1.5rem; align-items: flex-start;">
-                                <i class="icon ion-md-flash" style="font-size: 1.5rem;"></i>
-                                <span><strong>Onboarding Velocity:</strong> Client launch times reduced from weeks to
-                                    days via the modular white-label system.</span>
+                        <h4 style="color: var(--accent-highlight); margin-bottom: 1rem; font-size: 0.85rem;">Impact Metrics</h4>
+                        <div style="font-size: 4.5rem; font-weight: 700; line-height: 1; margin-bottom: 0.5rem; background: var(--accent-gradient); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">+45%</div>
+                        <div style="font-size: 1.25rem; font-weight: 600; color: white;">Retention Increase</div>
+                    </div>
+
+                    <!-- Card 2: Behavioral Shifts -->
+                    <div class="cs-glass-card" style="padding: 3rem;">
+                        <h4 style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.85rem;">Behavioral Shifts</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1.5rem;">
+                            <li style="display: flex; gap: 1rem; align-items: center;">
+                                <span style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 10px; background: rgba(34, 197, 94, 0.1); color: #22c55e;"><i class="icon ion-md-trending-up" style="font-size: 1.2rem;"></i></span>
+                                <span style="font-size: 1.1rem; color: white; font-weight: 500;">App stickiness significantly improved</span>
                             </li>
-                            <li style="margin-bottom: 2rem; display: flex; gap: 1.5rem; align-items: flex-start;">
-                                <i class="icon ion-md-trending-up" style="font-size: 1.5rem;"></i>
-                                <span><strong>Sales Success:</strong> Visual demos in exact brand colors directly
-                                    contributed to signing IKEA and Lindex.</span>
+                            <li style="display: flex; gap: 1rem; align-items: center;">
+                                <span style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 10px; background: rgba(59, 130, 246, 0.1); color: #3b82f6;"><i class="icon ion-md-share" style="font-size: 1.2rem;"></i></span>
+                                <span style="font-size: 1.1rem; color: white; font-weight: 500;">Organic bet sharing surged</span>
                             </li>
-                            <li style="display: flex; gap: 1.5rem; align-items: flex-start;">
-                                <i class="icon ion-md-leaf" style="font-size: 1.5rem;"></i>
-                                <span><strong>Sustainable Growth:</strong> Empowered users with a voice and created
-                                    resale ecosystems through internal brand feeds.</span>
+                            <li style="display: flex; gap: 1rem; align-items: center;">
+                                <span style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 10px; background: rgba(168, 85, 247, 0.1); color: #a855f7;"><i class="icon ion-md-chatbubbles" style="font-size: 1.2rem;"></i></span>
+                                <span style="font-size: 1.1rem; color: white; font-weight: 500;">Users sharing codes in our comment section (replacing WhatsApp)</span>
                             </li>
                         </ul>
                     </div>
-                    <div class="cs-content-side animate-on-scroll"
-                        style="display: flex; flex-direction: column; justify-content: center; gap: 2rem;">
-                        <div class="cs-glass-card"
-                            style="background: rgba(255, 255, 255, 0.1); border: none; padding: 2.5rem;">
-                            <p style="font-style: italic; font-size: 1.1rem;">“With Keep.Social's tools, our content
-                                speaks to users. Engagement is way up, and we're building a real community.”</p>
-                            <p
-                                style="font-weight: 700; margin-top: 1rem; font-size: 0.8rem; text-transform: uppercase;">
-                                — MotoGP Enterprise Partner</p>
-                        </div>
-                        <div class="cs-glass-card"
-                            style="background: rgba(255, 255, 255, 0.1); border: none; padding: 2.5rem;">
-                            <p style="font-style: italic; font-size: 1.1rem;">“the real value came after launch, the
-                                flexibility of their APIs allowed us to create entirely new user views and features we
-                                hadn't even planned for initially.”</p>
-                            <p
-                                style="font-weight: 700; margin-top: 1rem; font-size: 0.8rem; text-transform: uppercase;">
-                                — Retail Partner Lead</p>
+
+                    <!-- Card 3: CTO Testimonial -->
+                    <div class="cs-glass-card" style="padding: 3rem;">
+                        <h4 style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.85rem;">Engineering Alignment</h4>
+                        <div style="position: relative;">
+                            <span style="position: absolute; top: -20px; left: -15px; font-size: 4rem; font-family: 'Playfair Display', serif; color: rgba(255,255,255,0.05); line-height: 1;">&ldquo;</span>
+                            <p style="font-family: 'Playfair Display', serif; font-size: 1.35rem; font-style: italic; color: white; line-height: 1.6; position: relative; z-index: 1;">A massive thank you for radically improving the UX of the product. The new interface has completely changed how users interact with the platform.</p>
+                            <p style="font-weight: 700; margin-top: 1.5rem; font-size: 0.9rem; color: var(--accent-highlight); text-transform: uppercase; letter-spacing: 0.05em;">— Q, CTO</p>
                         </div>
                     </div>
+
+                    <!-- Card 4: Product Excellence (Screenshot) -->
+                    <div class="cs-glass-card" style="padding: 0; overflow: hidden; display: flex; flex-direction: column; position: relative;">
+                        <div style="padding: 2rem 2rem 1.5rem;">
+                            <h4 style="color: var(--text-secondary); margin-bottom: 0; font-size: 0.85rem;">Product Excellence</h4>
+                            <p style="font-size: 1rem; color: white; margin-top: 0.5rem; font-weight: 500;">Kudos from the Head of Product</p>
+                        </div>
+                        <div style="flex: 1; background: #0a0a0a; display: flex; align-items: flex-end; justify-content: center; padding: 0 2rem 0;">
+                            <img src="../img/projects/derivco/Derivco-Global-Gaming-Sample-Work/4. Mentoring.png" alt="Head of Product Feedback" style="width: 100%; border-radius: 12px 12px 0 0; border: 1px solid rgba(255,255,255,0.1); border-bottom: none; box-shadow: 0 -10px 30px rgba(0,0,0,0.5); object-fit: cover; object-position: top; max-height: 250px; transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                        </div>
+                    </div>
+                    
+                    <!-- Card 5: Partner Validation -->
+                    <div class="cs-glass-card" style="grid-column: span 2; padding: 3rem; display: flex; align-items: center; gap: 3rem; background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(99, 102, 241, 0.05) 100%);">
+                        <div style="flex: 0 0 160px; text-align: center;">
+                            <h3 style="font-size: 2.2rem; margin: 0; font-weight: 800; letter-spacing: -1px; background: linear-gradient(to right, #cfcfcf, #888); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">betway</h3>
+                        </div>
+                        <div style="flex: 1; border-left: 1px solid rgba(255,255,255,0.1); padding-left: 3rem;">
+                            <h4 style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.85rem;">Partner Validation</h4>
+                            <p style="font-size: 1.2rem; color: white; line-height: 1.6; margin: 0;">The integrated social commenting and tailored feeds perfectly align with our engagement strategy, keeping players deeply immersed in the ecosystem without needing external channels.</p>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
+            
+            <style>
+                @media (max-width: 900px) {
+                    .cs-section { padding-top: 4rem; }
+                    .cs-glass-card { grid-column: span 1 !important; }
+                    .cs-glass-card[style*="grid-column: span 2"] {
+                        flex-direction: column;
+                        text-align: center;
+                        gap: 1.5rem;
+                    }
+                    .cs-glass-card[style*="grid-column: span 2"] > div:last-child {
+                        border-left: none !important;
+                        padding-left: 0 !important;
+                        border-top: 1px solid rgba(255,255,255,0.1);
+                        padding-top: 1.5rem;
+                    }
+                }
+            </style>
         </section>
 
         <!-- Reflections -->
