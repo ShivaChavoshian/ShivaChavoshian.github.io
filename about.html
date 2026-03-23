@@ -66,21 +66,12 @@
                 </div>
 
                 <!-- Image with subtle frame -->
-                <div style="position: relative;">
-                    <!-- Use the EDITED image here -->
-                    <!-- Note: In a real scenario I would move the artifact to the img folder. For this simulation I will use the path if accessible or revert to shiva.png with filter if not -->
-                    <!-- Since I generated the image, I should use it. I will assume I can reference it or I should move it. 
-                          I'll use the original path as placeholder or if I can move it. 
-                          Wait, I can't easily move artifacts to the user directory without read/write. 
-                          I will use the original image but apply a CSS filter to simulate the change as a fallback, 
-                          BUT ideally I should put the new image in. 
-                          For the purpose of this file content, I'll point to a new filename 'img/shiva-navy.png' 
-                          and I (Agent) will perform the copy operation next. -->
+                <div style="position: relative; max-width: 480px; margin-left: auto;">
                     <div
-                        style="position: absolute; top: 20px; right: 20px; width: 100%; height: 100%; border: 1px solid var(--accent-primary); border-radius: var(--radius-lg); z-index: -1;">
+                        style="position: absolute; top: 15px; right: 15px; width: 100%; height: 100%; border: 1px solid var(--accent-primary); border-radius: var(--radius-lg); z-index: -1;">
                     </div>
                     <img src="img/about-me.jpg" alt="Shiva Chavoshian"
-                        style="border-radius: var(--radius-lg); width: 100%; box-shadow: var(--shadow-glow);">
+                        style="border-radius: var(--radius-lg); width: 100%; height: 520px; object-fit: cover; box-shadow: var(--shadow-glow);">
                 </div>
             </div>
 
