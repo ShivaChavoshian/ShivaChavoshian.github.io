@@ -17,12 +17,12 @@
     }
 
     .case-study-header {
-      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
       padding: 1.5rem 0;
-      background: #ffffff;
+      background: var(--bg-color);
       position: sticky;
       top: 0;
       z-index: 100;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     .back-link {
@@ -39,7 +39,7 @@
     }
 
     .logo-dark {
-      color: #333333 !important;
+      color: var(--text-primary) !important;
     }
 
     .btn-outline-dark {
@@ -85,9 +85,9 @@
 
   <nav class="case-study-header">
     <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
-      <a href="../index.html" class="logo logo-dark">Shiva Chavoshian</a>
-      <span style="font-weight: 500; color: #666666; text-transform: capitalize;">RaceID Organizers</span>
-      <a href="../index.html#projects" class="back-link">
+      <a href="../index.html" class="logo">Shiva Chavoshian</a>
+      <span style="font-weight: 500; color: var(--text-secondary); text-transform: capitalize;">RaceID Organizers</span>
+      <a href="../index.html#work" class="back-link">
         <i class="icon ion-md-arrow-back"></i> Back to Work
       </a>
     </div>

@@ -9,10 +9,26 @@
   <link rel="stylesheet" href="../css/modern.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
   <style>
-    .back-nav {
-      padding: 2rem 0;
-      border-bottom: var(--glass-border);
-      margin-bottom: 2rem;
+    .case-study-header {
+      padding: 1.5rem 0;
+      background: var(--bg-color);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      transition: color 0.3s ease;
+    }
+
+    .back-link:hover {
+      color: var(--accent-highlight);
     }
 
     .project-image {
@@ -32,11 +48,15 @@
 </head>
 
 <body>
-  <div class="back-nav">
-    <div class="container">
-      <a href="../index.html#projects" class="btn btn-outline" style="font-size: 0.9rem;">&larr; Back to Work</a>
+  <nav class="case-study-header">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+      <a href="../index.html" class="logo">Shiva Chavoshian</a>
+      <span style="font-weight: 500; color: var(--text-secondary); text-transform: capitalize;">Teaching Tazhib</span>
+      <a href="../index.html#work" class="back-link">
+        <i class="icon ion-md-arrow-back"></i> Back to Work
+      </a>
     </div>
-  </div>
+  </nav>
   <main>
     <div class="container">
       <h1 style="margin-bottom: 2rem;">Teaching Tazhib</h1>
