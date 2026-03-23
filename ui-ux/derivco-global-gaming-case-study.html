@@ -67,36 +67,29 @@
 
         /* --- New Visual Storytelling Components --- */
 
-        /* 1. Device Mockup (Mobile Frame) */
-        .device-container {
+        /* 1. Hero Mockup Presentation (Cleaner, Bezel-less) */
+        .hero-mockup-wrapper {
             position: relative;
-            width: 280px;
-            height: 580px;
+            width: 320px;
+            max-width: 100%;
             margin: 0 auto;
-            border: 8px solid #1a1a1a;
-            border-radius: 40px;
-            background: #000;
-            box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.5), 0 0 20px rgba(99, 102, 241, 0.2);
-            overflow: hidden;
+            border-radius: 1.5rem;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 
+                0 30px 60px -12px rgba(0, 0, 0, 0.5),
+                0 18px 36px -18px rgba(0, 0, 0, 0.3);
         }
 
-        .device-screen {
-            width: 100%;
-            height: 100%;
-            background: #0f172a;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: rgba(255, 255, 255, 0.1);
-            font-size: 0.8rem;
-            text-align: center;
-            padding: 2rem;
+        .hero-mockup-wrapper:hover {
+            transform: translateY(-10px) rotateY(-5deg);
         }
 
-        .device-screen img {
+        .hero-mockup-image {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
+            border-radius: 1.5rem;
+            display: block;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
         /* 2. Process / Evidence Gallery */
@@ -212,7 +205,8 @@
     <nav class="case-study-header">
         <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
             <a href="../index.html" class="logo">Shiva Chavoshian</a>
-            <span style="font-weight: 500; color: var(--text-secondary); text-transform: capitalize;">Derivco Global Gaming</span>
+            <span style="font-weight: 500; color: var(--text-secondary); text-transform: capitalize;">Derivco Global
+                Gaming</span>
             <a href="../index.html#work" class="back-link">
                 <i class="icon ion-md-arrow-back"></i> Back to Work
             </a>
@@ -250,11 +244,9 @@
                     </div>
                     <!-- Product Hero Image in Device Frame -->
                     <div class="animate-on-scroll" style="transition-delay: 0.2s; text-align: center;">
-                        <div class="device-container" style="margin-bottom: 1.5rem;">
-                            <div class="device-screen">
-                                <img src="../img/projects/derivco/derivco-luminbrane-hero-image.png"
-                                    alt="Derivco Global Gaming Platform" style="width: 100%; height: 100%; object-fit: cover;">
-                            </div>
+                        <div class="hero-mockup-wrapper" style="margin-bottom: 2rem;">
+                            <img src="../img/projects/derivco/sportsbook_hero-case-study.svg"
+                                 alt="Derivco Global Gaming Platform Mockup" class="hero-mockup-image">
                         </div>
                         <a href="#" class="link-arrow" style="font-size: 0.9rem;">
                             View Live Application <i class="icon ion-md-open" style="margin-left: 5px;"></i>
@@ -262,10 +254,7 @@
                     </div>
                 </div>
             </div>
-            <!-- Background element -->
-            <div
-                style="position: absolute; top: 10%; left: 50%; transform: translateX(-50%); width: 80%; height: 60vh; background: var(--accent-primary); filter: blur(200px); opacity: 0.05; z-index: -1;">
-            </div>
+
         </section>
 
         <!-- Overview Section -->
@@ -778,9 +767,12 @@
         <section class="section-padding" style="background: rgba(255,255,255,0.01);">
             <div class="container">
                 <div class="animate-on-scroll" style="margin-bottom: 5rem; text-align: center;">
-                    <span style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--accent-highlight); display: block; margin-bottom: 1rem;">Outcomes</span>
+                    <span
+                        style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--accent-highlight); display: block; margin-bottom: 1rem;">Outcomes</span>
                     <h2 class="section-title" style="margin-bottom: 1.5rem;">Impact & Results</h2>
-                    <p style="max-width: 700px; margin: 0 auto; font-size: 1.2rem; opacity: 0.8; line-height: 1.6;">Our UX transformation elevated the product standard, driving measurable growth, external recognition, and massive global reach.</p>
+                    <p style="max-width: 700px; margin: 0 auto; font-size: 1.2rem; opacity: 0.8; line-height: 1.6;">Our
+                        UX transformation elevated the product standard, driving measurable growth, external
+                        recognition, and massive global reach.</p>
                 </div>
 
                 <!-- Modern Impact Cards Layout -->
@@ -790,13 +782,14 @@
                         grid-template-columns: repeat(3, 1fr);
                         gap: 2.5rem;
                     }
+
                     @media (max-width: 1024px) {
                         .impact-cards-grid {
                             grid-template-columns: 1fr;
                             gap: 2rem;
                         }
                     }
-                    
+
                     .impact-card-modern {
                         position: relative;
                         padding: 3rem 2.5rem;
@@ -810,12 +803,15 @@
                         justify-content: space-between;
                         min-height: 380px;
                     }
-                    
+
                     .impact-card-modern::before {
                         content: '';
                         position: absolute;
-                        top: 0; left: 0; right: 0; bottom: 0;
-                        background: radial-gradient(circle at center, var(--card-glow, rgba(255,255,255,0.05)) 0%, transparent 70%);
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        background: radial-gradient(circle at center, var(--card-glow, rgba(255, 255, 255, 0.05)) 0%, transparent 70%);
                         opacity: 0;
                         transition: opacity 0.5s ease;
                         z-index: 0;
@@ -825,9 +821,9 @@
                     .impact-card-modern:hover {
                         transform: translateY(-10px);
                         border-color: rgba(255, 255, 255, 0.15);
-                        box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5);
+                        box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
                     }
-                    
+
                     .impact-card-modern:hover::before {
                         opacity: 0.8;
                     }
@@ -852,7 +848,7 @@
                     }
 
                     .impact-card-modern:hover .impact-icon-wrapper {
-                        background: var(--card-glow, rgba(255,255,255,0.1));
+                        background: var(--card-glow, rgba(255, 255, 255, 0.1));
                         transform: scale(1.1);
                     }
 
@@ -865,19 +861,19 @@
                     .impact-card-modern p {
                         font-size: 1.05rem;
                         line-height: 1.6;
-                        color: rgba(255,255,255,0.7);
+                        color: rgba(255, 255, 255, 0.7);
                         transition: color 0.3s ease;
                     }
 
                     .impact-card-modern:hover p {
-                        color: rgba(255,255,255,0.95);
+                        color: rgba(255, 255, 255, 0.95);
                     }
-                    
+
                     .impact-highlight {
                         display: inline-block;
                         padding: 0.3rem 0.8rem;
                         border-radius: 100px;
-                        background: rgba(255,255,255,0.08);
+                        background: rgba(255, 255, 255, 0.08);
                         font-family: monospace;
                         font-size: 0.85rem;
                         color: var(--accent-highlight);
@@ -886,7 +882,7 @@
                 </style>
 
                 <div class="impact-cards-grid">
-                    
+
                     <!-- Card 1: Partnerships -->
                     <div class="impact-card-modern animate-on-scroll" style="--card-glow: rgba(99, 102, 241, 0.15);">
                         <div class="impact-card-main">
@@ -895,31 +891,39 @@
                             </div>
                             <span class="impact-highlight">Strategic Growth</span>
                             <h3>Industry Partnerships</h3>
-                            <p>Our internal UX transformation directly influenced external business growth, unlocking major industry collaborations with giants like <strong>Betway Africa</strong> and <strong>GGL</strong>.</p>
+                            <p>Our internal UX transformation directly influenced external business growth, unlocking
+                                major industry collaborations with giants like <strong>Betway Africa</strong> and
+                                <strong>GGL</strong>.</p>
                         </div>
                     </div>
 
                     <!-- Card 2: Recognition -->
-                    <div class="impact-card-modern animate-on-scroll" style="--card-glow: rgba(212, 175, 55, 0.15); transition-delay: 0.1s;">
+                    <div class="impact-card-modern animate-on-scroll"
+                        style="--card-glow: rgba(212, 175, 55, 0.15); transition-delay: 0.1s;">
                         <div class="impact-card-main">
                             <div class="impact-icon-wrapper" style="color: #d4af37;">
                                 <i class="icon ion-md-trophy"></i>
                             </div>
                             <span class="impact-highlight" style="color: #d4af37;">Global Recognition</span>
                             <h3>ICE Gaming Exhibition</h3>
-                            <p>Selected as the flagship successful project to represent the company's capabilities at <strong>ICE</strong>, one of the world's largest and most prestigious gaming exhibitions.</p>
+                            <p>Selected as the flagship successful project to represent the company's capabilities at
+                                <strong>ICE</strong>, one of the world's largest and most prestigious gaming
+                                exhibitions.</p>
                         </div>
                     </div>
 
                     <!-- Card 3: Metrics -->
-                    <div class="impact-card-modern animate-on-scroll" style="--card-glow: rgba(20, 184, 166, 0.15); transition-delay: 0.2s;">
+                    <div class="impact-card-modern animate-on-scroll"
+                        style="--card-glow: rgba(20, 184, 166, 0.15); transition-delay: 0.2s;">
                         <div class="impact-card-main">
                             <div class="impact-icon-wrapper" style="color: #14b8a6;">
                                 <i class="icon ion-md-trending-up"></i>
                             </div>
                             <span class="impact-highlight" style="color: #14b8a6;">Platform Scale</span>
                             <h3>Millions of Daily Users</h3>
-                            <p>Empowered multi-disciplinary teams with data-backed design strategies that measurably spiked <strong>day-one retention</strong> and interaction across our global live systems.</p>
+                            <p>Empowered multi-disciplinary teams with data-backed design strategies that measurably
+                                spiked <strong>day-one retention</strong> and interaction across our global live
+                                systems.</p>
                         </div>
                     </div>
 
