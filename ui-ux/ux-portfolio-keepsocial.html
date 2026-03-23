@@ -1350,92 +1350,18 @@
                             /* Feed specific styles removed for static image approach */
                         </style>
 
-                        <!-- The Status Bar Component (Unified for all screens) -->
-                        <style>
-                            .thin-screen {
-                                position: relative;
-                                overflow: hidden;
-                                background: #000;
-                                border: 1px solid rgba(255, 255, 255, 0.08) !important;
-                                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(0, 0, 0, 0.8) !important;
-                                border-radius: 20px;
-                            }
-
-                            .ui-status-bar {
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                right: 0;
-                                height: 32px;
-                                display: flex;
-                                align-items: center;
-                                justify-content: space-between;
-                                padding: 0 16px;
-                                z-index: 10;
-                                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-                                color: #fff;
-                                font-size: 11px;
-                                font-weight: 500;
-                                pointer-events: none;
-                                background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, transparent 100%);
-                            }
-
-                            .ui-status-bar .icons {
-                                display: flex;
-                                gap: 4px;
-                                align-items: center;
-                            }
-
-                            .ui-status-bar .battery {
-                                width: 18px;
-                                height: 9px;
-                                border: 1px solid rgba(255, 255, 255, 0.5);
-                                border-radius: 2px;
-                                position: relative;
-                            }
-
-                            .ui-status-bar .battery::after {
-                                content: '';
-                                position: absolute;
-                                right: -3px;
-                                top: 2px;
-                                width: 2px;
-                                height: 3px;
-                                background: rgba(255, 255, 255, 0.5);
-                                border-radius: 0 1px 1px 0;
-                            }
-
-                            .ui-status-bar .battery-fill {
-                                position: absolute;
-                                left: 1px;
-                                top: 1px;
-                                bottom: 1px;
-                                width: 12px;
-                                background: #fff;
-                                border-radius: 0.5px;
-                            }
-                        </style>
-
                         <!-- Screen 1: Feeds -->
                         <div class="thin-screen-wrapper">
                             <span class="cs-eyebrow"
                                 style="text-align: center; margin-bottom: 1.2rem; color: var(--text-secondary); letter-spacing: 0.05em; font-size: 0.9rem;">Activity
                                 Feeds</span>
-                            <div class="thin-screen">
-                                <div class="ui-status-bar">
-                                    <span>9:41</span>
-                                    <div class="icons">
-                                        <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
-                                            <path d="M12.01 21.49L23.64 7c-.45-.34-4.93-4-11.64-4C5.28 3 .81 6.66.36 7l11.63 14.49.01.01.01-.01z" fill-opacity=".3" />
-                                            <path d="M0 8l12 15 12-15c-1-1-4-3-12-3s-11 2-12 3z" />
-                                        </svg>
-                                        <div class="battery">
-                                            <div class="battery-fill"></div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="thin-screen"
+                                style="position: relative; overflow: hidden; background: #000; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 20px 40px rgba(0,0,0,0.5), inset 0 0 20px rgba(0,0,0,0.8);">
                                 <img src="../img/skysocial-feed-v3.png" alt="SkySocial Activity Feed"
                                     style="width: 100%; height: 100%; object-fit: cover; transform: scale(1.15); display: block;">
+                                <div
+                                    style="position: absolute; inset: 0; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1); pointer-events: none; border-radius: inherit;">
+                                </div>
                             </div>
                         </div>
 
@@ -1443,21 +1369,13 @@
                         <div class="thin-screen-wrapper">
                             <span class="cs-eyebrow"
                                 style="text-align: center; margin-bottom: 1.2rem; color: var(--text-secondary); letter-spacing: 0.05em; font-size: 0.9rem;">Explore</span>
-                            <div class="thin-screen">
-                                <div class="ui-status-bar">
-                                    <span>9:41</span>
-                                    <div class="icons">
-                                        <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
-                                            <path d="M12.01 21.49L23.64 7c-.45-.34-4.93-4-11.64-4C5.28 3 .81 6.66.36 7l11.63 14.49.01.01.01-.01z" fill-opacity=".3" />
-                                            <path d="M0 8l12 15 12-15c-1-1-4-3-12-3s-11 2-12 3z" />
-                                        </svg>
-                                        <div class="battery">
-                                            <div class="battery-fill"></div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="thin-screen"
+                                style="position: relative; overflow: hidden; background: #000; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 20px 40px rgba(0,0,0,0.5), inset 0 0 20px rgba(0,0,0,0.8);">
                                 <img src="../img/skysocial-explore-v3.png" alt="SkySocial Explore"
                                     style="width: 100%; height: 100%; object-fit: cover; transform: scale(1.15); display: block;">
+                                <div
+                                    style="position: absolute; inset: 0; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1); pointer-events: none; border-radius: inherit;">
+                                </div>
                             </div>
                         </div>
 
@@ -1465,21 +1383,13 @@
                         <div class="thin-screen-wrapper">
                             <span class="cs-eyebrow"
                                 style="text-align: center; margin-bottom: 1.2rem; color: var(--text-secondary); letter-spacing: 0.05em; font-size: 0.9rem;">Groups</span>
-                            <div class="thin-screen">
-                                <div class="ui-status-bar">
-                                    <span>9:41</span>
-                                    <div class="icons">
-                                        <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
-                                            <path d="M12.01 21.49L23.64 7c-.45-.34-4.93-4-11.64-4C5.28 3 .81 6.66.36 7l11.63 14.49.01.01.01-.01z" fill-opacity=".3" />
-                                            <path d="M0 8l12 15 12-15c-1-1-4-3-12-3s-11 2-12 3z" />
-                                        </svg>
-                                        <div class="battery">
-                                            <div class="battery-fill"></div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="thin-screen"
+                                style="position: relative; overflow: hidden; background: #000; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 20px 40px rgba(0,0,0,0.5), inset 0 0 20px rgba(0,0,0,0.8);">
                                 <img src="../img/skysocial-groups-v3.png" alt="SkySocial Groups"
                                     style="width: 100%; height: 100%; object-fit: cover; transform: scale(1.15); display: block;">
+                                <div
+                                    style="position: absolute; inset: 0; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1); pointer-events: none; border-radius: inherit;">
+                                </div>
                             </div>
                         </div>
 
@@ -1487,21 +1397,13 @@
                         <div class="thin-screen-wrapper">
                             <span class="cs-eyebrow"
                                 style="text-align: center; margin-bottom: 1.2rem; color: var(--text-secondary); letter-spacing: 0.05em; font-size: 0.9rem;">Profiles</span>
-                            <div class="thin-screen">
-                                <div class="ui-status-bar">
-                                    <span>9:41</span>
-                                    <div class="icons">
-                                        <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
-                                            <path d="M12.01 21.49L23.64 7c-.45-.34-4.93-4-11.64-4C5.28 3 .81 6.66.36 7l11.63 14.49.01.01.01-.01z" fill-opacity=".3" />
-                                            <path d="M0 8l12 15 12-15c-1-1-4-3-12-3s-11 2-12 3z" />
-                                        </svg>
-                                        <div class="battery">
-                                            <div class="battery-fill"></div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="thin-screen"
+                                style="position: relative; overflow: hidden; background: #000; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 20px 40px rgba(0,0,0,0.5), inset 0 0 20px rgba(0,0,0,0.8);">
                                 <img src="../img/skysocial-profiles-v3.png" alt="SkySocial Profiles"
                                     style="width: 100%; height: 100%; object-fit: cover; transform: scale(1.15); display: block;">
+                                <div
+                                    style="position: absolute; inset: 0; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1); pointer-events: none; border-radius: inherit;">
+                                </div>
                             </div>
                         </div>
 
@@ -1509,21 +1411,13 @@
                         <div class="thin-screen-wrapper">
                             <span class="cs-eyebrow"
                                 style="text-align: center; margin-bottom: 1.2rem; color: var(--text-secondary); letter-spacing: 0.05em; font-size: 0.9rem;">Livestream</span>
-                            <div class="thin-screen">
-                                <div class="ui-status-bar">
-                                    <span>9:41</span>
-                                    <div class="icons">
-                                        <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
-                                            <path d="M12.01 21.49L23.64 7c-.45-.34-4.93-4-11.64-4C5.28 3 .81 6.66.36 7l11.63 14.49.01.01.01-.01z" fill-opacity=".3" />
-                                            <path d="M0 8l12 15 12-15c-1-1-4-3-12-3s-11 2-12 3z" />
-                                        </svg>
-                                        <div class="battery">
-                                            <div class="battery-fill"></div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="thin-screen"
+                                style="position: relative; overflow: hidden; background: #000; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 20px 40px rgba(0,0,0,0.5), inset 0 0 20px rgba(0,0,0,0.8);">
                                 <img src="../img/skysocial-livestream-v3.png" alt="SkySocial Livestream"
                                     style="width: 100%; height: 100%; object-fit: cover; transform: scale(1.15); display: block;">
+                                <div
+                                    style="position: absolute; inset: 0; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1); pointer-events: none; border-radius: inherit;">
+                                </div>
                             </div>
                         </div>
 
@@ -1532,21 +1426,13 @@
                             <span class="cs-eyebrow"
                                 style="text-align: center; margin-bottom: 1.2rem; color: var(--text-secondary); letter-spacing: 0.05em; font-size: 0.9rem;">Group
                                 Chat</span>
-                            <div class="thin-screen">
-                                <div class="ui-status-bar">
-                                    <span>9:41</span>
-                                    <div class="icons">
-                                        <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
-                                            <path d="M12.01 21.49L23.64 7c-.45-.34-4.93-4-11.64-4C5.28 3 .81 6.66.36 7l11.63 14.49.01.01.01-.01z" fill-opacity=".3" />
-                                            <path d="M0 8l12 15 12-15c-1-1-4-3-12-3s-11 2-12 3z" />
-                                        </svg>
-                                        <div class="battery">
-                                            <div class="battery-fill"></div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="thin-screen"
+                                style="position: relative; overflow: hidden; background: #000; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 20px 40px rgba(0,0,0,0.5), inset 0 0 20px rgba(0,0,0,0.8);">
                                 <img src="../img/skysocial-chat-v3.png" alt="SkySocial Group Chat"
                                     style="width: 100%; height: 100%; object-fit: cover; transform: scale(1.15); display: block;">
+                                <div
+                                    style="position: absolute; inset: 0; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1); pointer-events: none; border-radius: inherit;">
+                                </div>
                             </div>
                         </div>
 
@@ -1554,21 +1440,13 @@
                         <div class="thin-screen-wrapper">
                             <span class="cs-eyebrow"
                                 style="text-align: center; margin-bottom: 1.2rem; color: var(--text-secondary); letter-spacing: 0.05em; font-size: 0.9rem;">Stories</span>
-                            <div class="thin-screen">
-                                <div class="ui-status-bar">
-                                    <span>9:41</span>
-                                    <div class="icons">
-                                        <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
-                                            <path d="M12.01 21.49L23.64 7c-.45-.34-4.93-4-11.64-4C5.28 3 .81 6.66.36 7l11.63 14.49.01.01.01-.01z" fill-opacity=".3" />
-                                            <path d="M0 8l12 15 12-15c-1-1-4-3-12-3s-11 2-12 3z" />
-                                        </svg>
-                                        <div class="battery">
-                                            <div class="battery-fill"></div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="thin-screen"
+                                style="position: relative; overflow: hidden; background: #000; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 20px 40px rgba(0,0,0,0.5), inset 0 0 20px rgba(0,0,0,0.8);">
                                 <img src="../img/skysocial-stories-v3.png" alt="SkySocial Stories"
                                     style="width: 100%; height: 100%; object-fit: cover; transform: scale(2.2); object-position: 80% center; display: block;">
+                                <div
+                                    style="position: absolute; inset: 0; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1); pointer-events: none; border-radius: inherit;">
+                                </div>
                             </div>
                         </div>
 
@@ -1576,21 +1454,13 @@
                         <div class="thin-screen-wrapper">
                             <span class="cs-eyebrow"
                                 style="text-align: center; margin-bottom: 1.2rem; color: var(--text-secondary); letter-spacing: 0.05em; font-size: 0.9rem;">Discover</span>
-                            <div class="thin-screen">
-                                <div class="ui-status-bar">
-                                    <span>9:41</span>
-                                    <div class="icons">
-                                        <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
-                                            <path d="M12.01 21.49L23.64 7c-.45-.34-4.93-4-11.64-4C5.28 3 .81 6.66.36 7l11.63 14.49.01.01.01-.01z" fill-opacity=".3" />
-                                            <path d="M0 8l12 15 12-15c-1-1-4-3-12-3s-11 2-12 3z" />
-                                        </svg>
-                                        <div class="battery">
-                                            <div class="battery-fill"></div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="thin-screen"
+                                style="position: relative; overflow: hidden; background: #000; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 20px 40px rgba(0,0,0,0.5), inset 0 0 20px rgba(0,0,0,0.8);">
                                 <img src="../img/skysocial-discover-v3.png" alt="SkySocial Discover"
                                     style="width: 100%; height: 100%; object-fit: cover; transform: scale(1.15); display: block;">
+                                <div
+                                    style="position: absolute; inset: 0; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1); pointer-events: none; border-radius: inherit;">
+                                </div>
                             </div>
                         </div>
                     </div>
