@@ -78,10 +78,18 @@
             box-shadow: 
                 0 30px 60px -12px rgba(0, 0, 0, 0.5),
                 0 18px 36px -18px rgba(0, 0, 0, 0.3);
+            animation: floating 6s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
         }
 
         .hero-mockup-wrapper:hover {
-            transform: translateY(-10px) rotateY(-5deg);
+            animation-play-state: paused;
+            transform: scale(1.02) rotateY(-5deg);
         }
 
         .hero-mockup-image {
@@ -228,7 +236,7 @@
                             Leading UX strategy, research, and feature definition for a live platform with millions of
                             daily users.
                         </p>
-                        <div style="display: flex; gap: 3rem; margin-bottom: 2.5rem;">
+                        <div style="display: flex; gap: 3rem; align-items: flex-end; margin-bottom: 2.5rem;">
                             <div style="text-align: left;">
                                 <span
                                     style="display: block; font-size: 0.8rem; text-transform: uppercase; color: var(--accent-highlight); margin-bottom: 0.5rem; letter-spacing: 0.1em;">My
@@ -240,17 +248,20 @@
                                     style="display: block; font-size: 0.8rem; text-transform: uppercase; color: var(--accent-highlight); margin-bottom: 0.5rem; letter-spacing: 0.1em;">Timeline</span>
                                 <span style="font-weight: 600; font-size: 1.1rem;">2024 — 2025</span>
                             </div>
+                            <!-- Relocated CTA -->
+                            <div style="text-align: left; padding-bottom: 2px;">
+                                <a href="#" class="link-arrow" style="font-size: 0.9rem; margin: 0;">
+                                    View Live Application <i class="icon ion-md-open" style="margin-left: 5px;"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                     <!-- Product Hero Image in Device Frame -->
                     <div class="animate-on-scroll" style="transition-delay: 0.2s; text-align: center;">
-                        <div class="hero-mockup-wrapper" style="margin-bottom: 2rem;">
+                        <div class="hero-mockup-wrapper">
                             <img src="../img/projects/derivco/sportsbook_hero-case-study.svg"
                                  alt="Derivco Global Gaming Platform Mockup" class="hero-mockup-image">
                         </div>
-                        <a href="#" class="link-arrow" style="font-size: 0.9rem;">
-                            View Live Application <i class="icon ion-md-open" style="margin-left: 5px;"></i>
-                        </a>
                     </div>
                 </div>
             </div>
