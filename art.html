@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Art - Shiva Chavoshian</title>
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/shared/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/modern.css">
     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -134,7 +134,7 @@
         // Render Grid
         artworks.forEach((art, index) => {
             let namePart = art.id.split('-').slice(1).join('-');
-            const imgSrc = `img/portfolio/${art.id}/${namePart}-demo.jpg`;
+            const imgSrc = `img/artworks/${art.id}/${namePart}-demo.jpg`;
 
             const card = document.createElement('div');
             card.className = 'card';
@@ -150,7 +150,7 @@
                 <div style="position: relative; padding-bottom: 100%; overflow: hidden;">
                     <img src="${imgSrc}" alt="${art.title}" loading="lazy" class="card-image" 
                          style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover; transition: transform 0.5s ease;" 
-                         onerror="this.onerror=null;this.src='img/placeholder.jpg'">
+                         onerror="this.onerror=null;this.src='img/shared/placeholder.jpg'">
                     <div class="card-content" style="position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent); padding-top: 4rem;">
                         <h3>${art.title}</h3>
                         <p style="color: var(--text-primary); font-size: 0.9rem;">${art.technique}</p>
@@ -163,7 +163,7 @@
         // Dynamic Modal Logic
         function openModal(art) {
             let namePart = art.id.split('-').slice(1).join('-');
-            const fullImgSrc = `img/portfolio/${art.id}/${namePart}.jpg`;
+            const fullImgSrc = `img/artworks/${art.id}/${namePart}.jpg`;
 
             modalTitle.textContent = art.title.toUpperCase();
             modalTechnique.textContent = art.technique;
